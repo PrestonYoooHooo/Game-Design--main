@@ -8,37 +8,37 @@ os.system('cls')
 pygame.init()
 #list fot menu Messages
 gameMessages= ["Play Game","Settings","Instructions","Scoreboard","Exit"]
-settingMessages=["Screen Size","Background Colors", "Object Colors", "Sounds On/Off","Back"]#can use same logic for main menu
+settingMessages=["Screen Size","Background Colors", "Object Colors", "Sounds On\Off","Back"]#can use same logic for main menu
 sizeMessages=["700*700", "800*800", "900*900", "1000*1000","Back"]
 BacoMessages=["Red","Blue","White","Orange","Back"]
 CoMessages=['Orange','Red','White','Blue','Back']
 ScMessages=['Score 1','Score 2','Score 3', 'Score 4', 'Back']
 InMessages= ['Get a friend', 'Gather 3 flags before them', 'Push them back with your laser', 'Enjoy your ruined friendship', 'Back']
 PlMessages= ['Level 1', 'Level 2', 'Back']
-walkRight = [pygame.image.load('images/Right Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 2.jpeg'),pygame.image.load('images/Right Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 3.jpeg'),pygame.image.load('images/Right Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 4.jpeg'),pygame.image.load('images/Right Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 5.jpeg'),pygame.image.load('images/Right Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 6.jpeg'),pygame.image.load('images/Right Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 7.jpeg'), pygame.image.load('images/Right Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 8.jpeg'),pygame.image.load('images/Right Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 9.jpeg'),pygame.image.load('images/Right Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png.jpeg')]
-walkLeft = [pygame.image.load('images/Left Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 2.jpeg'),pygame.image.load('images/Left Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 3.jpeg'),pygame.image.load('images/Left Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 4.jpeg'), pygame.image.load('images/Left Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 5.jpeg'), pygame.image.load('images/Left Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 6.jpeg'),pygame.image.load('images/Left Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 7.jpeg'),pygame.image.load('images/Left Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 8.jpeg'), pygame.image.load('images/Left Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png copy 5.jpeg'), pygame.image.load('images/Left Mov./716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png copy 6.jpeg')]
-StL = pygame.image.load('images/716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 2.jpeg')
-StR = pygame.image.load('images/716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png.jpeg')
-sebg = pygame.image.load('images/images copy.jpg')
-eibg = pygame.image.load('images/images copy 2.jpg')
-nibg = pygame.image.load('images/images copy 3.jpg')
-tebg = pygame.image.load('images/images.jpg')
-sebg2 = pygame.image.load('images/lava-lake-active-valcano-rj-2560x1700.jpg')
-eibg2 = pygame.image.load('images/lava-lake-active-valcano-rj-2560x1700 copy.jpg')
-nibg2 = pygame.image.load('images/lava-lake-active-valcano-rj-2560x1700 copy 2.jpg')
-tebg2 = pygame.image.load('images/lava-lake-active-valcano-rj-2560x1700 copy 3.jpg')
-lamon = pygame.image.load('images/95-957201_lava-muk-pokemon-lava.jpg')
-p1 = pygame.image.load('images/pngtree-battle-player-1-vs-2-logo-versus-png-image_2899070.jpeg')
-p2 = pygame.image.load('images/pngtree-battle-player-1-vs-2-logo-versus-png-image_2899070.jpeg')
-fl = pygame.image.load('images/Unknown.png')#I define/load all of my picture variables 
-proj11 = pygame.image.load('images/untitled folder/explosion01_128 copy.png')
-proj12 = pygame.image.load('images/untitled folder/explosion01_128 copy 2.png')
-proj13 = pygame.image.load('images/untitled folder/explosion01_128 copy 3.png')
-proj14 = pygame.image.load('images/untitled folder/explosion01_128 copy 4.png')
-proj21 = pygame.image.load("images/untitled folder/explosion01_128 copy 5.png")
-proj22 = pygame.image.load('images/untitled folder/explosion01_128 copy 6.png')
-proj23 = pygame.image.load('images/untitled folder/explosion01_128 copy 7.png')
-proj24 = pygame.image.load('images/untitled folder/explosion01_128 copy 8.png')
+walkRight = [pygame.image.load('images\Right Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 2.jpeg'),pygame.image.load('images\Right Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 3.jpeg'),pygame.image.load('images\Right Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 4.jpeg'),pygame.image.load('images\Right Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 5.jpeg'),pygame.image.load('images\Right Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 6.jpeg'),pygame.image.load('images\Right Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 7.jpeg'), pygame.image.load('images\Right Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 8.jpeg'),pygame.image.load('images\Right Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 9.jpeg'),pygame.image.load('images\Right Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png.jpeg')]
+walkLeft = [pygame.image.load('images\Left Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 2.jpeg'),pygame.image.load('images\Left Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 3.jpeg'),pygame.image.load('images\Left Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 4.jpeg'), pygame.image.load('images\Left Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 5.jpeg'), pygame.image.load('images\Left Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 6.jpeg'),pygame.image.load('images\Left Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 7.jpeg'),pygame.image.load('images\Left Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 8.jpeg'), pygame.image.load('images\Left Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png copy 5.jpeg'), pygame.image.load('images\Left Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png copy 6.jpeg')]
+StL = pygame.image.load('images\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 2.jpeg')
+StR = pygame.image.load('images\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png.jpeg')
+sebg = pygame.image.load('images\images copy.jpg')
+eibg = pygame.image.load('images\images copy 2.jpg')
+nibg = pygame.image.load('images\images copy 3.jpg')
+tebg = pygame.image.load('images\images.jpg')
+sebg2 = pygame.image.load('images\lava-lake-active-valcano-rj-2560x1700.jpg')
+eibg2 = pygame.image.load('images\lava-lake-active-valcano-rj-2560x1700 copy.jpg')
+nibg2 = pygame.image.load('images\lava-lake-active-valcano-rj-2560x1700 copy 2.jpg')
+tebg2 = pygame.image.load('images\lava-lake-active-valcano-rj-2560x1700 copy 3.jpg')
+lamon = pygame.image.load('images\95-957201_lava-muk-pokemon-lava.jpg')
+p1 = pygame.image.load('images\pngtree-battle-player-1-vs-2-logo-versus-png-image_2899070.jpeg')
+p2 = pygame.image.load('images\pngtree-battle-player-1-vs-2-logo-versus-png-image_2899070.jpeg')
+fl = pygame.image.load('images\\Unknown.png') 
+proj11 = pygame.image.load('images\\untitled folder\explosion01_128 copy.jpeg')
+proj12 = pygame.image.load('images\\untitled folder\explosion01_128 copy 2.jpeg')
+proj13 = pygame.image.load('images\\untitled folder\explosion01_128 copy 3.jpeg')
+proj14 = pygame.image.load('images\\untitled folder\explosion01_128 copy 4.jpeg')
+proj21 = pygame.image.load("images\\untitled folder\explosion01_128 copy 5.jpeg")
+proj22 = pygame.image.load('images\\untitled folder\explosion01_128 copy 6.jpeg')
+proj23 = pygame.image.load('images\\untitled folder\explosion01_128 copy 7.jpeg')
+proj24 = pygame.image.load('images\\untitled folder\explosion01_128 copy 8.jpeg')
 p1pjcon=4
 p2pjcon=4
 projcount11=30
@@ -454,7 +454,6 @@ while run:
                 if xp>x and xp<x+wbox and yp>y and yp<245 and counter is 7 or newgame1==True:
                     walkCount1= 0
                     walkCount2= 0
-
                     boldx1=200
                     boldy1=200
                     boldx2=WIDTH-200
@@ -521,18 +520,19 @@ while run:
                     pjyd22=FIGy2+40
                     pjyd23=FIGy2+40
                     pjyd24=FIGy2+40
-                    if HEIGHT==700:
-                        win.blit(sebg,(0,0))
-                    if HEIGHT==800:
-                        win.blit(eibg,(0,0))
-                    if HEIGHT==900:
-                        win.blit(nibg,(0,0))
-                    if HEIGHT==1000:
-                        win.blit(tebg,(0,0))
                     P1y=FIGy1-45
                     P2y=FIGy2-45
                     Flgx=random.randint(50,WIDTH-50)
                     flgy=random.randint(50,HEIGHT-50)
+                    create_NewWindow('Level 1')
+                    if HEIGHT==700:
+                        win.blit(sebg2,(0,0))
+                    if HEIGHT==800:
+                        win.blit(eibg2(0,0))
+                    if HEIGHT==900:
+                        win.blit(nibg2(0,0))
+                    if HEIGHT==1000:
+                        win.blit(tebg2 (0,0))
                     win.blit(StR,(FIGx1,FIGy1))
                     win.blit(StL,(FIGx2, FIGy2))
                     win.blit(p1,(P1x,P1y))
@@ -1590,6 +1590,7 @@ while run:
                     P2x=FIGx2
                     P1y=FIGy1-45
                     P2y=FIGy2-45
+                    create_NewWindow('Level 2')
                     if HEIGHT==700:
                         win.blit(sebg2,(0,0))
                     if HEIGHT==800:
