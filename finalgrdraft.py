@@ -113,6 +113,10 @@ FIGx1=50
 FIGy1=HEIGHT-50
 FIGx2=WIDTH-50
 FIGy2= HEIGHT-50#they start at oppisted sides of the screen 
+def flagspawn():
+    pygame.time.delay(15000)
+    flgx= random.randint(50,WIDTH-50)
+    flgy= random.randint(50,HEIGHT-50)
 def redrawGameWindowforp1():
     global walkCount1 
     if walkCount1 + 1 >= 27:
