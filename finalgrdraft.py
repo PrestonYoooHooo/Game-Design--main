@@ -7,6 +7,8 @@ import pygame, os,random,time
 os.system('cls')
 pygame.init()
 #list fot menu Messages
+fl1count=0
+fl2count=0
 gameMessages= ["Play Game","Settings","Instructions","Scoreboard","Exit"]
 settingMessages=["Screen Size","Background Colors", "Object Colors", "Sounds On\Off","Back"]#can use same logic for main menu
 sizeMessages=["700*700", "800*800", "900*900", "1000*1000","Back"]
@@ -109,14 +111,28 @@ lastr1= False
 lastl1= False 
 lastr2= False
 lastl2= False#used to determine the last dircetion each of them faced 
+flgcount=0#counts number of flags on screen
 FIGx1=50
 FIGy1=HEIGHT-50
 FIGx2=WIDTH-50
 FIGy2= HEIGHT-50#they start at oppisted sides of the screen 
 def flagspawn():
-    pygame.time.delay(15000)
-    flgx= random.randint(50,WIDTH-50)
-    flgy= random.randint(50,HEIGHT-50)
+    if flgcount=0:
+        pygame.time.delay(15000)
+        flgx= random.randint(50,WIDTH-50)#when there is no flag the count is zero which triggers the coords to randomize after a delay and adds to the count so it dosen't happen untill the flag is collected
+        flgy= random.randint(50,HEIGHT-50)
+        flgcount=1
+    if flgcount=1
+        wiin.blit(fl,(flgx,flgy))
+    if flgx==boldx1+85 or flgx==boldx1-85 or flgx==boldx2+85 or flgx==boldx2-85 or flgx==boldx3+85 or flgx==boldx3-85 or flgx==boldx4+85 or flgx==boldx4-85 or flgy==boldy1+85 or flgy==boldy1-85 or flgy==boldy2+85 or flgy==boldy2-85 or flgy==boldy3+85 or flgy== boldy3-85 or flgy== boldy4+85 or flgy== boldy4-85:
+        flgx= random.randint(50,WIDTH-50)# if the flag lands on a wall postition it will instantly randomize the coordinates so the flag isn't stuck
+        flgy= random.randint(50,HEIGHT-50)  
+    if flgx=-FIGx1+30 or flgx==FIGx1-30 or flgy==FIGy1+30 or flgy==FIGy1-30: #as with other extra numbers these gave some linency so you don't have to be right on top of it  
+        flgcount=0
+        fl1count+=1#adds to the flag count for a player
+    if flgx==FIGx2+30 or flgx==FIGx2-30 or flgy==FIGy2-30 or flgy==FIGy2+30
+        flgcount=0
+        fl2count+=1
 def redrawGameWindowforp1():
     global walkCount1 
     if walkCount1 + 1 >= 27:
@@ -127,7 +143,7 @@ def redrawGameWindowforp1():
     elif right1==True and left1 ==False:
         win.blit(walkRight[walkCount//3], (FIGx1,FIGy1))
         walkCount += 1
-    elif lastr1== True and lastl1 == False:
+    elif lastr1== True and lastl1 == False:#when they stop depending on their last motions it will have an idle motion in the last direction it was in
         win.blit(StR, (FIGx1, FIGy1))
         walkCount = 0
     else:
@@ -466,6 +482,8 @@ while run:
                     boldx3=200
                     boldx4=WIDTH-200
                     boldy4=HEIGHT-200
+                    fl1count=0
+                    fl2count=0
                     left1=False
                     right1=False
                     left2=False
@@ -524,6 +542,7 @@ while run:
                     pjyd22=FIGy2+40
                     pjyd23=FIGy2+40
                     pjyd24=FIGy2+40
+                    flgcount=0
                     P1y=FIGy1-45
                     P2y=FIGy2-45
                     Flgx=random.randint(50,WIDTH-50)
@@ -1539,6 +1558,8 @@ while run:
                     lastw2=False
                     lastd1=False
                     lastd2=False
+                    fl1count=0
+                    fl2count=0
                     pjxr11=FIGx1-40
                     pjy11=FIGy1
                     pjxl11=FIGx1+40
@@ -1588,6 +1609,7 @@ while run:
                     boldx3=200
                     boldx4=WIDTH-200
                     boldy4=HEIGHT-200
+                    flgcount=0
                     flgx= random.randint(50,WIDTH-50)
                     flgx= random.randint(50, HEIGHT-50)
                     P1x=FIGx1
