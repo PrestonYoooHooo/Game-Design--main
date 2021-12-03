@@ -139,17 +139,17 @@ def flagspawn():
 def lavspawn():
     if lavacount==0:
         pygame.time.delay(5000)
-        lvx= random.randint(50,WIDTH-50)#when there is no flag the count is zero which triggers the coords to randomize after a delay and adds to the count so it dosen't happen untill the flag is collected
+        lvx= random.randint(50,WIDTH-50)#randomizes the lava coordds when there isn't lava already on the screen
         lvy= random.randint(50,HEIGHT-50)
         lavacount+=1
-    if lavacount==1:
+    if lavacount==1:#shows the lava when the coords are found
         win.blit(lamon,(lvx,lvy))
     if lvx==boldx1+85 or lvx==boldx1-85 or lvx==boldx2+85 or lvx==boldx2-85 or lvx==boldx3+85 or lvx==boldx3-85 or lvx==boldx4+85 or lvx==boldx4-85 or lvy==boldy1+85 or lvy==boldy1-85 or lvy==boldy2+85 or lvy==boldy2-85 or lvy==boldy3+85 or lvy== boldy3-85 or lvy== boldy4+85 or lvy== boldy4-85:
-        lvx= random.randint(50,WIDTH-50)# if the flag lands on a wall postition it will instantly randomize the coordinates so the flag isn't stuck
+        lvx= random.randint(50,WIDTH-50)# if the lava lands on a wall postition it will instantly randomize the coordinates so the flag isn't stuck
         lvy= random.randint(50,HEIGHT-50)  
     if lvx=-FIGx1+30 or lvx==FIGx1-30 or lvy==FIGy1+30 or lvy==FIGy1-30: #as with other extra numbers these gave some linency so you don't have to be right on top of it  
         lavacount=0
-        spped1=False
+        spped1=False#when someone toches this it not only stuns the player but gets rid of the lava too
         pygame.time.delay(5000)
         spped1=True
     if lvx==FIGx2+30 or lvx==FIGx2-30 or lvy==FIGy2-30 or lvy==FIGy2+30
@@ -172,9 +172,9 @@ def redrawGameWindowforp1():
         win.blit(StR, (FIGx1, FIGy1))
         walkCount = 0
     else:
-        win.blit(StL,FIGx1,FIGy1)
+        win.blit(StL,FIGx1,FIGy1)#
         walkCount=0
-    if pj11==True:
+    if pj11==True:#just redraws the projectiles
         win.blit(proj11,pjxl11,pjy11)
     if pj12==True:
         win.blit(proj12,pjxl12,pjy12)
@@ -206,7 +206,22 @@ def redrawGameWindowforp2():
     else:
         win.blit(StL,FIGx2,FIGy2)
         walkCount=0
-    
+    if pj11==True:
+        win.blit(proj11,pjxl11,pjy11)
+    if pj12==True:
+        win.blit(proj12,pjxl12,pjy12)
+    if pj13==True:
+        win.blit(proj13,pjxl13,pjy13)
+    if pj14==True:
+        win.blit(proj14,pjxl14,pjy14)
+    if pj21==True:
+        win.blit(proj21,pjxl21,pjy21)
+    if pj22==True:
+        win.blit(proj22,pjxl22,pjy22)
+    if pj23==True:
+        win.blit(proj23,pjxl23,pjy23)
+    if pj24==True:
+        win.blit(proj24,pjxl24,pjy24)
 def create_NewWindow(winTitile):
     pygame.display.set_caption(winTitile)
     win.fill(WHITE)
@@ -575,7 +590,7 @@ while run:
                     flgcount=0
                     P1y=FIGy1-75#shows which player is which by stayign directicly above them
                     P2y=FIGy2-75
-                    Flgx=random.randint(50,WIDTH-50)
+                    Flgx=random.randint(50,WIDTH-50)#
                     flgy=random.randint(50,HEIGHT-50)
                     create_NewWindow('Level 1')
                     if HEIGHT==700:
@@ -633,6 +648,14 @@ while run:
                                     lastl1=False
                                     lastw1=False
                                     lastd1=True
+                                if FIGx1=10:
+                                    FIGx1=WIDTH-10
+                                if FIGx1=WIDTH-10:
+                                    FIGx1=10
+                                if FIGy1=10
+                                    FIGy1=HEIGHT-10
+                                if FIGy1=HEIGHT-10
+                                    FIGy1=10
                                 if keyPressed[pygame.K_f]:#fires projectile depending on directions and limits it to only 4 projectiles per player allowed to be fired on the screen
                                     if lastr1==True and p1pjcon>0:
                                         if p1pjcon==4:
@@ -697,6 +720,14 @@ while run:
                                     lastl2=False
                                     lastd2=True
                                     lastw2=False
+                                if FIGx2=10:
+                                    FIGx2=WIDTH-10
+                                if FIGx2=WIDTH-10:
+                                    FIGx2=10
+                                if FIGy2=10
+                                    FIGy2=HEIGHT-10
+                                if FIGy2=HEIGHT-10
+                                    FIGy2=10
                                 if keyPressed[pygame.K_SLASH]:
                                     if lastr2==True and p2pjcon>0:
                                         if p2pjcon==4:
@@ -755,6 +786,14 @@ while run:
                                     projcount11=30
                                     pjxl11=FIGx1-40  
                                     pjy11=FIGy1  
+                                if pjxl11=10:
+                                    pjxl11=WIDTH-10
+                                if pjxl11=WIDTH-10:
+                                    pjxl11=10
+                                if pjyl11=10
+                                    pjyl1=HEIGHT-10
+                                if pjyl11=HEIGHT-10
+                                    pjyl11=10  
                             elif pj11==False or projcount11<1:#this kills the projecile and resets the coordinates for the projectile after it disappears
                                 pj11=False
                                 projcount11=30
@@ -783,6 +822,14 @@ while run:
                                     projcount12=30
                                     pjxl12=FIGx1-40  
                                     pjy12=FIGy1  
+                                if pjxl11=10:
+                                    pjxl11=WIDTH-10
+                                if pjxl11=WIDTH-10:
+                                    pjxl11=10
+                                if pjyl11=10
+                                    pjyl1=HEIGHT-10
+                                if pjyl11=HEIGHT-10
+                                    pjyl11=10  
                             elif pj12==False or projcount12<1:
                                 pj12=False
                                 projcount12=30
@@ -1596,36 +1643,33 @@ while run:
                                 FIGy2-=50
                                 pygame.time.delay(3000)
                                 spped2=True
-                            if fl1count==5:
+                            if fl1count==5:#this ends the game whenever a player has collected 5 flags
                                 play=False
                                 score=f11count*2000
                             if fl2count==5:
                                 play=False
                                 score=fl2count*1000
-                    create_NewWindow("Good Game")
+                    create_NewWindow("Good Game")#creates a endgame window
                     win.fill(WHITE)
-                    display_Title("Good Game",40)
-                    Menu_function(EndMessages,150)
+                    display_Title("Good Game",40)#
+                    Menu_function(EndMessages,150)#ssame as the other menus but also with the score thing and it allows us to travel to other parts of the game like hte menu
                     pygame.time.delay(100)
-                    counter+=1
+                    counter+=1#actiates the endgame if statments
                     if xp>x and xp<x+wbox and yp>y and yp<345 and yp>245 and counter is 8:
                         newgame1=True
                         newgame2=False
-                        escape1=False
                         counter-=1
                     if xp>x and xp<x+wbox and yp>y and yp<445 and yp>345 and counter is 8:
                         newgame1=False
                         newgame2=True
-                        escape1=False
                         counter-=1
                     if xp>x and xp<x+wbox and yp>y and yp<445 and yp>545 and counter is 8:
                         newgame1=False 
                         newgame2=False
-                        escape1=False
                         display_Title("TestyGame",y)
                         Menu_function(gameMessages,150)
                         counter -=8
-                if xp>x and xp<x+wbox and yp>y and yp<345 and yp>245 and counter is 7 or newgame2==True and escape2=True
+                if xp>x and xp<x+wbox and yp>y and yp<345 and yp>245 and counter is 7 or newgame2==True:
                     walkCount1= 0
                     walkCount2= 0
                     left1=False
