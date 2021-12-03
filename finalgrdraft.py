@@ -1545,7 +1545,7 @@ while run:
                                     projcount24=30
                                     pjy24=FIGy2+40
                             if pjxr11==FIGx1 or pjxr12==FIGx1 or pjxr13==FIGx1 or pjxr14==FIGx1 or pjxr21==FIGx1 or pjxr22==FIGx1 or pjxr23==FIGx1 or pjxr24==FIGx1 or pjxl11==FIGx1 or pjxl12==FIGx1 or pjxl13==FIGx1 or pjxl14==FIGx1 or pjxl21==FIGx1 or pjxl22==FIGx1 or pjxl23==FIGx1 or pjxl24==FIGx1 or pjyw11==FIGy1 or pjyw12==FIGy1 or pjyw13==FIGy1 or pjyw14==FIGy1 or pjyw21==FIGy1 or pjyw22==FIGy1 or pjyw23==FIGy1 or pjyw24==FIGy1 or pjyd11==FIGy1 or pjyd12==FIGy1 or pjyd13==FIGy1 or pjyd14==FIGy1 or pjyd21==FIGy1 or pjyd22==FIGy1 or pjyd23==FIGy1 or pjyd24==FIGy1:
-                                spped1=False
+                                spped1=False#the projectiles pierce players but will still leave them stunned if they score a direct hit
                                 pygame.time.delay(5000)
                                 spped1=True
                             if pjxr11==FIGx2 or pjxr12==FIGx2 or pjxr13==FIGx2 or pjxr14==FIGx2 or pjxr21==FIGx2 or pjxr22==FIGx2 or pjxr23==FIGx2 or pjxr24==FIGx2 or pjxl11==FIGx2 or pjxl12==FIGx2 or pjxl13==FIGx2 or pjxl14==FIGx2 or pjxl21==FIGx2 or pjxl22==FIGx2 or pjxl23==FIGx2 or pjxl24==FIGx2 or pjyw11==FIGy2 or pjyw12==FIGy2 or pjyw13==FIGy2 or pjyw14==FIGy2 or pjyw21==FIGy2 or pjyw22==FIGy2 or pjyw23==FIGy2 or pjyw24==FIGy2 or pjyd11==FIGy2 or pjyd12==FIGy2 or pjyd13==FIGy2 or pjyd14==FIGy2 or pjyd21==FIGy2 or pjyd22==FIGy2 or pjyd23==FIGy2 or pjyd24==FIGy2:
@@ -1556,20 +1556,44 @@ while run:
                                 pj24=False
                                 projcount24=30
                                 pjy24=FIGy2+40  
-                            if FIGx1==boldx1+85 or boldx2+85 or boldx3+85 or boldx4+85 or boldx1-85 or boldx2-85 or boldx3-85 or boldx4-85:
+                            if FIGx1==boldx1+85 or boldx2+85 or boldx3+85 or boldx4+85:#These sets of commands will cause a player to reocil back and be stunned if they run into a wall
                                 spped1=False
+                                FIGx1+=50
                                 pygame.time.delay(3000)
                                 spped1=True
-                            if FIGy1==boldy1+85 or boldy2+85 or boldy3+85 or boldy4+85 or boldy1-85 or boldy2-85 or boldy3-85 or boldy4-85:
+                            if FIGx1==boldx1-85 or boldx2-85 or boldx3-85 or boldx4-85:
                                 spped1=False
+                                FIGx1-=50
                                 pygame.time.delay(3000)
                                 spped1=True
-                            if FIGx2==boldx1+85 or boldx2+85 or boldx3+85 or boldx4+85 or boldx1-85 or boldx2-85 or boldx3-85 or boldx4-85:
+                            if FIGy1==boldy1+85 or boldy2+85 or boldy3+85 or boldy4+85:
+                                spped1=False
+                                FIGy1+=50
+                                pygame.time.delay(3000)
+                                spped1=True
+                            if FIGy1==boldy1-85 or boldy2-85 or boldy3-85 or boldy4-85:
+                                spped1=False
+                                FIGy1-=50
+                                pygame.time.delay(3000)
+                                spped1=True
+                            if FIGx2==boldx1+85 or boldx2+85 or boldx3+85 or boldx4+85:
                                 spped2=False
+                                FIGx2+=50
                                 pygame.time.delay(3000)
                                 spped2=True
-                            if FIGy2==boldy1+85 or boldy2+85 or boldy3+85 or boldy4+85 or boldy1-85 or boldy2-85 or boldy3-85 or boldy4-85:
+                            if FIGx2==boldx-85 or boldx2-85 or boldx3-85 or boldx4-85:
                                 spped2=False
+                                FIGx2-=50
+                                pygame.time.delay(3000)
+                                spped2=True
+                            if FIGy2==boldy1+85 or boldy2+85 or boldy3+85 or boldy4+85:
+                                spped2=False
+                                FIGy2+=50
+                                pygame.time.delay(3000)
+                                spped2=True
+                            if FIGy2==boldy1-85 or boldy2-85 or boldy3-85 or boldy4-85:
+                                spped2=False
+                                FIGy2-=50
                                 pygame.time.delay(3000)
                                 spped2=True
                             if fl1count==5:
