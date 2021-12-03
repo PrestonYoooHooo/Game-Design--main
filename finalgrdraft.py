@@ -17,7 +17,7 @@ CoMessages=['Orange','Red','White','Blue','Back']
 ScMessages=['Score 1','Score 2','Score 3', 'Score 4', 'Back']
 InMessages= ['Get a friend', 'Gather 3 flags before them', 'Push them back with your laser', 'Enjoy your ruined friendship', 'Back']
 PlMessages= ['Level 1', 'Level 2', 'Back']
-EndMessages=['The top Score was'score, 'Play Level 1'. 'Play Level 2', 'Back to Menu']
+EndMessages=['The top Score was', 'Play Level 1','Play Level 2', 'Back to Menu']
 walkRight = [pygame.image.load('images\Right Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 2.jpeg'),pygame.image.load('images\Right Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 3.jpeg'),pygame.image.load('images\Right Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 4.jpeg'),pygame.image.load('images\Right Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 5.jpeg'),pygame.image.load('images\Right Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 6.jpeg'),pygame.image.load('images\Right Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 7.jpeg'), pygame.image.load('images\Right Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 8.jpeg'),pygame.image.load('images\Right Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 9.jpeg'),pygame.image.load('images\Right Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png.jpeg')]
 walkLeft = [pygame.image.load('images\Left Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 2.jpeg'),pygame.image.load('images\Left Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 3.jpeg'),pygame.image.load('images\Left Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 4.jpeg'), pygame.image.load('images\Left Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 5.jpeg'), pygame.image.load('images\Left Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 6.jpeg'),pygame.image.load('images\Left Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 7.jpeg'),pygame.image.load('images\Left Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 8.jpeg'), pygame.image.load('images\Left Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png copy 5.jpeg'), pygame.image.load('images\Left Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png copy 6.jpeg')]
 StL = pygame.image.load('images\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 2.jpeg')
@@ -120,20 +120,20 @@ FIGx2=WIDTH-50
 FIGy2= HEIGHT-50#they start at oppisted sides of the screen 
 
 def flagspawn():
-    if flgcount=0:
+    if flgcount==0:
         pygame.time.delay(15000)
         flgx= random.randint(50,WIDTH-50)#when there is no flag the count is zero which triggers the coords to randomize after a delay and adds to the count so it dosen't happen untill the flag is collected
         flgy= random.randint(50,HEIGHT-50)
         flgcount+=1
-    if flgcount=1
+    if flgcount==1:
         wiin.blit(fl,(flgx,flgy))
     if flgx==boldx1+85 or flgx==boldx1-85 or flgx==boldx2+85 or flgx==boldx2-85 or flgx==boldx3+85 or flgx==boldx3-85 or flgx==boldx4+85 or flgx==boldx4-85 or flgy==boldy1+85 or flgy==boldy1-85 or flgy==boldy2+85 or flgy==boldy2-85 or flgy==boldy3+85 or flgy== boldy3-85 or flgy== boldy4+85 or flgy== boldy4-85:
         flgx= random.randint(50,WIDTH-50)# if the flag lands on a wall postition it will instantly randomize the coordinates so the flag isn't stuck
         flgy= random.randint(50,HEIGHT-50)  
-    if flgx=-FIGx1+30 or flgx==FIGx1-30 or flgy==FIGy1+30 or flgy==FIGy1-30: #as with other extra numbers these gave some linency so you don't have to be right on top of it  
+    if flgx==-FIGx1+30 or flgx==FIGx1-30 or flgy==FIGy1+30 or flgy==FIGy1-30: #as with other extra numbers these gave some linency so you don't have to be right on top of it  
         flgcount=0
         fl1count+=1#adds to the flag count for a player
-    if flgx==FIGx2+30 or flgx==FIGx2-30 or flgy==FIGy2-30 or flgy==FIGy2+30
+    if flgx==FIGx2+30 or flgx==FIGx2-30 or flgy==FIGy2-30 or flgy==FIGy2+30:
         flgcount=0
         fl2count+=1
 def lavspawn():
@@ -147,12 +147,12 @@ def lavspawn():
     if lvx==boldx1+85 or lvx==boldx1-85 or lvx==boldx2+85 or lvx==boldx2-85 or lvx==boldx3+85 or lvx==boldx3-85 or lvx==boldx4+85 or lvx==boldx4-85 or lvy==boldy1+85 or lvy==boldy1-85 or lvy==boldy2+85 or lvy==boldy2-85 or lvy==boldy3+85 or lvy== boldy3-85 or lvy== boldy4+85 or lvy== boldy4-85:
         lvx= random.randint(50,WIDTH-50)# if the lava lands on a wall postition it will instantly randomize the coordinates so the flag isn't stuck
         lvy= random.randint(50,HEIGHT-50)  
-    if lvx=-FIGx1+30 or lvx==FIGx1-30 or lvy==FIGy1+30 or lvy==FIGy1-30: #as with other extra numbers these gave some linency so you don't have to be right on top of it  
+    if lvx==-FIGx1+30 or lvx==FIGx1-30 or lvy==FIGy1+30 or lvy==FIGy1-30: #as with other extra numbers these gave some linency so you don't have to be right on top of it  
         lavacount=0
         spped1=False#when someone toches this it not only stuns the player but gets rid of the lava too
         pygame.time.delay(5000)
         spped1=True
-    if lvx==FIGx2+30 or lvx==FIGx2-30 or lvy==FIGy2-30 or lvy==FIGy2+30
+    if lvx==FIGx2+30 or lvx==FIGx2-30 or lvy==FIGy2-30 or lvy==FIGy2+30:
         lavacount=0
         spped2=False
         pygame.time.delay(5000)
@@ -636,7 +636,7 @@ while run:
                                     lastl1=True
                                     lastd1=False
                                     lastw1=False
-                                if keyPressed[pygame.K_UP]:  
+                                if keyPressed[pygame.K_UP]:  #wasn't able to get up and down sprite so reused the other walking sprites but you do still travel in that direction
                                     FIGy1-=speedx
                                     lastr1=False
                                     lastl1=False
@@ -648,16 +648,16 @@ while run:
                                     lastl1=False
                                     lastw1=False
                                     lastd1=True
-                                if FIGx1=10:
-                                    FIGx1=WIDTH-10
-                                if FIGx1=WIDTH-10:
-                                    FIGx1=10
-                                if FIGy1=10
-                                    FIGy1=HEIGHT-10
-                                if FIGy1=HEIGHT-10
+                                if FIGx1==10:
+                                    FIGx1==WIDTH-10
+                                if FIGx1==WIDTH-10:
+                                    FIGx1==10
+                                if FIGy1==10:
+                                    FIGy1==HEIGHT-10
+                                if FIGy1==HEIGHT-10:
                                     FIGy1=10
                                 if keyPressed[pygame.K_f]:#fires projectile depending on directions and limits it to only 4 projectiles per player allowed to be fired on the screen
-                                    if lastr1==True and p1pjcon>0:
+                                    if lastr1==True and p1pjcon>0:#you can fire left and right (not up and down becuase i could find good back sprites for facing does directions so while you can move in them you can shot in them)
                                         if p1pjcon==4:
                                             win.blit(proj11,pjxr11,FIGy1)
                                             p1pjcon-=1
@@ -720,14 +720,14 @@ while run:
                                     lastl2=False
                                     lastd2=True
                                     lastw2=False
-                                if FIGx2=10:
-                                    FIGx2=WIDTH-10
-                                if FIGx2=WIDTH-10:
-                                    FIGx2=10
-                                if FIGy2=10
-                                    FIGy2=HEIGHT-10
-                                if FIGy2=HEIGHT-10
-                                    FIGy2=10
+                                if FIGx2==10:
+                                    FIGx2==WIDTH-10
+                                if FIGx2==WIDTH-10:
+                                    FIGx2==10
+                                if FIGy2==10:
+                                    FIGy2==HEIGHT-10
+                                if FIGy2==HEIGHT-10:
+                                    FIGy2==10
                                 if keyPressed[pygame.K_SLASH]:
                                     if lastr2==True and p2pjcon>0:
                                         if p2pjcon==4:
@@ -767,33 +767,33 @@ while run:
                                 pjxl11+=20
                                 projcount11-=1
                                 if pjxl11 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:#These are for the coords of the wall and will delete the projectiels if the touch them
-                                    pj11==False
+                                    pj11=False
                                     projcount11=30
                                     pjxl11=FIGx1-40
                                     pjy11=FIGy1
                                 if pjy11 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj11==False
+                                    pj11=False
                                     projcount11=30
                                     pjxl11=FIGx1-40  
                                     pjy11=FIGy1  
                                 if pjxl11 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj11==False
+                                    pj11=False
                                     projcount11=30
                                     pjxl11=FIGx1-40
                                     pjy11=FIGy1
                                 if pjy11 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj11==False
+                                    pj11=False
                                     projcount11=30
                                     pjxl11=FIGx1-40  
                                     pjy11=FIGy1  
-                                if pjxl11=10:
+                                if pjxl11==10:
                                     pjxl11=WIDTH-10
-                                if pjxl11=WIDTH-10:
+                                if pjxl11==WIDTH-10:
                                     pjxl11=10
-                                if pjyl11=10
+                                if pjy11==10:
                                     pjyl1=HEIGHT-10
-                                if pjyl11=HEIGHT-10
-                                    pjyl11=10  
+                                if pjy11==HEIGHT-10:
+                                    pjy11=10  
                             elif pj11==False or projcount11<1:#this kills the projecile and resets the coordinates for the projectile after it disappears
                                 pj11=False
                                 projcount11=30
@@ -803,33 +803,33 @@ while run:
                                 pjxl12+=20
                                 projcount12-=1
                                 if pjxl12 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj12==False
+                                    pj12=False
                                     projcount12=30
                                     pjxl12=FIGx1-40
                                     pjy12=FIGy1
                                 if pjy12 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj12==False
+                                    pj12=False
                                     projcount12=30
                                     pjxl12=FIGx1-40  
                                     pjy12=FIGy1  
                                 if pjxl12 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj12==False
+                                    pj12=False
                                     projcount12=30
                                     pjxl12=FIGx1-40
                                     pjy12=FIGy1
                                 if pjy12 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj12==False
+                                    pj12=False
                                     projcount12=30
                                     pjxl12=FIGx1-40  
                                     pjy12=FIGy1  
-                                if pjxl11=10:
-                                    pjxl11=WIDTH-10
-                                if pjxl11=WIDTH-10:
-                                    pjxl11=10
-                                if pjyl11=10
-                                    pjyl1=HEIGHT-10
-                                if pjyl11=HEIGHT-10
-                                    pjyl11=10  
+                                if pjxl12==10:
+                                    pjxl12=WIDTH-10
+                                if pjxl12==WIDTH-10:
+                                    pjxl12=10
+                                if pjy12==10:
+                                    pjyl2=HEIGHT-10
+                                if pjy12==HEIGHT-10:
+                                    pjy12=10  
                             elif pj12==False or projcount12<1:
                                 pj12=False
                                 projcount12=30
@@ -839,25 +839,33 @@ while run:
                                 pjxl13+=20
                                 projcount13-=1
                                 if pjxl13 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj13==False
+                                    pj13=False
                                     projcount13=30
                                     pjxl13=FIGx1-40
                                     pjy13=FIGy1
                                 if pjy13 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj13==False
+                                    pj13=False
                                     projcount13=30
                                     pjxl13=FIGx1-40  
                                     pjy13=FIGy1  
                                 if pjxl13 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj13==False
+                                    pj13=False
                                     projcount13=30
                                     pjxl13=FIGx1-40
                                     pjy13=FIGy1
                                 if pjy13 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj13==False
+                                    pj13=False
                                     projcount13=30
                                     pjxl13=FIGx1-40  
                                     pjy13=FIGy1 
+                                if pjxl13==10:
+                                    pjxl13=WIDTH-10
+                                if pjxl13==WIDTH-10:
+                                    pjxl13=10
+                                if pjy13==10:
+                                    pjyl3=HEIGHT-10
+                                if pjy13==HEIGHT-10:
+                                    pjy13=10
                             elif pj13==False or projcount13<1:
                                 pj13=False
                                 projcount13=30
@@ -867,25 +875,33 @@ while run:
                                 pjxl14+=20
                                 projcount14-=1
                                 if pjxl14 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj14==False
+                                    pj14=False
                                     projcount14=30
                                     pjxl14=FIGx1-40
                                     pjy14=FIGy1
                                 if pjy14 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj14==False
+                                    pj14=False
                                     projcount14=30
                                     pjxl14=FIGx1-40  
                                     pjy14=FIGy1  
                                 if pjxl14 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj14==False
+                                    pj14=False
                                     projcount14=30
                                     pjxl14=FIGx1-40
                                     pjy14=FIGy1
                                 if pjy14 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj14==False
+                                    pj14=False
                                     projcount14=30
                                     pjxl14=FIGx1-40  
                                     pjy14=FIGy1  
+                                if pjxl14==10:
+                                    pjxl14=WIDTH-10
+                                if pjxl14==WIDTH-10:
+                                    pjxl14=10
+                                if pjy14==10:
+                                    pjyl4=HEIGHT-10
+                                if pjy14==HEIGHT-10:
+                                    pjy14=10
                             elif pj14==False or projcount14<1:
                                 pj14=False
                                 projcount14=30
@@ -895,25 +911,33 @@ while run:
                                 pjxl21+=20
                                 projcount21-=1
                                 if pjxl21 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj21==False
+                                    pj21=False
                                     projcount21=30
                                     pjxl21=FIGx2-40
                                     pjy21=FIGy2
                                 if pjy21 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj21==False
+                                    pj21=False
                                     projcount21=30
                                     pjxl21=FIGx2-40  
                                     pjy21=FIGy2  
                                 if pjxl21 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj21==False
+                                    pj21=False
                                     projcount21=30
                                     pjxl21=FIGx2-40
                                     pjy21=FIGy2
                                 if pjy21 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj21==False
+                                    pj21=False
                                     projcount21=30
                                     pjxl21=FIGx2-40  
-                                    pjy21=FIGy2  
+                                    pjy21=FIGy2
+                                if pjxl21==10:
+                                    pjxl21=WIDTH-10
+                                if pjxl21==WIDTH-10:
+                                    pjxl21=10
+                                if pjy21==10:
+                                    pjy21=HEIGHT-10
+                                if pjy21==HEIGHT-10:
+                                    pjy21=10  
                             elif pj21==False or projcount21<1:
                                 pj21=False
                                 projcount21=30
@@ -923,25 +947,33 @@ while run:
                                 pjxl22+=20
                                 projcount22-=1
                                 if pjxl22 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj22==False
+                                    pj22=False
                                     projcount22=30
                                     pjxl22=FIGx2-40
                                     pjy22=FIGy2
                                 if pjy22 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj22==False
+                                    pj22=False
                                     projcount22=30
                                     pjxl22=FIGx2-40  
                                     pjy22=FIGy2  
                                 if pjxl22 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj22==False
+                                    pj22=False
                                     projcount22=30
                                     pjxl22=FIGx2-40
                                     pjy22=FIGy2
                                 if pjy22 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj22==False
+                                    pj22=False
                                     projcount22=30
                                     pjxl22=FIGx2-40  
                                     pjy22=FIGy2  
+                                if pjxl22==10:
+                                    pjxl22=WIDTH-10
+                                if pjxl22==WIDTH-10:
+                                    pjxl22=10
+                                if pjy22==10:
+                                    pjy22=HEIGHT-10
+                                if pjy22==HEIGHT-10:
+                                    pjy22=10  
                             elif pj22==False or projcount22<1:
                                 pj22=False
                                 projcount22=30
@@ -951,25 +983,33 @@ while run:
                                 pjxl23+=20
                                 projcount23-=1
                                 if pjxl23 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj23==False
+                                    pj23=False
                                     projcount23=30
                                     pjxl23=FIGx2-40
                                     pjy23=FIGy2
                                 if pjy23 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj23==False
+                                    pj23=False
                                     projcount23=30
                                     pjxl23=FIGx2-40  
                                     pjy23=FIGy2  
                                 if pjxl23 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj23==False
+                                    pj23=False
                                     projcount23=30
                                     pjxl23=FIGx2-40
                                     pjy23=FIGy2
                                 if pjy23 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj23==False
+                                    pj23=False
                                     projcount23=30
                                     pjxl23=FIGx2-40  
                                     pjy23=FIGy2  
+                                if pjxl23==10:
+                                    pjxl23=WIDTH-10
+                                if pjxl23==WIDTH-10:
+                                    pjxl23=10
+                                if pjy23==10:
+                                    pjy23=HEIGHT-10
+                                if pjy23==HEIGHT-10:
+                                    pjy23=10  
                             elif pj23==False or projcount23<1:
                                 pj23=False
                                 projcount23=30
@@ -979,25 +1019,33 @@ while run:
                                 pjxl24+=20
                                 projcount24-=1
                                 if pjxl24 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj24==False
+                                    pj24=False
                                     projcount24=30
                                     pjxl24=FIGx2-40
                                     pjy24=FIGy2
                                 if pjy24 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj24==False
+                                    pj24=False
                                     projcount24=30
                                     pjxl24=FIGx2-40  
                                     pjy24=FIGy2  
                                 if pjxl24 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj24==False
+                                    pj24=False
                                     projcount24=30
                                     pjxl24=FIGx2-40
                                     pjy24=FIGy2
                                 if pjy24 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj24==False
+                                    pj24=False
                                     projcount24=30
                                     pjxl24=FIGx2-40  
-                                    pjy24=FIGy2  
+                                    pjy24=FIGy2 
+                                if pjxl24==10:
+                                    pjxl24=WIDTH-10
+                                if pjxl24==WIDTH-10:
+                                    pjxl24=10
+                                if pjy24==10:
+                                    pjy24=HEIGHT-10
+                                if pjy24==HEIGHT-10:
+                                    pjy24=10   
                             elif pj24==False or projcount24<1:
                                 pj24=False
                                 projcount24=30
@@ -1007,12 +1055,12 @@ while run:
                                 pjxr11+=20
                                 projcount11-=1
                                 if pjxr11 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj11==False
+                                    pj11=False
                                     projcount11=30
                                     pjxr11=FIGx1+40
                                     pjy11=FIGy1
                                 if pjy11 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj11==False
+                                    pj11=False
                                     projcount11=30
                                     pjxr11=FIGx1+40  
                                     pjy11=FIGy1  
@@ -1022,10 +1070,18 @@ while run:
                                     pjxr11=FIGx1+40
                                     pjy11=FIGy1
                                 if pjy11 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj11==False
+                                    pj11=False
                                     projcount11=30
                                     pjxr11=FIGx1+40  
-                                    pjy11=FIGy1  
+                                    pjy11=FIGy1 
+                                if pjxr11==10:
+                                    pjxr11=WIDTH-10
+                                if pjxr11==WIDTH-10:
+                                    pjxr11=10
+                                if pjy11==10:
+                                    pjy11=HEIGHT-10
+                                if pjy11==HEIGHT-10:
+                                    pjy11=10 
                             elif pj11==False or projcount11<1:
                                 pj11=False
                                 projcount11=30
@@ -1035,25 +1091,33 @@ while run:
                                 pjxr12+=20
                                 projcount12-=1
                                 if pjxr12 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj12==False
+                                    pj12=False
                                     projcount12=30
                                     pjxr12=FIGx1+40
                                     pjy12=FIGy1
                                 if pjy12 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj12==False
+                                    pj12=False
                                     projcount12=30
                                     pjxr12=FIGx1+40  
                                     pjy12=FIGy1  
                                 if pjxr12 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj12==False
+                                    pj12=False
                                     projcount12=30
                                     pjxr12=FIGx1+40
                                     pjy12=FIGy1
                                 if pjy12 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj12==False
+                                    pj12=False
                                     projcount12=30
                                     pjxr12=FIGx1+40  
-                                    pjy12=FIGy1  
+                                    pjy12=FIGy1
+                                if pjxr12==10:
+                                    pjxr12=WIDTH-10
+                                if pjxr12==WIDTH-10:
+                                    pjxr12=10
+                                if pjy12==10:
+                                    pjy12=HEIGHT-10
+                                if pjy12==HEIGHT-10:
+                                    pjy12=10 
                             elif pj12==False or projcount12<1:
                                 pj12=False
                                 projcount12=30
@@ -1063,25 +1127,33 @@ while run:
                                 pjxr13+=20
                                 projcount13-=1
                                 if pjxr13 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj13==False
+                                    pj13=False
                                     projcount13=30
                                     pjxr13=FIGx1+40
                                     pjy13=FIGy1
                                 if pjy13 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj13==False
+                                    pj13=False
                                     projcount13=30
                                     pjxr13=FIGx1-40  
                                     pjy13=FIGy1  
                                 if pjxr13 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj13==False
+                                    pj13=False
                                     projcount13=30
                                     pjxr13=FIGx1-40
                                     pjy13=FIGy1
                                 if pjy13 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj13==False
+                                    pj13=False
                                     projcount13=30
                                     pjxr13=FIGx1-40  
                                     pjy13=FIGy1 
+                                if pjxr13==10:
+                                    pjxr13==WIDTH-10
+                                if pjxr13==WIDTH-10:
+                                    pjxr13==10
+                                if pjy13==10:
+                                    pjy13=HEIGHT-10
+                                if pjy13==HEIGHT-10:
+                                    pjy13==10 
                             elif pj13==False or projcount13<1:
                                 pj13=False
                                 projcount13=30
@@ -1091,25 +1163,33 @@ while run:
                                 pjxr14+=20
                                 projcount14-=1
                                 if pjxr14 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj14==False
+                                    pj14=False
                                     projcount14=30
                                     pjxr14=FIGx1+40
                                     pjy14=FIGy1
                                 if pjy14 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj14==False
+                                    pj14=False
                                     projcount14=30
                                     pjxr14=FIGx1+40  
                                     pjy14=FIGy1  
                                 if pjxr14 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj14==False
+                                    pj14=False
                                     projcount14=30
                                     pjxr14=FIGx1+40
                                     pjy14=FIGy1
                                 if pjy14 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj14==False
+                                    pj14=False
                                     projcount14=30
                                     pjxr14=FIGx1+40  
-                                    pjy14=FIGy1  
+                                    pjy14=FIGy1
+                                if pjxr14==10:
+                                    pjxr14=WIDTH-10
+                                if pjxr14==WIDTH-10:
+                                    pjxr14=10
+                                if pjy14==10:
+                                    pjy14=HEIGHT-10
+                                if pjy14==HEIGHT-10:
+                                    pjy14=10   
                             elif pj14==False or projcount14<1:
                                 pj14=False
                                 projcount14=30
@@ -1119,25 +1199,33 @@ while run:
                                 pjxr21+=20
                                 projcount21-=1
                                 if pjxr21 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj21==False
+                                    pj21=False
                                     projcount21=30
                                     pjxr21=FIGx2+40
                                     pjy21=FIGy2
                                 if pjy21 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj21==False
+                                    pj21=False
                                     projcount21=30
                                     pjxr21=FIGx2+40  
                                     pjy21=FIGy2  
                                 if pjxr21 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj21==False
+                                    pj21=False
                                     projcount21=30
                                     pjxr21=FIGx2+40
                                     pjy21=FIGy2
                                 if pjy21 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj21==False
+                                    pj21=False
                                     projcount21=30
                                     pjxr21=FIGx2+40  
                                     pjy21=FIGy2  
+                                if pjxr21==10:
+                                    pjxr21=WIDTH-10
+                                if pjxr21==WIDTH-10:
+                                    pjxr21=10
+                                if pjy21==10:
+                                    pjy21=HEIGHT-10
+                                if pjy21==HEIGHT-10:
+                                    pjy21=10 
                             elif pj21==False or projcount21<1:
                                 pj21=False
                                 projcount21=30
@@ -1147,25 +1235,33 @@ while run:
                                 pjxr22+=20
                                 projcount22-=1
                                 if pjxr22 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj22==False
+                                    pj22=False
                                     projcount22=30
                                     pjxr22=FIGx2+40
                                     pjy22=FIGy2
                                 if pjy22 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj22==False
+                                    pj22=False
                                     projcount22=30
                                     pjxr22=FIGx2+40  
                                     pjy22=FIGy2  
                                 if pjxr22 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj22==False
+                                    pj22=False
                                     projcount22=30
                                     pjxr22=FIGx2+40
                                     pjy22=FIGy2
                                 if pjy22 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj22==False
+                                    pj22=False
                                     projcount22=30
                                     pjxr22=FIGx2+40  
                                     pjy22=FIGy2  
+                                if pjxr22==10:
+                                    pjxr22=WIDTH-10
+                                if pjxr22==WIDTH-10:
+                                    pjxr22=10
+                                if pjy22==10:
+                                    pjy22=HEIGHT-10
+                                if pjy22==HEIGHT-10:
+                                    pjy21=10 
                             elif pj22==False or projcount22<1:
                                 pj22=False
                                 projcount22=30
@@ -1175,25 +1271,33 @@ while run:
                                 pjxr23+=20
                                 projcount23-=1
                                 if pjxr23 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj23==False
+                                    pj23=False
                                     projcount23=30
                                     pjxr23=FIGx2+40
                                     pjy23=FIGy2
                                 if pjy23 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj23==False
+                                    pj23=False
                                     projcount23=30
                                     pjxr23=FIGx2+40  
                                     pjy23=FIGy2  
                                 if pjxr23 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj23==False
+                                    pj23=False
                                     projcount23=30
                                     pjxr23=FIGx2+40
                                     pjy23=FIGy2
                                 if pjy23 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj23==False
+                                    pj23=False
                                     projcount23=30
                                     pjxr23=FIGx2+40  
                                     pjy23=FIGy2  
+                                if pjxr23==10:
+                                    pjxr23=WIDTH-10
+                                if pjxr23==WIDTH-10:
+                                    pjxr23=10
+                                if pjy23==10:
+                                    pjy23=HEIGHT-10
+                                if pjy23==HEIGHT-10:
+                                    pjy23=10 
                             elif pj23==False or projcount23<1:
                                 pj23=False
                                 projcount23=30
@@ -1203,406 +1307,46 @@ while run:
                                 pjxr24+=20
                                 projcount24-=1
                                 if pjxr24 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj24==False
+                                    pj24=False
                                     projcount24=30
                                     pjxr24=FIGx2+40
                                     pjy24=FIGy2
                                 if pjy24 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj24==False
+                                    pj24=False
                                     projcount24=30
                                     pjxr24=FIGx2+40  
                                     pjy24=FIGy2  
                                 if pjxr24 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj24==False
+                                    pj24=False
                                     projcount24=30
                                     pjxr24=FIGx2+40
                                     pjy24=FIGy2
                                 if pjy24 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj24==False
+                                    pj24=False
                                     projcount24=30
                                     pjxr24=FIGx2+40  
                                     pjy24=FIGy2  
+                                if pjxr24==10:
+                                    pjxr24=WIDTH-10
+                                if pjxr24==WIDTH-10:
+                                    pjxr24=10
+                                if pjy24==10:
+                                    pjy24=HEIGHT-10
+                                if pjy24==HEIGHT-10:
+                                    pjy24=10 
                             elif pj24==False or projcount24<1:
                                 pj24=False
                                 projcount24=30
                                 pjxr24=FIGx2+40  
                                 pjy24=FIGy2 
-                            if pj11==True and projcount11>0 and lastw1==True:
-                                pjy11-=20
-                                projcount11-=1
-                                if pjy11 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj11==False
-                                    projcount11=30
-                                    pjy11=FIGy1-40
-                                if pjy11 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj11==False
-                                    projcount11=30
-                                    pjy11=FIGy1-40   
-                                if pjy11 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj11==False
-                                    projcount11=30
-                                    pjy11=FIGy1-40
-                                if pjy11 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj11==False
-                                    projcount11=30
-                                    pjy11=FIGy1-40   
-                            elif pj11==False or projcount11<1:
-                                pj11=False
-                                projcount11=30
-                                pjy11=FIGy1-40 
-                            if pj12==True and projcount12>0 and lastw1==True:
-                                pjy12-=20
-                                projcount12-=1
-                                if pjy12 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj12==False
-                                    projcount12=30
-                                    pjy12=FIGy1-40
-                                if pjy12 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj12==False
-                                    projcount12=30
-                                    pjy12=FIGy1-40   
-                                if pjy12 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj12==False
-                                    projcount12=30
-                                    pjy12=FIGy1-40
-                                if pjy12 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj12==False
-                                    projcount12=30
-                                    pjy12=FIGy1-40   
-                            elif pj12==False or projcount12<1:
-                                pj12=False
-                                projcount12=30
-                                pjy12=FIGy1-40 
-                            if pj13==True and projcount13>0 and lastw1==True:
-                                pjy13-=20
-                                projcount13-=1
-                                if pjy13 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj13==False
-                                    projcount13=30
-                                    pjy13=FIGy1-40
-                                if pjy13 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj13==False
-                                    projcount13=30
-                                    pjy13=FIGy1-40   
-                                if pjy13 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj13==False
-                                    projcount13=30
-                                    pjy13=FIGx1-40
-                                if pjy13 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj13==False
-                                    projcount13=30
-                                    pjy13=FIGy1-40  
-                            elif pj13==False or projcount13<1:
-                                pj13=False
-                                projcount13=30
-                                pjy13=FIGy1-40
-                            if pj14==True and projcount13>0 and lastw1==True:
-                                pjy14-=20
-                                projcount14-=1
-                                if pjy14 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj14==False
-                                    projcount14=30
-                                    pjy14=FIGy1-40
-                                if pjy14 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj14==False
-                                    projcount14=30
-                                    pjy14=FIGy1-40    
-                                if pjy14 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj14==False
-                                    projcount14=30
-                                    pjy14=FIGy1-40
-                                if pjy14 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj14==False
-                                    projcount14=30
-                                    pjy14=FIGy1-40    
-                            elif pj14==False or projcount14<1:
-                                pj14=False
-                                projcount14=30
-                                pjy14=FIGy1-40 
-                            if pj21==True and projcount21>0 and lastw2==True:
-                                pjy21-=20
-                                projcount21-=1
-                                if pjy21 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj21==False
-                                    projcount21=30
-                                    pjy21=FIGy2-40
-                                if pjy21 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj21==False
-                                    projcount21=30
-                                    pjy21=FIGy2-40   
-                                if pjy21 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj21==False
-                                    projcount21=30
-                                    pjy21=FIGy2-40
-                                if pjy21 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj21==False
-                                    projcount21=30
-                                    pjy21=FIGy2-40  
-                            elif pj21==False or projcount21<1:
-                                pj21=False
-                                projcount21=30
-                                pjy21=FIGx2-40  
-                            if pj22==True and projcount22>0 and lastw2==True:
-                                pjy22-=20
-                                projcount22-=1
-                                if pjy22 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj22==False
-                                    projcount22=30
-                                    pjy22=FIGy2-40
-                                if pjy22 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj22==False
-                                    projcount22=30
-                                    pjy22=FIGy2-40  
-                                if pjy22 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj22==False
-                                    projcount22=30
-                                    pjy22=FIGy2-40
-                                if pjy22 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj22==False
-                                    projcount22=30
-                                    pjy22=FIGy2-40  
-                            elif pj22==False or projcount22<1:
-                                pj22=False
-                                projcount22=30
-                                pjy22=FIGy2-40  
-                            if pj23==True and projcount23>0 and lastw2==True:
-                                pjy23-=20
-                                projcount23-=1
-                                if pjy23 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj23==False
-                                    projcount23=30
-                                    pjy23=FIGy2-40
-                                if pjy23 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj23==False
-                                    projcount23=30
-                                    pjy23=FIGy2-40    
-                                if pjy23 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj23==False
-                                    projcount23=30
-                                    pjy23=FIGy2-40
-                                if pjy23 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj23==False
-                                    projcount23=30
-                                    pjy23=FIGy2-40   
-                            elif pj23==False or projcount23<1:
-                                pj23=False
-                                projcount23=30
-                                pjy23=FIGy2-40  
-                            if pj24==True and projcount24>0 and lastw2==True:
-                                pjy24-=20
-                                projcount24-=1
-                                if pjy24 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj24==False
-                                    projcount24=30
-                                    pjy24=FIGy2-40
-                                if pjy24 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj24==False
-                                    projcount24=30
-                                    pjy24=FIGy2-40  
-                                if pjy24 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj24==False
-                                    projcount24=30
-                                    pjy24=FIGy2-40
-                                if pjy24 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj24==False
-                                    projcount24=30
-                                    pjy24=FIGy2-40  
-                            elif pj24==False or projcount24<1:
-                                pj24=False
-                                projcount24=30
-                                pjy24=FIGy2-40  
-                            if pj11==True and projcount11>0 and lastd1==True:
-                                pjy11+=20
-                                projcount11-=1
-                                if pjy11 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj11==False
-                                    projcount11=30
-                                    pjy11=FIGy1+40
-                                if pjy11 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj11==False
-                                    projcount11=30
-                                    pjy11=FIGy1+40   
-                                if pjy11 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj11==False
-                                    projcount11=30
-                                    pjy11=FIGy1+40
-                                if pjy11 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj11==False
-                                    projcount11=30
-                                    pjy11=FIGy1+40   
-                            elif pj11==False or projcount11<1:
-                                pj11=False
-                                projcount11=30
-                                pjy11=FIGy1+40 
-                            if pj12==True and projcount12>0 and lastd1==True:
-                                pjy12+=20
-                                projcount12-=1
-                                if pjy12 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj12==False
-                                    projcount12=30
-                                    pjy12=FIGy1+40
-                                if pjy12 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj12==False
-                                    projcount12=30
-                                    pjy12=FIGy1+40   
-                                if pjy12 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj12==False
-                                    projcount12=30
-                                    pjy12=FIGy1+40
-                                if pjy12 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj12==False
-                                    projcount12=30
-                                    pjy12=FIGy1+40   
-                            elif pj12==False or projcount12<1:
-                                pj12=False
-                                projcount12=30
-                                pjy12=FIGy1+40 
-                            if pj13==True and projcount13>0 and lastd1==True:
-                                pjy13+=20
-                                projcount13-=1
-                                if pjy13 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj13==False
-                                    projcount13=30
-                                    pjy13=FIGy1+40
-                                if pjy13 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj13==False
-                                    projcount13=30
-                                    pjy13=FIGy1+40   
-                                if pjy13 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj13==False
-                                    projcount13=30
-                                    pjy13=FIGx1+40
-                                if pjy13 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj13==False
-                                    projcount13=30
-                                    pjy13=FIGy1+40  
-                            elif pj13==False or projcount13<1:
-                                pj13=False
-                                projcount13=30
-                                pjy13=FIGy1+40
-                            if pj14==True and projcount13>0 and lastd1==True:
-                                pjy14+=20
-                                projcount14-=1
-                                if pjy14 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj14==False
-                                    projcount14=30
-                                    pjy14=FIGy1+40
-                                if pjy14 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj14==False
-                                    projcount14=30
-                                    pjy14=FIGy1+40    
-                                if pjy14 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj14==False
-                                    projcount14=30
-                                    pjy14=FIGy1+40
-                                if pjy14 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj14==False
-                                    projcount14=30
-                                    pjy14=FIGy1+40    
-                            elif pj14==False or projcount14<1:
-                                pj14=False
-                                projcount14=30
-                                pjy14=FIGy1+40 
-                            if pj21==True and projcount21>0 and lastd2==True:
-                                pjy21+=20
-                                projcount21-=1
-                                if pjy21 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj21==False
-                                    projcount21=30
-                                    pjy21=FIGy2+40
-                                if pjy21 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj21==False
-                                    projcount21=30
-                                    pjy21=FIGy2+40   
-                                if pjy21 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj21==False
-                                    projcount21=30
-                                    pjy21=FIGy2+40
-                                if pjy21 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj21==False
-                                    projcount21=30
-                                    pjy21=FIGy2+40  
-                            elif pj21==False or projcount21<1:
-                                pj21=False
-                                projcount21=30
-                                pjy21=FIGx2+40  
-                            if pj22==True and projcount22>0 and lastd2==True:
-                                pjy22+=20
-                                projcount22-=1
-                                if pjy22 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj22==False
-                                    projcount22=30
-                                    pjy22=FIGy2+40
-                                if pjy22 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj22==False
-                                    projcount22=30
-                                    pjy22=FIGy2+40  
-                                if pjy22 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj22==False
-                                    projcount22=30
-                                    pjy22=FIGy2+40
-                                if pjy22 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj22==False
-                                    projcount22=30
-                                    pjy22=FIGy2+40  
-                            elif pj22==False or projcount22<1:
-                                pj22=False
-                                projcount22=30
-                                pjy22=FIGy2+40  
-                            if pj23==True and projcount23>0 and lastd2==True:
-                                pjy23+=20
-                                projcount23-=1
-                                if pjy23 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj23==False
-                                    projcount23=30
-                                    pjy23=FIGy2+40
-                                if pjy23 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj23==False
-                                    projcount23=30
-                                    pjy23=FIGy2+40    
-                                if pjy23 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj23==False
-                                    projcount23=30
-                                    pjy23=FIGy2+40
-                                if pjy23 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj23==False
-                                    projcount23=30
-                                    pjy23=FIGy2+40   
-                            elif pj23==False or projcount23<1:
-                                pj23=False
-                                projcount23=30
-                                pjy23=FIGy2+40  
-                            if pj24==True and projcount24>0 and lastd2==True:
-                                pjy24+=20
-                                projcount24-=1
-                                if pjy24 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj24==False
-                                    projcount24=30
-                                    pjy24=FIGy2+40                                   
-                                if pjy24 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj24==False
-                                    projcount24=30
-                                    pjy24=FIGy2+40                                       
-                                if pjy24 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj24==False
-                                    projcount24=30
-                                    pjy24=FIGy2+40
-                                if pjy24 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj24==False
-                                    projcount24=30
-                                    pjy24=FIGy2+40
-                            if pjxr11==FIGx1 or pjxr12==FIGx1 or pjxr13==FIGx1 or pjxr14==FIGx1 or pjxr21==FIGx1 or pjxr22==FIGx1 or pjxr23==FIGx1 or pjxr24==FIGx1 or pjxl11==FIGx1 or pjxl12==FIGx1 or pjxl13==FIGx1 or pjxl14==FIGx1 or pjxl21==FIGx1 or pjxl22==FIGx1 or pjxl23==FIGx1 or pjxl24==FIGx1 or pjyw11==FIGy1 or pjyw12==FIGy1 or pjyw13==FIGy1 or pjyw14==FIGy1 or pjyw21==FIGy1 or pjyw22==FIGy1 or pjyw23==FIGy1 or pjyw24==FIGy1 or pjyd11==FIGy1 or pjyd12==FIGy1 or pjyd13==FIGy1 or pjyd14==FIGy1 or pjyd21==FIGy1 or pjyd22==FIGy1 or pjyd23==FIGy1 or pjyd24==FIGy1:
+                            if pjxr11==FIGx1 or pjxr12==FIGx1 or pjxr13==FIGx1 or pjxr14==FIGx1 or pjxr21==FIGx1 or pjxr22==FIGx1 or pjxr23==FIGx1 or pjxr24==FIGx1 or pjxl11==FIGx1 or pjxl12==FIGx1 or pjxl13==FIGx1 or pjxl14==FIGx1 or pjxl21==FIGx1 or pjxl22==FIGx1 or pjxl23==FIGx1 or pjxl24==FIGx1 or pjy11==FIGy1 or pjy12==FIGy1 or pjy13==FIGy1 or pjy14==FIGy1 or pjy21==FIGy1 or pjy22==FIGy1 or pjy23==FIGy1 or pjy24==FIGy1:
                                 spped1=False#the projectiles pierce players but will still leave them stunned if they score a direct hit
                                 pygame.time.delay(5000)
                                 spped1=True
-                            if pjxr11==FIGx2 or pjxr12==FIGx2 or pjxr13==FIGx2 or pjxr14==FIGx2 or pjxr21==FIGx2 or pjxr22==FIGx2 or pjxr23==FIGx2 or pjxr24==FIGx2 or pjxl11==FIGx2 or pjxl12==FIGx2 or pjxl13==FIGx2 or pjxl14==FIGx2 or pjxl21==FIGx2 or pjxl22==FIGx2 or pjxl23==FIGx2 or pjxl24==FIGx2 or pjyw11==FIGy2 or pjyw12==FIGy2 or pjyw13==FIGy2 or pjyw14==FIGy2 or pjyw21==FIGy2 or pjyw22==FIGy2 or pjyw23==FIGy2 or pjyw24==FIGy2 or pjyd11==FIGy2 or pjyd12==FIGy2 or pjyd13==FIGy2 or pjyd14==FIGy2 or pjyd21==FIGy2 or pjyd22==FIGy2 or pjyd23==FIGy2 or pjyd24==FIGy2:
+                            if pjxr11==FIGx2 or pjxr12==FIGx2 or pjxr13==FIGx2 or pjxr14==FIGx2 or pjxr21==FIGx2 or pjxr22==FIGx2 or pjxr23==FIGx2 or pjxr24==FIGx2 or pjxl11==FIGx2 or pjxl12==FIGx2 or pjxl13==FIGx2 or pjxl14==FIGx2 or pjxl21==FIGx2 or pjxl22==FIGx2 or pjxl23==FIGx2 or pjxl24==FIGx2 or pjy11==FIGy2 or pjy12==FIGy2 or pjy13==FIGy2 or pjy14==FIGy2 or pjy21==FIGy2 or pjy22==FIGy2 or pjy23==FIGy2 or pjy21==FIGy2:
                                 spped2=False
                                 pygame.time.delay(5000)
                                 spped=True
-                            elif pj24==False or projcount24<1:
-                                pj24=False
-                                projcount24=30
-                                pjy24=FIGy2+40  
                             if FIGx1==boldx1+85 or boldx2+85 or boldx3+85 or boldx4+85:#These sets of commands will cause a player to reocil back and be stunned if they run into a wall
                                 spped1=False
                                 FIGx1+=50
@@ -1649,6 +1393,9 @@ while run:
                             if fl2count==5:
                                 play=False
                                 score=fl2count*1000
+                            redrawGameWindowforp1()
+                            redrawGameWindowforp2()
+                            flagspawn()
                     create_NewWindow("Good Game")#creates a endgame window
                     win.fill(WHITE)
                     display_Title("Good Game",40)#
@@ -1802,6 +1549,14 @@ while run:
                                     lastl1=False
                                     lastd1=True
                                     lastw1=False
+                                if FIGx1==10:
+                                    FIGx1=WIDTH-10
+                                if FIGx1==WIDTH-10:
+                                    FIGx1=10
+                                if FIGy1==10:
+                                    FIGy1=HEIGHT-10
+                                if FIGy1==HEIGHT-10:
+                                    FIGy1=10
                                 if keyPressed[pygame.K_f]:
                                     if lastr1==True and p1pjcon>0:
                                         if p1pjcon==4:
@@ -1837,93 +1592,109 @@ while run:
                                             win.blit(proj14,pjxl14,FIGy1)
                                             p1pjcon-=1 
                                             pj14=True          
-                                if spped2==True:
-                                    if keyPressed[pygame.K_d]:  
-                                        FIGx2 +=speedy 
-                                        righ2=True
-                                        left2=False
-                                        lastr2=True
-                                        lastl2=False
-                                        lastd2=False
-                                        lastw2=False 
-                                    if keyPressed[pygame.K_a]:  
-                                        FIGx2-=speedy
-                                        right2=False
-                                        left2=True
-                                        lastr2=False
-                                        lastl2=True
-                                        lastd2=False
-                                        lastw2=False
-                                    if keyPressed[pygame.K_w]:  
-                                        FIGy2-=speedy
-                                        lastr2=False
-                                        lastl2=False
-                                        lastd2=False
-                                        lastw2=True
-                                    if keyPressed [pygame.K_s]:
-                                        FIGy2 +=speedy
-                                        lastr2=False
-                                        lastl2=False
-                                        lastd2=True
-                                        lastw2=False
-                                if keyPressed[pygame.K_SLASH]:
-                                    if lastr2==True and p2pjcon>0:
-                                        if p2pjcon==4:
-                                            win.blit(proj21,pjxr21,FIGy2)
-                                            p2pjcon-=1
-                                            pj21=True
-                                        if p2pjcon==3:
-                                            win.blit(proj22,pjxr22,FIGy2)
-                                            p2pjcon-=1 
-                                            pj22=True    
-                                        if p2pjcon==2:
-                                            win.blit(proj23,pjxr23,FIGy2)
-                                            p2pjcon-=1 
-                                            pj23=True
-                                        if p2pjcon==1:
-                                            win.blit(proj24,pjxr24,FIGy2)
-                                            p2pjcon-=1 
-                                            pj24=True
-                                    if lastl2==True and p2pjcon>0:
-                                        if p2pjcon==4:
-                                            win.blit(proj21,pjxr21,FIGy2)
-                                            p2pjcon-=1
-                                            pj21=True
-                                        if p2pjcon==3:
-                                            win.blit(proj22,pjxr22,FIGy2)
-                                            p2pjcon-=1 
-                                            pj22=True    
-                                        if p2pjcon==2:
-                                            win.blit(proj23,pjxr23,FIGy2)
-                                            p2pjcon-=1 
-                                            pj23=True
-                                        if p2pjcon==1:
-                                            win.blit(proj24,pjxr24,FIGy2)
-                                            p2pjcon-=1 
-                                            pj24=True   
+                            if spped2==True:
+                                if keyPressed[pygame.K_d]:  
+                                    FIGx2 +=speedy 
+                                    righ2=True
+                                    left2=False
+                                    lastr2=True
+                                    lastl2=False
+                                    lastd2=False
+                                    lastw2=False 
+                                if keyPressed[pygame.K_a]:  
+                                    FIGx2-=speedy
+                                    right2=False
+                                    left2=True
+                                    lastr2=False
+                                    lastl2=True
+                                    lastd2=False
+                                    lastw2=False
+                                if keyPressed[pygame.K_w]:  
+                                    FIGy2-=speedy
+                                    lastr2=False
+                                    lastl2=False
+                                    lastd2=False
+                                    lastw2=True
+                                if keyPressed [pygame.K_s]:
+                                    FIGy2 +=speedy
+                                    lastr2=False
+                                    lastl2=False
+                                    lastd2=True
+                                    lastw2=False
+                                if FIGx2==10:
+                                    FIGx2=WIDTH-10
+                                if FIGx2==WIDTH-10:
+                                    FIGx2=10
+                                if FIGy2==10:
+                                    FIGy2=HEIGHT-10
+                                if FIGy2==HEIGHT-10:
+                                    FIGy2=10
+                            if keyPressed[pygame.K_SLASH]:
+                                if lastr2==True and p2pjcon>0:
+                                    if p2pjcon==4:
+                                        win.blit(proj21,pjxr21,FIGy2)
+                                        p2pjcon-=1
+                                        pj21=True
+                                    if p2pjcon==3:
+                                        win.blit(proj22,pjxr22,FIGy2)
+                                        p2pjcon-=1 
+                                        pj22=True    
+                                    if p2pjcon==2:
+                                        win.blit(proj23,pjxr23,FIGy2)
+                                        p2pjcon-=1 
+                                        pj23=True
+                                    if p2pjcon==1:
+                                        win.blit(proj24,pjxr24,FIGy2)
+                                        p2pjcon-=1 
+                                        pj24=True
+                                if lastl2==True and p2pjcon>0:
+                                    if p2pjcon==4:
+                                        win.blit(proj21,pjxr21,FIGy2)
+                                        p2pjcon-=1
+                                        pj21=True
+                                    if p2pjcon==3:
+                                        win.blit(proj22,pjxr22,FIGy2)
+                                        p2pjcon-=1 
+                                        pj22=True    
+                                    if p2pjcon==2:
+                                        win.blit(proj23,pjxr23,FIGy2)
+                                        p2pjcon-=1 
+                                        pj23=True
+                                    if p2pjcon==1:
+                                        win.blit(proj24,pjxr24,FIGy2)
+                                        p2pjcon-=1 
+                                        pj24=True   
                             if pj11==True and projcount11>0 and lastl1==True:
                                 pjxl11+=20
                                 projcount11-=1
                                 if pjxl11 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj11==False
+                                    pj11=False
                                     projcount11=30
                                     pjxl11=FIGx1-40
                                     pjy11=FIGy1
                                 if pjy11 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj11==False
+                                    pj11=False
                                     projcount11=30
                                     pjxl11=FIGx1-40  
                                     pjy11=FIGy1  
                                 if pjxl11 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj11==False
+                                    pj11=False
                                     projcount11=30
                                     pjxl11=FIGx1-40
                                     pjy11=FIGy1
                                 if pjy11 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj11==False
+                                    pj11=False
                                     projcount11=30
                                     pjxl11=FIGx1-40  
-                                    pjy11=FIGy1  
+                                    pjy11=FIGy1 
+                                if pjxl11==10:
+                                    pjxl11=WIDTH-10
+                                if pjxl11==WIDTH-10:
+                                    pjxl11=10
+                                if pjy11==10:
+                                    pjy11=HEIGHT-10
+                                if pjy11==HEIGHT-10:
+                                    pjy11=10 
                             elif pj11==False or projcount11<1:
                                 pj11=False
                                 projcount11=30
@@ -1933,25 +1704,33 @@ while run:
                                 pjxl12+=20
                                 projcount12-=1
                                 if pjxl12 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj12==False
+                                    pj12=False
                                     projcount12=30
                                     pjxl12=FIGx1-40
                                     pjy12=FIGy1
                                 if pjy12 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj12==False
+                                    pj12=False
                                     projcount12=30
                                     pjxl12=FIGx1-40  
                                     pjy12=FIGy1  
                                 if pjxl12 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj12==False
+                                    pj12=False
                                     projcount12=30
                                     pjxl12=FIGx1-40
                                     pjy12=FIGy1
                                 if pjy12 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj12==False
+                                    pj12=False
                                     projcount12=30
                                     pjxl12=FIGx1-40  
-                                    pjy12=FIGy1  
+                                    pjy12=FIGy1 
+                                if pjxl12==10:
+                                    pjxl12=WIDTH-10
+                                if pjxl12==WIDTH-10:
+                                    pjxl12=10
+                                if pjy12==10:
+                                    pjy12=HEIGHT-10
+                                if pjy12==HEIGHT-10:
+                                    pjy12=10  
                             elif pj12==False or projcount12<1:
                                 pj12=False
                                 projcount12=30
@@ -1961,25 +1740,33 @@ while run:
                                 pjxl13+=20
                                 projcount13-=1
                                 if pjxl13 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj13==False
+                                    pj13=False
                                     projcount13=30
                                     pjxl13=FIGx1-40
                                     pjy13=FIGy1
                                 if pjy13 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj13==False
+                                    pj13=False
                                     projcount13=30
                                     pjxl13=FIGx1-40  
                                     pjy13=FIGy1  
                                 if pjxl13 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj13==False
+                                    pj13=False
                                     projcount13=30
                                     pjxl13=FIGx1-40
                                     pjy13=FIGy1
                                 if pjy13 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj13==False
+                                    pj13=False
                                     projcount13=30
                                     pjxl13=FIGx1-40  
                                     pjy13=FIGy1 
+                                if pjxl13==10:
+                                    pjxl13=WIDTH-10
+                                if pjxl13==WIDTH-10:
+                                    pjxl13=10
+                                if pjy13==10:
+                                    pjy13=HEIGHT-10
+                                if pjy13==HEIGHT-10:
+                                    pjy13=10 
                             elif pj13==False or projcount13<1:
                                 pj13=False
                                 projcount13=30
@@ -1989,25 +1776,33 @@ while run:
                                 pjxl14+=20
                                 projcount14-=1
                                 if pjxl14 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj14==False
+                                    pj14=False
                                     projcount14=30
                                     pjxl14=FIGx1-40
                                     pjy14=FIGy1
                                 if pjy14 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj14==False
+                                    pj14=False
                                     projcount14=30
                                     pjxl14=FIGx1-40  
                                     pjy14=FIGy1  
                                 if pjxl14 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj14==False
+                                    pj14=False
                                     projcount14=30
                                     pjxl14=FIGx1-40
                                     pjy14=FIGy1
                                 if pjy14 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj14==False
+                                    pj14=False
                                     projcount14=30
                                     pjxl14=FIGx1-40  
                                     pjy14=FIGy1  
+                                if pjxl14==10:
+                                    pjxl14=WIDTH-10
+                                if pjxl14==WIDTH-10:
+                                    pjxl14=10
+                                if pjy14==10:
+                                    pjy14=HEIGHT-10
+                                if pjy14==HEIGHT-10:
+                                    pjy14=10 
                             elif pj14==False or projcount14<1:
                                 pj14=False
                                 projcount14=30
@@ -2017,25 +1812,33 @@ while run:
                                 pjxl21+=20
                                 projcount21-=1
                                 if pjxl21 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj21==False
+                                    pj21=False
                                     projcount21=30
                                     pjxl21=FIGx2-40
                                     pjy21=FIGy2
                                 if pjy21 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj21==False
+                                    pj21=False
                                     projcount21=30
                                     pjxl21=FIGx2-40  
                                     pjy21=FIGy2  
                                 if pjxl21 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj21==False
+                                    pj21=False
                                     projcount21=30
                                     pjxl21=FIGx2-40
                                     pjy21=FIGy2
                                 if pjy21 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj21==False
+                                    pj21=False
                                     projcount21=30
                                     pjxl21=FIGx2-40  
-                                    pjy21=FIGy2  
+                                    pjy21=FIGy2 
+                                if pjxl21==10:
+                                    pjxl21=WIDTH-10
+                                if pjxl21==WIDTH-10:
+                                    pjxl21=10
+                                if pjy21==10:
+                                    pjy21=HEIGHT-10
+                                if pjy21==HEIGHT-10:
+                                    pjy21=10  
                             elif pj21==False or projcount21<1:
                                 pj21=False
                                 projcount21=30
@@ -2045,25 +1848,33 @@ while run:
                                 pjxl22+=20
                                 projcount22-=1
                                 if pjxl22 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj22==False
+                                    pj22=False
                                     projcount22=30
                                     pjxl22=FIGx2-40
                                     pjy22=FIGy2
                                 if pjy22 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj22==False
+                                    pj22=False
                                     projcount22=30
                                     pjxl22=FIGx2-40  
                                     pjy22=FIGy2  
                                 if pjxl22 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj22==False
+                                    pj22=False
                                     projcount22=30
                                     pjxl22=FIGx2-40
                                     pjy22=FIGy2
                                 if pjy22 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj22==False
+                                    pj22=False
                                     projcount22=30
                                     pjxl22=FIGx2-40  
                                     pjy22=FIGy2  
+                                if pjxl22==10:
+                                    pjxl22=WIDTH-10
+                                if pjxl22==WIDTH-10:
+                                    pjxl22=10
+                                if pjy22==10:
+                                    pjy22=HEIGHT-10
+                                if pjy22==HEIGHT-10:
+                                    pjy22=10
                             elif pj22==False or projcount22<1:
                                 pj22=False
                                 projcount22=30
@@ -2073,25 +1884,33 @@ while run:
                                 pjxl23+=20
                                 projcount23-=1
                                 if pjxl23 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj23==False
+                                    pj23=False
                                     projcount23=30
                                     pjxl23=FIGx2-40
                                     pjy23=FIGy2
                                 if pjy23 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj23==False
+                                    pj23=False
                                     projcount23=30
                                     pjxl23=FIGx2-40  
                                     pjy23=FIGy2  
                                 if pjxl23 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj23==False
+                                    pj23=False
                                     projcount23=30
                                     pjxl23=FIGx2-40
                                     pjy23=FIGy2
                                 if pjy23 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj23==False
+                                    pj23=False
                                     projcount23=30
                                     pjxl23=FIGx2-40  
                                     pjy23=FIGy2  
+                                if pjxl23==10:
+                                    pjxl23=WIDTH-10
+                                if pjxl23==WIDTH-10:
+                                    pjxl23=10
+                                if pjy23==10:
+                                    pjy23=HEIGHT-10
+                                if pjy23==HEIGHT-10:
+                                    pjy23=10
                             elif pj23==False or projcount23<1:
                                 pj23=False
                                 projcount23=30
@@ -2101,25 +1920,33 @@ while run:
                                 pjxl24+=20
                                 projcount24-=1
                                 if pjxl24 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj24==False
+                                    pj24=False
                                     projcount24=30
                                     pjxl24=FIGx2-40
                                     pjy24=FIGy2
                                 if pjy24 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj24==False
+                                    pj24=False
                                     projcount24=30
                                     pjxl24=FIGx2-40  
                                     pjy24=FIGy2  
                                 if pjxl24 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj24==False
+                                    pj24=False
                                     projcount24=30
                                     pjxl24=FIGx2-40
                                     pjy24=FIGy2
                                 if pjy24 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj24==False
+                                    pj24=False
                                     projcount24=30
                                     pjxl24=FIGx2-40  
                                     pjy24=FIGy2  
+                                if pjxl24==10:
+                                    pjxl24=WIDTH-10
+                                if pjxl24==WIDTH-10:
+                                    pjxl24=10
+                                if pjy24==10:
+                                    pjy24=HEIGHT-10
+                                if pjy24==HEIGHT-10:
+                                    pjy24=10
                             elif pj24==False or projcount24<1:
                                 pj24=False
                                 projcount24=30
@@ -2129,25 +1956,33 @@ while run:
                                 pjxr11+=20
                                 projcount11-=1
                                 if pjxr11 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj11==False
+                                    pj11=False
                                     projcount11=30
                                     pjxr11=FIGx1+40
                                     pjy11=FIGy1
                                 if pjy11 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj11==False
+                                    pj11=False
                                     projcount11=30
                                     pjxr11=FIGx1+40  
                                     pjy11=FIGy1  
                                 if pjxr11 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj11==False
+                                    pj11=False
                                     projcount11=30
                                     pjxr11=FIGx1+40
                                     pjy11=FIGy1
                                 if pjy11 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj11==False
+                                    pj11=False
                                     projcount11=30
                                     pjxr11=FIGx1+40  
                                     pjy11=FIGy1  
+                                if pjxr11==10:
+                                    pjxr11=WIDTH-10
+                                if pjxr11==WIDTH-10:
+                                    pjxr11=10
+                                if pjy11==10:
+                                    pjy11=HEIGHT-10
+                                if pjy11==HEIGHT-10:
+                                    pjy11=10
                             elif pj11==False or projcount11<1:
                                 pj11=False
                                 projcount11=30
@@ -2157,25 +1992,33 @@ while run:
                                 pjxr12+=20
                                 projcount12-=1
                                 if pjxr12 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj12==False
+                                    pj12=False
                                     projcount12=30
                                     pjxr12=FIGx1+40
                                     pjy12=FIGy1
                                 if pjy12 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj12==False
+                                    pj12=False
                                     projcount12=30
                                     pjxr12=FIGx1+40  
                                     pjy12=FIGy1  
                                 if pjxr12 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj12==False
+                                    pj12=False
                                     projcount12=30
                                     pjxr12=FIGx1+40
                                     pjy12=FIGy1
                                 if pjy12 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj12==False
+                                    pj12=False
                                     projcount12=30
                                     pjxr12=FIGx1+40  
                                     pjy12=FIGy1  
+                                if pjxr12==10:
+                                    pjxr12=WIDTH-10
+                                if pjxr12==WIDTH-10:
+                                    pjxr12=10
+                                if pjy12==10:
+                                    pjy12=HEIGHT-10
+                                if pjy12==HEIGHT-10:
+                                    pjy12=10
                             elif pj12==False or projcount12<1:
                                 pj12=False
                                 projcount12=30
@@ -2185,25 +2028,33 @@ while run:
                                 pjxr13+=20
                                 projcount13-=1
                                 if pjxr13 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj13==False
+                                    pj13=False
                                     projcount13=30
                                     pjxr13=FIGx1+40
                                     pjy13=FIGy1
                                 if pjy13 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj13==False
+                                    pj13=False
                                     projcount13=30
                                     pjxr13=FIGx1-40  
                                     pjy13=FIGy1  
                                 if pjxr13 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj13==False
+                                    pj13=False
                                     projcount13=30
                                     pjxr13=FIGx1-40
                                     pjy13=FIGy1
                                 if pjy13 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj13==False
+                                    pj13=False
                                     projcount13=30
                                     pjxr13=FIGx1-40  
                                     pjy13=FIGy1 
+                                if pjxr13==10:
+                                    pjxr13=WIDTH-10
+                                if pjxr13==WIDTH-10:
+                                    pjxr13=10
+                                if pjy13==10:
+                                    pjy13=HEIGHT-10
+                                if pjy13==HEIGHT-10:
+                                    pjy13=10
                             elif pj13==False or projcount13<1:
                                 pj13=False
                                 projcount13=30
@@ -2213,25 +2064,33 @@ while run:
                                 pjxr14+=20
                                 projcount14-=1
                                 if pjxr14 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj14==False
+                                    pj14=False
                                     projcount14=30
                                     pjxr14=FIGx1+40
                                     pjy14=FIGy1
                                 if pjy14 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj14==False
+                                    pj14=False
                                     projcount14=30
                                     pjxr14=FIGx1+40  
                                     pjy14=FIGy1  
                                 if pjxr14 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj14==False
+                                    pj14=False
                                     projcount14=30
                                     pjxr14=FIGx1+40
                                     pjy14=FIGy1
                                 if pjy14 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj14==False
+                                    pj14=False
                                     projcount14=30
                                     pjxr14=FIGx1+40  
-                                    pjy14=FIGy1  
+                                    pjy14=FIGy1
+                                if pjxr14==10:
+                                    pjxr14=WIDTH-10
+                                if pjxr14==WIDTH-10:
+                                    pjxr14=10
+                                if pjy14==10:
+                                    pjy14=HEIGHT-10
+                                if pjy14==HEIGHT-10:
+                                    pjy14=10  
                             elif pj14==False or projcount14<1:
                                 pj14=False
                                 projcount14=30
@@ -2241,25 +2100,33 @@ while run:
                                 pjxr21+=20
                                 projcount21-=1
                                 if pjxr21 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj21==False
+                                    pj21=False
                                     projcount21=30
                                     pjxr21=FIGx2+40
                                     pjy21=FIGy2
                                 if pjy21 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj21==False
+                                    pj21=False
                                     projcount21=30
                                     pjxr21=FIGx2+40  
                                     pjy21=FIGy2  
                                 if pjxr21 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj21==False
+                                    pj21=False
                                     projcount21=30
                                     pjxr21=FIGx2+40
                                     pjy21=FIGy2
                                 if pjy21 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj21==False
+                                    pj21=False
                                     projcount21=30
                                     pjxr21=FIGx2+40  
                                     pjy21=FIGy2  
+                                if pjxr21==10:
+                                    pjxr21=WIDTH-10
+                                if pjxr21==WIDTH-10:
+                                    pjxr21=10
+                                if pjy21==10:
+                                    pjy21=HEIGHT-10
+                                if pjy21==HEIGHT-10:
+                                    pjy21=10
                             elif pj21==False or projcount21<1:
                                 pj21=False
                                 projcount21=30
@@ -2269,25 +2136,33 @@ while run:
                                 pjxr22+=20
                                 projcount22-=1
                                 if pjxr22 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj22==False
+                                    pj22=False
                                     projcount22=30
                                     pjxr22=FIGx2+40
                                     pjy22=FIGy2
                                 if pjy22 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj22==False
+                                    pj22=False
                                     projcount22=30
                                     pjxr22=FIGx2+40  
                                     pjy22=FIGy2  
                                 if pjxr22 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj22==False
+                                    pj22=False
                                     projcount22=30
                                     pjxr22=FIGx2+40
                                     pjy22=FIGy2
                                 if pjy22 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj22==False
+                                    pj22=False
                                     projcount22=30
                                     pjxr22=FIGx2+40  
                                     pjy22=FIGy2  
+                                if pjxr22==10:
+                                    pjxr22=WIDTH-10
+                                if pjxr22==WIDTH-10:
+                                    pjxr22=10
+                                if pjy22==10:
+                                    pjy22=HEIGHT-10
+                                if pjy22==HEIGHT-10:
+                                    pjy22=10
                             elif pj22==False or projcount22<1:
                                 pj22=False
                                 projcount22=30
@@ -2297,25 +2172,33 @@ while run:
                                 pjxr23+=20
                                 projcount23-=1
                                 if pjxr23 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj23==False
+                                    pj23=False
                                     projcount23=30
                                     pjxr23=FIGx2+40
                                     pjy23=FIGy2
                                 if pjy23 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj23==False
+                                    pj23=False
                                     projcount23=30
                                     pjxr23=FIGx2+40  
                                     pjy23=FIGy2  
                                 if pjxr23 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj23==False
+                                    pj23=False
                                     projcount23=30
                                     pjxr23=FIGx2+40
                                     pjy23=FIGy2
                                 if pjy23 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj23==False
+                                    pj23=False
                                     projcount23=30
                                     pjxr23=FIGx2+40  
-                                    pjy23=FIGy2  
+                                    pjy23=FIGy2 
+                                if pjxr23==10:
+                                    pjxr23=WIDTH-10
+                                if pjxr23==WIDTH-10:
+                                    pjxr23=10
+                                if pjy23==10:
+                                    pjy23=HEIGHT-10
+                                if pjy23==HEIGHT-10:
+                                    pjy23=10 
                             elif pj23==False or projcount23<1:
                                 pj23=False
                                 projcount23=30
@@ -2325,33 +2208,38 @@ while run:
                                 pjxr24+=20
                                 projcount24-=1
                                 if pjxr24 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj24==False
+                                    pj24=False
                                     projcount24=30
                                     pjxr24=FIGx2+40
                                     pjy24=FIGy2
                                 if pjy24 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj24==False
+                                    pj24=False
                                     projcount24=30
                                     pjxr24=FIGx2+40  
                                     pjy24=FIGy2  
                                 if pjxr24 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj24==False
+                                    pj24=False
                                     projcount24=30
                                     pjxr24=FIGx2+40
                                     pjy24=FIGy2
                                 if pjy24 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj24==False
+                                    pj24=False
                                     projcount24=30
                                     pjxr24=FIGx2+40  
-                                    pjy24=FIGy2  
+                                    pjy24=FIGy2 
+                                if pjxr24==10:
+                                    pjxr24=WIDTH-10
+                                if pjxr24==WIDTH-10:
+                                    pjxr24=10
+                                if pjy24==10:
+                                    pjy24=HEIGHT-10
+                                if pjy24==HEIGHT-10:
+                                    pjy24=10 
                             elif pj24==False or projcount24<1:
                                 pj24=False
                                 projcount24=30
                                 pjxr24=FIGx2+40  
                                 pjy24=FIGy2 
-                            if pj11==True and projcount11>0 and lastw1==True:
-                                pjy11-=20
-                                projcount11-=1
                                 if pjy11 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
                                     pj11==False
                                     projcount11=30
@@ -2367,386 +2255,65 @@ while run:
                                 if pjy11 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
                                     pj11==False
                                     projcount11=30
-                                    pjy11=FIGy1-40   
-                            elif pj11==False or projcount11<1:
-                                pj11=False
-                                projcount11=30
-                                pjy11=FIGy1-40 
-                            if pj12==True and projcount12>0 and lastw1==True:
-                                pjy12-=20
-                                projcount12-=1
-                                if pjy12 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj12==False
-                                    projcount12=30
-                                    pjy12=FIGy1-40
-                                if pjy12 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj12==False
-                                    projcount12=30
-                                    pjy12=FIGy1-40   
-                                if pjy12 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj12==False
-                                    projcount12=30
-                                    pjy12=FIGy1-40
-                                if pjy12 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj12==False
-                                    projcount12=30
-                                    pjy12=FIGy1-40   
-                            elif pj12==False or projcount12<1:
-                                pj12=False
-                                projcount12=30
-                                pjy12=FIGy1-40 
-                            if pj13==True and projcount13>0 and lastw1==True:
-                                pjy13-=20
-                                projcount13-=1
-                                if pjy13 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj13==False
-                                    projcount13=30
-                                    pjy13=FIGy1-40
-                                if pjy13 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj13==False
-                                    projcount13=30
-                                    pjy13=FIGy1-40   
-                                if pjy13 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj13==False
-                                    projcount13=30
-                                    pjy13=FIGx1-40
-                                if pjy13 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj13==False
-                                    projcount13=30
-                                    pjy13=FIGy1-40  
-                            elif pj13==False or projcount13<1:
-                                pj13=False
-                                projcount13=30
-                                pjy13=FIGy1-40
-                            if pj14==True and projcount13>0 and lastw1==True:
-                                pjy14-=20
-                                projcount14-=1
-                                if pjy14 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj14==False
-                                    projcount14=30
-                                    pjy14=FIGy1-40
-                                if pjy14 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj14==False
-                                    projcount14=30
-                                    pjy14=FIGy1-40    
-                                if pjy14 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj14==False
-                                    projcount14=30
-                                    pjy14=FIGy1-40
-                                if pjy14 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj14==False
-                                    projcount14=30
-                                    pjy14=FIGy1-40    
-                            elif pj14==False or projcount14<1:
-                                pj14=False
-                                projcount14=30
-                                pjy14=FIGy1-40 
-                            if pj21==True and projcount21>0 and lastw2==True:
-                                pjy21-=20
-                                projcount21-=1
-                                if pjy21 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj21==False
-                                    projcount21=30
-                                    pjy21=FIGy2-40
-                                if pjy21 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj21==False
-                                    projcount21=30
-                                    pjy21=FIGy2-40   
-                                if pjy21 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj21==False
-                                    projcount21=30
-                                    pjy21=FIGy2-40
-                                if pjy21 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj21==False
-                                    projcount21=30
-                                    pjy21=FIGy2-40  
-                            elif pj21==False or projcount21<1:
-                                pj21=False
-                                projcount21=30
-                                pjy21=FIGx2-40  
-                            if pj22==True and projcount22>0 and lastw2==True:
-                                pjy22-=20
-                                projcount22-=1
-                                if pjy22 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj22==False
-                                    projcount22=30
-                                    pjy22=FIGy2-40
-                                if pjy22 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj22==False
-                                    projcount22=30
-                                    pjy22=FIGy2-40  
-                                if pjy22 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj22==False
-                                    projcount22=30
-                                    pjy22=FIGy2-40
-                                if pjy22 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj22==False
-                                    projcount22=30
-                                    pjy22=FIGy2-40  
-                            elif pj22==False or projcount22<1:
-                                pj22=False
-                                projcount22=30
-                                pjy22=FIGy2-40  
-                            if pj23==True and projcount23>0 and lastw2==True:
-                                pjy23-=20
-                                projcount23-=1
-                                if pjy23 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj23==False
-                                    projcount23=30
-                                    pjy23=FIGy2-40
-                                if pjy23 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj23==False
-                                    projcount23=30
-                                    pjy23=FIGy2-40    
-                                if pjy23 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj23==False
-                                    projcount23=30
-                                    pjy23=FIGy2-40
-                                if pjy23 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj23==False
-                                    projcount23=30
-                                    pjy23=FIGy2-40   
-                            elif pj23==False or projcount23<1:
-                                pj23=False
-                                projcount23=30
-                                pjy23=FIGy2-40  
-                            if pj24==True and projcount24>0 and lastw2==True:
-                                pjy24-=20
-                                projcount24-=1
-                                if pjy24 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj24==False
-                                    projcount24=30
-                                    pjy24=FIGy2-40
-                                if pjy24 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj24==False
-                                    projcount24=30
-                                    pjy24=FIGy2-40  
-                                if pjy24 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj24==False
-                                    projcount24=30
-                                    pjy24=FIGy2-40
-                                if pjy24 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj24==False
-                                    projcount24=30
-                                    pjy24=FIGy2-40  
-                            elif pj24==False or projcount24<1:
-                                pj24=False
-                                projcount24=30
-                                pjy24=FIGy2-40  
-                            if pj11==True and projcount11>0 and lastd1==True:
-                                pjy11+=20
-                                projcount11-=1
-                                if pjy11 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj11==False
-                                    projcount11=30
-                                    pjy11=FIGy1+40
-                                if pjy11 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj11==False
-                                    projcount11=30
-                                    pjy11=FIGy1+40   
-                                if pjy11 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj11==False
-                                    projcount11=30
-                                    pjy11=FIGy1+40
-                                if pjy11 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj11==False
-                                    projcount11=30
-                                    pjy11=FIGy1+40   
-                            elif pj11==False or projcount11<1:
-                                pj11=False
-                                projcount11=30
-                                pjy11=FIGy1+40 
-                            if pj12==True and projcount12>0 and lastd1==True:
-                                pjy12+=20
-                                projcount12-=1
-                                if pjy12 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj12==False
-                                    projcount12=30
-                                    pjy12=FIGy1+40
-                                if pjy12 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj12==False
-                                    projcount12=30
-                                    pjy12=FIGy1+40   
-                                if pjy12 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj12==False
-                                    projcount12=30
-                                    pjy12=FIGy1+40
-                                if pjy12 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj12==False
-                                    projcount12=30
-                                    pjy12=FIGy1+40   
-                            elif pj12==False or projcount12<1:
-                                pj12=False
-                                projcount12=30
-                                pjy12=FIGy1+40 
-                            if pj13==True and projcount13>0 and lastd1==True:
-                                pjy13+=20
-                                projcount13-=1
-                                if pjy13 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj13==False
-                                    projcount13=30
-                                    pjy13=FIGy1+40
-                                if pjy13 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj13==False
-                                    projcount13=30
-                                    pjy13=FIGy1+40   
-                                if pjy13 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj13==False
-                                    projcount13=30
-                                    pjy13=FIGx1+40
-                                if pjy13 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj13==False
-                                    projcount13=30
-                                    pjy13=FIGy1+40  
-                            elif pj13==False or projcount13<1:
-                                pj13=False
-                                projcount13=30
-                                pjy13=FIGy1+40
-                            if pj14==True and projcount13>0 and lastd1==True:
-                                pjy14+=20
-                                projcount14-=1
-                                if pjy14 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj14==False
-                                    projcount14=30
-                                    pjy14=FIGy1+40
-                                if pjy14 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj14==False
-                                    projcount14=30
-                                    pjy14=FIGy1+40    
-                                if pjy14 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj14==False
-                                    projcount14=30
-                                    pjy14=FIGy1+40
-                                if pjy14 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj14==False
-                                    projcount14=30
-                                    pjy14=FIGy1+40    
-                            elif pj14==False or projcount14<1:
-                                pj14=False
-                                projcount14=30
-                                pjy14=FIGy1+40 
-                            if pj21==True and projcount21>0 and lastd2==True:
-                                pjy21+=20
-                                projcount21-=1
-                                if pjy21 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj21==False
-                                    projcount21=30
-                                    pjy21=FIGy2+40
-                                if pjy21 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj21==False
-                                    projcount21=30
-                                    pjy21=FIGy2+40   
-                                if pjy21 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj21==False
-                                    projcount21=30
-                                    pjy21=FIGy2+40
-                                if pjy21 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj21==False
-                                    projcount21=30
-                                    pjy21=FIGy2+40  
-                            elif pj21==False or projcount21<1:
-                                pj21=False
-                                projcount21=30
-                                pjy21=FIGx2+40  
-                            if pj22==True and projcount22>0 and lastd2==True:
-                                pjy22+=20
-                                projcount22-=1
-                                if pjy22 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj22==False
-                                    projcount22=30
-                                    pjy22=FIGy2+40
-                                if pjy22 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj22==False
-                                    projcount22=30
-                                    pjy22=FIGy2+40  
-                                if pjy22 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj22==False
-                                    projcount22=30
-                                    pjy22=FIGy2+40
-                                if pjy22 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj22==False
-                                    projcount22=30
-                                    pjy22=FIGy2+40  
-                            elif pj22==False or projcount22<1:
-                                pj22=False
-                                projcount22=30
-                                pjy22=FIGy2+40  
-                            if pj23==True and projcount23>0 and lastd2==True:
-                                pjy23+=20
-                                projcount23-=1
-                                if pjy23 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj23==False
-                                    projcount23=30
-                                    pjy23=FIGy2+40
-                                if pjy23 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj23==False
-                                    projcount23=30
-                                    pjy23=FIGy2+40    
-                                if pjy23 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj23==False
-                                    projcount23=30
-                                    pjy23=FIGy2+40
-                                if pjy23 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj23==False
-                                    projcount23=30
-                                    pjy23=FIGy2+40   
-                            elif pj23==False or projcount23<1:
-                                pj23=False
-                                projcount23=30
-                                pjy23=FIGy2+40  
-                            if pj24==True and projcount24>0 and lastd2==True:
-                                pjy24+=20
-                                projcount24-=1
-                                if pjy24 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
-                                    pj24==False
-                                    projcount24=30
-                                    pjy24=FIGy2+40                                   
-                                if pjy24 == boldy1+80 or boldy2+80 or boldy3+80 or boldy4+80:
-                                    pj24==False
-                                    projcount24=30
-                                    pjy24=FIGy2+40                                       
-                                if pjy24 == boldx1-80 or boldx2-80 or boldx3-80 or boldx4-80:
-                                    pj24==False
-                                    projcount24=30
-                                    pjy24=FIGy2+40
-                                if pjy24 == boldy1-80 or boldy2-80 or boldy3-80 or boldy4-80:
-                                    pj24==False
-                                    projcount24=30
-                                    pjy24=FIGy2+40  
-                            elif pj24==False or projcount24<1:
-                                pj24=False
-                                projcount24=30
-                                pjy24=FIGy2+40  
-                            if pjxr11==FIGx1 or pjxr12==FIGx1 or pjxr13==FIGx1 or pjxr14==FIGx1 or pjxr21==FIGx1 or pjxr22==FIGx1 or pjxr23==FIGx1 or pjxr24==FIGx1 or pjxl11==FIGx1 or pjxl12==FIGx1 or pjxl13==FIGx1 or pjxl14==FIGx1 or pjxl21==FIGx1 or pjxl22==FIGx1 or pjxl23==FIGx1 or pjxl24==FIGx1 or pjyw11==FIGy1 or pjyw12==FIGy1 or pjyw13==FIGy1 or pjyw14==FIGy1 or pjyw21==FIGy1 or pjyw22==FIGy1 or pjyw23==FIGy1 or pjyw24==FIGy1 or pjyd11==FIGy1 or pjyd12==FIGy1 or pjyd13==FIGy1 or pjyd14==FIGy1 or pjyd21==FIGy1 or pjyd22==FIGy1 or pjyd23==FIGy1 or pjyd24==FIGy1:
+                                    pjy11=FIGy1-40       
+                            if pjxr11==FIGx1 or pjxr12==FIGx1 or pjxr13==FIGx1 or pjxr14==FIGx1 or pjxr21==FIGx1 or pjxr22==FIGx1 or pjxr23==FIGx1 or pjxr24==FIGx1 or pjxl11==FIGx1 or pjxl12==FIGx1 or pjxl13==FIGx1 or pjxl14==FIGx1 or pjxl21==FIGx1 or pjxl22==FIGx1 or pjxl23==FIGx1 or pjxl24==FIGx1 or pjy11==FIGy1 or pjy12==FIGy1 or pjy13==FIGy1 or pjy14==FIGy1 or pjy21==FIGy1 or pjy22==FIGy1 or pjy23==FIGy1 or pjy24==FIGy1:
                                 spped1=False
                                 pygame.time.delay(5000)
                                 spped1=True
-                            if pjxr11==FIGx2 or pjxr12==FIGx2 or pjxr13==FIGx2 or pjxr14==FIGx2 or pjxr21==FIGx2 or pjxr22==FIGx2 or pjxr23==FIGx2 or pjxr24==FIGx2 or pjxl11==FIGx2 or pjxl12==FIGx2 or pjxl13==FIGx2 or pjxl14==FIGx2 or pjxl21==FIGx2 or pjxl22==FIGx2 or pjxl23==FIGx2 or pjxl24==FIGx2 or pjyw11==FIGy2 or pjyw12==FIGy2 or pjyw13==FIGy2 or pjyw14==FIGy2 or pjyw21==FIGy2 or pjyw22==FIGy2 or pjyw23==FIGy2 or pjyw24==FIGy2 or pjyd11==FIGy2 or pjyd12==FIGy2 or pjyd13==FIGy2 or pjyd14==FIGy2 or pjyd21==FIGy2 or pjyd22==FIGy2 or pjyd23==FIGy2 or pjyd24==FIGy2:
+                            if pjxr11==FIGx2 or pjxr12==FIGx2 or pjxr13==FIGx2 or pjxr14==FIGx2 or pjxr21==FIGx2 or pjxr22==FIGx2 or pjxr23==FIGx2 or pjxr24==FIGx2 or pjxl11==FIGx2 or pjxl12==FIGx2 or pjxl13==FIGx2 or pjxl14==FIGx2 or pjxl21==FIGx2 or pjxl22==FIGx2 or pjxl23==FIGx2 or pjxl24==FIGx2 or pjy11==FIGy2 or pjy12==FIGy2 or pjy13==FIGy2 or pjy14==FIGy2 or pjy21==FIGy2 or pjy22==FIGy2 or pjy23==FIGy2 or pjy24==FIGy2:
                                 spped2=False
                                 pygame.time.delay(5000)
-                                spped=True                   
-                                if FIGx1==boldx1+85 or boldx2+85 or boldx3+85 or boldx4+85 or boldx1-85 or boldx2-85 or boldx3-85 or boldx4-85:
-                                    spped1=False
-                                    pygame.time.delay(3000)
-                                    spped1=True
-                                if FIGy1==boldy1+85 or boldy2+85 or boldy3+85 or boldy4+85 or boldy1-85 or boldy2-85 or boldy3-85 or boldy4-85:
-                                    spped1=False
-                                    pygame.time.delay(3000)
-                                    spped1=True
-                                if FIGx2==boldx1+85 or boldx2+85 or boldx3+85 or boldx4+85 or boldx1-85 or boldx2-85 or boldx3-85 or boldx4-85:
-                                    spped1=False
-                                    pygame.time.delay(3000)
-                                    spped1=True
-                                if FIGy2==boldy1+85 or boldy2+85 or boldy3+85 or boldy4+85 or boldy1-85 or boldy2-85 or boldy3-85 or boldy4-85:
-                                    spped2=False
-                                    pygame.time.delay(3000)
-                                    spped2=True
-                        if fl1count==5:
-                            play=False
-                            score=fl1count*2000
-                        if fl2count==5:
+                                spped2=True  
+                            if FIGx1==boldx1+85 or boldx2+85 or bolxy3+85 or boldx4+85:
+                                spped1=False
+                                FIGx1+=50
+                                pygame.time.delay(3000)
+                                spped1=True
+                            if FIGx1==boldx1-85 or boldx2-85 or boldx3-85 or boldx4-85:
+                                spped1=False
+                                FIGx1+=50
+                                pygame.time.delay(3000)
+                                spped1=True
+                            if FIGy1==boldy1+85 or boldy2+85 or boldy3+85 or boldy4+85: 
+                                spped1=False
+                                FIGy1+=50
+                                pygame.time.delay(3000)
+                                spped1=True
+                            if FIGy1==boldy1-85 or boldy2-85 or boldy3-85 or boldy4-85:
+                                spped1=False
+                                FIGy1-=50
+                                pygame.time.delay(3000)
+                                spped1=True
+                            if FIGx2==boldx1+85 or boldx2+85 or boldx3+85 or boldx4+85:
+                                spped2=False
+                                FIGx2+=50
+                                pygame.time.delay(3000)
+                                spped2=True
+                            if FIGx2==boldx1-85 or boldx2-85 or boldx3-85 or boldx4-85:
+                                spped2=False
+                                FIGx2-=50
+                                pygame.time.delay(3000)
+                                spped2=True
+                            if FIGy2==boldy1+85 or boldy2+85 or boldy3+85 or boldy4+85:
+                                spped2=False
+                                FIGy2-=50
+                                pygame.time.delay(3000)
+                                spped2=True
+                            if FIGy2==boldy1-85 or boldy2-85 or boldy3-85 or boldy4-85:
+                                spped2=False
+                                FIGy2-=50
+                                pygame.time.delay(3000)
+                                spped2=True
+                            if fl1count==5:
+                                play=False
+                                score=fl1count*2000
+                            if fl2count==5:
                                 play=False
                                 score=fl2count*2000
+                            redrawGameWindowforp1()
+                            redrawGameWindowforp2()
+                            flagspawn()
+                            lavspawn()
                     create_NewWindow("Good Game")
                     win.fill(WHITE)
                     display_Title("Good Game",40)
