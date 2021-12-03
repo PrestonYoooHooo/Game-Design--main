@@ -596,11 +596,11 @@ while run:
                     if HEIGHT==700:
                         win.blit(sebg2,(0,0))
                     if HEIGHT==800:
-                        win.blit(eibg2(0,0))
+                        win.blit(eibg2,(0,0))
                     if HEIGHT==900:
-                        win.blit(nibg2(0,0))
+                        win.blit(nibg2,(0,0))
                     if HEIGHT==1000:#bases type of background needed on height
-                        win.blit(tebg2 (0,0))
+                        win.blit(tebg2,(0,0))
                     win.blit(StR,(FIGx1,FIGy1))
                     win.blit(StL,(FIGx2, FIGy2))
                     win.blit(p1,(P1x,P1y))
