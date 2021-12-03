@@ -17,6 +17,7 @@ CoMessages=['Orange','Red','White','Blue','Back']
 ScMessages=['Score 1','Score 2','Score 3', 'Score 4', 'Back']
 InMessages= ['Get a friend', 'Gather 3 flags before them', 'Push them back with your laser', 'Enjoy your ruined friendship', 'Back']
 PlMessages= ['Level 1', 'Level 2', 'Back']
+EndMessages=['The top Score was'score, 'Play Level 1'. 'Play Level 2', 'Back to Menu']
 walkRight = [pygame.image.load('images\Right Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 2.jpeg'),pygame.image.load('images\Right Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 3.jpeg'),pygame.image.load('images\Right Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 4.jpeg'),pygame.image.load('images\Right Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 5.jpeg'),pygame.image.load('images\Right Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 6.jpeg'),pygame.image.load('images\Right Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 7.jpeg'), pygame.image.load('images\Right Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 8.jpeg'),pygame.image.load('images\Right Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 9.jpeg'),pygame.image.load('images\Right Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png.jpeg')]
 walkLeft = [pygame.image.load('images\Left Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 2.jpeg'),pygame.image.load('images\Left Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 3.jpeg'),pygame.image.load('images\Left Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 4.jpeg'), pygame.image.load('images\Left Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 5.jpeg'), pygame.image.load('images\Left Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 6.jpeg'),pygame.image.load('images\Left Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 7.jpeg'),pygame.image.load('images\Left Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 8.jpeg'), pygame.image.load('images\Left Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png copy 5.jpeg'), pygame.image.load('images\Left Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png copy 6.jpeg')]
 StL = pygame.image.load('images\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 2.jpeg')
@@ -102,6 +103,7 @@ pj24=False
 counter=0
 walkCount1= 0
 walkCount2= 0
+lavacount=0
 left1=False
 right1=False
 left2=False
@@ -116,12 +118,13 @@ FIGx1=50
 FIGy1=HEIGHT-50
 FIGx2=WIDTH-50
 FIGy2= HEIGHT-50#they start at oppisted sides of the screen 
+
 def flagspawn():
     if flgcount=0:
         pygame.time.delay(15000)
         flgx= random.randint(50,WIDTH-50)#when there is no flag the count is zero which triggers the coords to randomize after a delay and adds to the count so it dosen't happen untill the flag is collected
         flgy= random.randint(50,HEIGHT-50)
-        flgcount=1
+        flgcount+=1
     if flgcount=1
         wiin.blit(fl,(flgx,flgy))
     if flgx==boldx1+85 or flgx==boldx1-85 or flgx==boldx2+85 or flgx==boldx2-85 or flgx==boldx3+85 or flgx==boldx3-85 or flgx==boldx4+85 or flgx==boldx4-85 or flgy==boldy1+85 or flgy==boldy1-85 or flgy==boldy2+85 or flgy==boldy2-85 or flgy==boldy3+85 or flgy== boldy3-85 or flgy== boldy4+85 or flgy== boldy4-85:
@@ -133,6 +136,28 @@ def flagspawn():
     if flgx==FIGx2+30 or flgx==FIGx2-30 or flgy==FIGy2-30 or flgy==FIGy2+30
         flgcount=0
         fl2count+=1
+def lavspawn():
+    if lavacount==0:
+        pygame.time.delay(5000)
+        lvx= random.randint(50,WIDTH-50)#when there is no flag the count is zero which triggers the coords to randomize after a delay and adds to the count so it dosen't happen untill the flag is collected
+        lvy= random.randint(50,HEIGHT-50)
+        lavacount+=1
+    if lavacount==1:
+        win.blit(lamon,(lvx,lvy))
+    if lvx==boldx1+85 or lvx==boldx1-85 or lvx==boldx2+85 or lvx==boldx2-85 or lvx==boldx3+85 or lvx==boldx3-85 or lvx==boldx4+85 or lvx==boldx4-85 or lvy==boldy1+85 or lvy==boldy1-85 or lvy==boldy2+85 or lvy==boldy2-85 or lvy==boldy3+85 or lvy== boldy3-85 or lvy== boldy4+85 or lvy== boldy4-85:
+        lvx= random.randint(50,WIDTH-50)# if the flag lands on a wall postition it will instantly randomize the coordinates so the flag isn't stuck
+        lvy= random.randint(50,HEIGHT-50)  
+    if lvx=-FIGx1+30 or lvx==FIGx1-30 or lvy==FIGy1+30 or lvy==FIGy1-30: #as with other extra numbers these gave some linency so you don't have to be right on top of it  
+        lavacount=0
+        spped1=False
+        pygame.time.delay(5000)
+        spped1=True
+    if lvx==FIGx2+30 or lvx==FIGx2-30 or lvy==FIGy2-30 or lvy==FIGy2+30
+        lavacount=0
+        spped2=False
+        pygame.time.delay(5000)
+        spped2=True
+         
 def redrawGameWindowforp1():
     global walkCount1 
     if walkCount1 + 1 >= 27:
@@ -195,6 +220,8 @@ def display_Title(message,y):#that comes with def
     win.blit(text,(xm,ym))
     pygame.display.update()
     pygame.time.delay(100)
+
+
     
 
 def Menu_function(Messages,y):
@@ -471,13 +498,15 @@ while run:
                     Menu_function(gameMessages,150)
                     counter-=6
                     pygame.time.delay(100)
-                if xp>x and xp<x+wbox and yp>y and yp<245 and counter is 7 or newgame1==True:
+                if xp>x and xp<x+wbox and yp>y and yp<245 and counter is 7 or newgame1==True and escape1=False:
                     walkCount1= 0
                     walkCount2= 0
                     boldx1=200
                     boldy1=200
                     boldx2=WIDTH-200
                     boldy2=200
+                    escape1=True
+                    score=0
                     boldy3=HEIGHT-200
                     boldx3=200
                     boldx4=WIDTH-200
@@ -497,6 +526,7 @@ while run:
                     lastw2=False
                     lastd1=False
                     lastd2=False
+                    lavacount=0
                     P1x=FIGx1
                     P2x=FIGx2
                     P1y=FIGy1-45
@@ -1542,7 +1572,36 @@ while run:
                                 spped2=False
                                 pygame.time.delay(3000)
                                 spped2=True
-                if xp>x and xp<x+wbox and yp>y and yp<345 and yp>245 and counter is 7 or newgame2==True:
+                            if fl1count==5:
+                                play=False
+                                score=f11count*2000
+                            if fl2count==5:
+                                play=False
+                                score=fl2count*1000
+                    create_NewWindow("Good Game")
+                    win.fill(WHITE)
+                    display_Title("Good Game",40)
+                    Menu_function(EndMessages,150)
+                    pygame.time.delay(100)
+                    counter+=1
+                    if xp>x and xp<x+wbox and yp>y and yp<345 and yp>245 and counter is 8:
+                        newgame1=True
+                        newgame2=False
+                        escape1=False
+                        counter-=1
+                    if xp>x and xp<x+wbox and yp>y and yp<445 and yp>345 and counter is 8:
+                        newgame1=False
+                        newgame2=True
+                        escape1=False
+                        counter-=1
+                    if xp>x and xp<x+wbox and yp>y and yp<445 and yp>545 and counter is 8:
+                        newgame1=False 
+                        newgame2=False
+                        escape1=False
+                        display_Title("TestyGame",y)
+                        Menu_function(gameMessages,150)
+                        counter -=8
+                if xp>x and xp<x+wbox and yp>y and yp<345 and yp>245 and counter is 7 or newgame2==True and escape2=True
                     walkCount1= 0
                     walkCount2= 0
                     left1=False
@@ -1558,6 +1617,7 @@ while run:
                     lastw2=False
                     lastd1=False
                     lastd2=False
+                    escape2=True
                     fl1count=0
                     fl2count=0
                     pjxr11=FIGx1-40
@@ -1601,6 +1661,7 @@ while run:
                     pjyd22=FIGy2+40
                     pjyd23=FIGy2+40
                     pjyd24=FIGy2+40
+                    lavacount=0
                     boldx1=200
                     boldy1=200
                     boldx2=WIDTH-200
@@ -1610,6 +1671,7 @@ while run:
                     boldx4=WIDTH-200
                     boldy4=HEIGHT-200
                     flgcount=0
+                    score=0
                     flgx= random.randint(50,WIDTH-50)
                     flgx= random.randint(50, HEIGHT-50)
                     P1x=FIGx1
@@ -2609,6 +2671,36 @@ while run:
                                     spped2=False
                                     pygame.time.delay(3000)
                                     spped2=True
+                        if fl1count==5:
+                            play=False
+                            score=fl1count*2000
+                        if fl2count==5:
+                                play=False
+                                score=fl2count*2000
+                    create_NewWindow("Good Game")
+                    win.fill(WHITE)
+                    display_Title("Good Game",40)
+                    Menu_function(EndMessages,150)
+                    pygame.time.delay(100)
+                    score+=1000
+                    counter+=1
+                    if xp>x and xp<x+wbox and yp>y and yp<345 and yp>245 and counter is 8:
+                        newgame1=True
+                        newgame2=False
+                        escape2=False
+                        counter-=1
+                    if xp>x and xp<x+wbox and yp>y and yp<445 and yp>345 and counter is 8:
+                        newgame1=False
+                        newgame2=True
+                        escape2=False
+                        counter-=1
+                    if xp>x and xp<x+wbox and yp>y and yp<445 and yp>545 and counter is 8:
+                        newgame1=False 
+                        newgame2=False
+                        escape2=False
+                        display_Title("TestyGame",y)
+                        Menu_function(gameMessages,150)
+                        counter -=8
                 if xp>x and xp<x+wbox and yp>y and yp<445 and yp>345 and counter is 7:
                     xp=0
                     yp=0 
