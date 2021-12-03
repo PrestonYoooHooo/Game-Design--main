@@ -498,7 +498,7 @@ while run:
                     Menu_function(gameMessages,150)
                     counter-=6
                     pygame.time.delay(100)
-                if xp>x and xp<x+wbox and yp>y and yp<245 and counter is 7 or newgame1==True and escape1=False:
+                if xp>x and xp<x+wbox and yp>y and yp<245 and counter is 7 or newgame1==True:
                     walkCount1= 0
                     walkCount2= 0
                     boldx1=200
@@ -531,7 +531,7 @@ while run:
                     P2x=FIGx2
                     P1y=FIGy1-45
                     P2y=FIGy2-45
-                    pjxr11=FIGx1-40
+                    pjxr11=FIGx1-40#all of these pj variables represent the projeciles and the diffrent positions I should spawn them dpending on the direction the player is facing when firing
                     pjy11=FIGy1
                     pjxl11=FIGx1+40
                     pjxr21=FIGx2-40
@@ -573,8 +573,8 @@ while run:
                     pjyd23=FIGy2+40
                     pjyd24=FIGy2+40
                     flgcount=0
-                    P1y=FIGy1-45
-                    P2y=FIGy2-45
+                    P1y=FIGy1-75#shows which player is which by stayign directicly above them
+                    P2y=FIGy2-75
                     Flgx=random.randint(50,WIDTH-50)
                     flgy=random.randint(50,HEIGHT-50)
                     create_NewWindow('Level 1')
@@ -584,12 +584,12 @@ while run:
                         win.blit(eibg2(0,0))
                     if HEIGHT==900:
                         win.blit(nibg2(0,0))
-                    if HEIGHT==1000:
+                    if HEIGHT==1000:#bases type of background needed on height
                         win.blit(tebg2 (0,0))
                     win.blit(StR,(FIGx1,FIGy1))
                     win.blit(StL,(FIGx2, FIGy2))
                     win.blit(p1,(P1x,P1y))
-                    win.blit(p2,(P2x, P2y))
+                    win.blit(p2,(P2x,P2y))
                     pygame.draw.rect(win,ORANGE,bolder1)#drawing all of the rectangles with the object colors chosen
                     pygame.draw.rect(win,ORANGE,bolder2)     
                     pygame.draw.rect(win,ORANGE,bolder3)  
@@ -602,14 +602,14 @@ while run:
                             keyPressed= pygame.key.get_pressed()#records keyboard movement
                             speedx=10
                             speedy=10
-                            P1y=FIGy1-45
-                            P2y=FIGy2-45
-                            if spped1==True:  
+                            P1y=FIGy1-75
+                            P2y=FIGy2-75
+                            if spped1==True:  #this if statment allows me to disable a single players movement if they are stunned
                                 if keyPressed[pygame.K_RIGHT]:  
-                                    FIGx1 +=speedx 
-                                    right1=True
+                                    FIGx1 +=speedx #negative or postive depsending on direction
+                                    right1=True#for direction
                                     left1=False
-                                    lastr1=True
+                                    lastr1=True#for the last direction if an idle pose is needed
                                     lastl1=False
                                     lastd1=False
                                     lastw1=False
@@ -633,7 +633,7 @@ while run:
                                     lastl1=False
                                     lastw1=False
                                     lastd1=True
-                                if keyPressed[pygame.K_f]:
+                                if keyPressed[pygame.K_f]:#fires projectile depending on directions and limits it to only 4 projectiles per player allowed to be fired on the screen
                                     if lastr1==True and p1pjcon>0:
                                         if p1pjcon==4:
                                             win.blit(proj11,pjxr11,FIGy1)
@@ -653,7 +653,7 @@ while run:
                                             pj14=True
                                     if lastl1==True and p1pjcon>0:
                                         if p1pjcon==4:
-                                            win.blit(proj11,pjxl11,FIGy1)
+                                            win.blit(proj11,pjxl11,FIGy1)#the 4 diffrent projeciles and 4 diffrent images allowing for them to have their own coordinates
                                             p1pjcon-=1
                                             pj11=True
                                         if p1pjcon==3:
@@ -668,7 +668,7 @@ while run:
                                             win.blit(proj14,pjxl14,FIGy1)
                                             p1pjcon-=1 
                                             pj14=True 
-                            if spped2==True:
+                            if spped2==True:#all of this is the same for player one except for player2 
                                 if keyPressed[pygame.K_d]:  
                                     FIGx2 +=speedy 
                                     righ2=True
@@ -732,10 +732,10 @@ while run:
                                             win.blit(proj24,pjxr24,pjy24)
                                             p2pjcon-=1 
                                             pj24=True
-                            if pj11==True and projcount11>0 and lastl1==True:
+                            if pj11==True and projcount11>0 and lastl1==True:#for every second the projectile is one screen it will travel depending on direction of shot and will only stop whe its counter reaches 0 causing it to disaapear or when it hits a playerer or a wall, all of these reset the counter and allow for anohter projectile to be fired
                                 pjxl11+=20
                                 projcount11-=1
-                                if pjxl11 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:
+                                if pjxl11 == boldx1+80 or boldx2+80 or boldx3+80 or boldx4+80:#These are for the coords of the wall and will delete the projectiels if the touch them
                                     pj11==False
                                     projcount11=30
                                     pjxl11=FIGx1-40
@@ -755,7 +755,7 @@ while run:
                                     projcount11=30
                                     pjxl11=FIGx1-40  
                                     pjy11=FIGy1  
-                            elif pj11==False or projcount11<1:
+                            elif pj11==False or projcount11<1:#this kills the projecile and resets the coordinates for the projectile after it disappears
                                 pj11=False
                                 projcount11=30
                                 pjxl11=FIGx1-40  
@@ -1676,8 +1676,8 @@ while run:
                     flgx= random.randint(50, HEIGHT-50)
                     P1x=FIGx1
                     P2x=FIGx2
-                    P1y=FIGy1-45
-                    P2y=FIGy2-45
+                    P1y=FIGy1-75
+                    P2y=FIGy2-75
                     create_NewWindow('Level 2')
                     if HEIGHT==700:
                         win.blit(sebg2,(0,0))
@@ -1703,6 +1703,8 @@ while run:
                             keyPressed= pygame.key.get_pressed()#records keyboard movement
                             speedx=10
                             speedy=10 
+                            P1y=FIGy1-75
+                            P2y=FIGy2-75
                             if spped1==True:
                                 if keyPressed[pygame.K_RIGHT]:  
                                     FIGx1 +=speedx 
