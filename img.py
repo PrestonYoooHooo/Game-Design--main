@@ -14,7 +14,7 @@ win = py.display.set_mode((900,800))
 py.init()
 #create window
 height= 800
-width = 900
+width = 800
 x=50 
 y=400 
 right=False
@@ -60,7 +60,7 @@ objColor=colors.get('red')
 py.display.update()
 #create a speed to move the object
 run=True
-bg=py.image.load("images/bgSmaller.jpg")
+bg=py.image.load("images\images copy.jpg")
 FIGx=300
 FIGy=300
 FIG=py.image.load("images/Pygame-Tutorials-master/Game/standing.png")
