@@ -18,12 +18,16 @@ ScMessages=['Score 1','Score 2','Score 3', 'Score 4', 'Back']
 InMessages= ['Get a friend', 'Gather 3 flags before them', 'Push them back with your laser', 'Enjoy your ruined friendship', 'Back']
 PlMessages= ['Level 1', 'Level 2', 'Back']
 EndMessages=['The top Score was', 'Play Level 1','Play Level 2', 'Back to Menu']
-walkRight = [pygame.image.load('images\Right Mov.\ 716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 2.jpeg'),pygame.image.load('images\Right Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 3.jpeg'),pygame.image.load('images\Right Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 4.jpeg'),pygame.image.load('images\Right Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 5.jpeg'),pygame.image.load('images\Right Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 6.jpeg'),pygame.image.load('images\Right Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 7.jpeg'), pygame.image.load('images\Right Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 8.jpeg'),pygame.image.load('images\Right Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 9.jpeg'),pygame.image.load('images\Right Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png.jpeg')]
-walkLeft = [pygame.image.load('images\Left Mov.\ 716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 2.jpeg'),pygame.image.load('images\Left Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 3.jpeg'),pygame.image.load('images\Left Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 4.jpeg'), pygame.image.load('images\Left Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 5.jpeg'), pygame.image.load('images\Left Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 6.jpeg'),pygame.image.load('images\Left Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 7.jpeg'),pygame.image.load('images\Left Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 8.jpeg'), pygame.image.load('images\Left Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png copy 5.jpeg'), pygame.image.load('images\Left Mov.\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png copy 6.jpeg')]
-StL = pygame.image.load('images\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 2.jpeg')
-StR = pygame.image.load('images\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png.jpeg')
+walkRight1 = [pygame.image.load('images/Pygame-Tutorials-master/Game/R1.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R2.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R3.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R4.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R5.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R6.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R7.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R8.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R9.png')]
+walkLeft1 = [pygame.image.load('images/Pygame-Tutorials-master/Game/L1.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L2.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L3.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L4.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L5.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L6.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L7.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L8.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L9.png')]
+walkRigh2 = [pygame.image.load('images/Pygame-Tutorials-master/Game/R1 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R2 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R3 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R4 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R5 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R6 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R7 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R8 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R9 - Copy.png')]
+walkLeft2 = [pygame.image.load('images\Pygame-Tutorials-master\Game\L1 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L2 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L3 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L4 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L5 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L6 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L7 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L8 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L9 - Copy.png')]
+StL1 = pygame.image.load('images\Pygame-Tutorials-master\Game\R1.png')
+StR1 = pygame.image.load('images\Pygame-Tutorials-master\Game\L1.png')
+StL2 = pygame.image.load('images\Pygame-Tutorials-master\Game\R1 - Copy.png')
+StR2 = pygame.image.load('images\Pygame-Tutorials-master\Game\L1 - Copy.png')
 sebg = pygame.image.load('images\images copy.jpg')
-eibg = pygame.image.load('images\images copy.jpg')
+eibg = pygame.image.load('images\images copy 2.jpg')
 nibg = pygame.image.load('images\images copy 3.jpg')
 tebg = pygame.image.load('images\images.jpg')
 sebg2 = pygame.image.load('images\lava-lake-active-valcano-rj-2560x1700.jpg')
@@ -119,7 +123,7 @@ flgcount=0#counts number of flags on screen
 FIGx1=50
 FIGy1=HEIGHT-50
 FIGx2=WIDTH-50
-FIGy2= HEIGHT-50#they start at oppisted sides of the screen 
+FIGy2=HEIGHT-50#they start at oppisted sides of the screen 
 
 def flagspawn():
     if flgcount==0:
@@ -163,19 +167,19 @@ def lavspawn():
 def redrawGameWindowforp1():
     global walkCount1 
     if walkCount1 + 1 >= 27:
-        walkCount = 0
+        walkCount1 = 0
     if left1==True and right1==False:  #for every time they take a step the walkcount is moved up by one and their image is changed constanly to make it look like they are moving in a certian direction
-        win.blit(walkLeft[walkCount//3], (FIGx1,FIGy1))
-        walkCount += 1                          
+        win.blit(walkLeft1[walkCount1//3], (FIGx1,FIGy1))
+        walkCount1 += 1                          
     elif right1==True and left1 ==False:
-        win.blit(walkRight[walkCount//3], (FIGx1,FIGy1))
-        walkCount += 1
+        win.blit(walkRight1[walkCount1//3], (FIGx1,FIGy1))
+        walkCount1 += 1
     elif lastr1== True and lastl1 == False:#when they stop depending on their last motions it will have an idle motion in the last direction it was in
-        win.blit(StR, (FIGx1, FIGy1))
-        walkCount = 0
+        win.blit(StR1, (FIGx1, FIGy1))
+        walkCount1 = 0
     else:
-        win.blit(StL,FIGx1,FIGy1)#
-        walkCount=0
+        win.blit(StL1,FIGx1,FIGy1)#
+        walkCoun1t=0
     if pj11==True:#just redraws the projectiles
         win.blit(proj11,pjxl11,pjy11)
     if pj12==True:
@@ -193,21 +197,21 @@ def redrawGameWindowforp1():
     if pj24==True:
         win.blit(proj24,pjxl24,pjy24)
 def redrawGameWindowforp2():
-    global walkCount1 
-    if walkCount1 + 1 >= 27:
-        walkCount = 0 
+    global walkCount2
+    if walkCount2 + 1 >= 27:
+        walkCount2 = 0 
     if left2==True and right2==False:  
-        win.blit(walkLeft[walkCount//3], (FIGx2,FIGy2))
-        walkCount += 1                          
+        win.blit(walkLeft2[walkCount2//3], (FIGx2,FIGy2))
+        walkCount2 += 1                          
     elif right2==True and left2 ==False:
-        win.blit(walkRight[walkCount//3], (FIGx2,FIGy2))
-        walkCount += 1
+        win.blit(walkRight2[walkCount2//3], (FIGx2,FIGy2))
+        walkCount2 += 1
     elif lastr2== True and lastl2 == False:
-        win.blit(StR, (FIGx2, FIGy2))
-        walkCount = 0
+        win.blit(StR2, (FIGx2, FIGy2))
+        walkCount2 = 0
     else:
-        win.blit(StL,FIGx2,FIGy2)
-        walkCount=0
+        win.blit(StL2,FIGx2,FIGy2)
+        walkCount2=0
     if pj11==True:
         win.blit(proj11,pjxl11,pjy11)
     if pj12==True:
@@ -596,6 +600,14 @@ while run:
                     pjyd23=FIGy2+40
                     pjyd24=FIGy2+40
                     flgcount=0
+                    pj11=False
+                    pj12=False
+                    pj13=False
+                    pj14=False
+                    pj21=False
+                    pj22=False
+                    pj23=False
+                    pj24=False
                     P1y=FIGy1-75#shows which player is which by stayign directicly above them
                     P2y=FIGy2-75
                     Flgx=random.randint(50,WIDTH-50)#
@@ -609,8 +621,8 @@ while run:
                         win.blit(nibg,(0,0))
                     if HEIGHT==1000:#bases type of background needed on height
                         win.blit(tebg,(0,0))
-                    win.blit(StR,(FIGx1,FIGy1))
-                    win.blit(StL,(FIGx2, FIGy2))
+                    win.blit(StR1,(FIGx1,FIGy1))
+                    win.blit(StL2,(FIGx2, FIGy2))
                     win.blit(p1,(P1x,P1y))
                     win.blit(p2,(P2x,P2y))
                     pygame.draw.rect(win,ORANGE,bolder1)#drawing all of the rectangles with the object colors chosen
@@ -1406,6 +1418,7 @@ while run:
                         redrawGameWindowforp1()
                         redrawGameWindowforp2()
                         flagspawn()
+                        win.blit(bg,(0,0))
                         pygame.draw.rect(win,ORANGE,bolder1)#drawing all of the rectangles with the object colors chosen
                         pygame.draw.rect(win,ORANGE,bolder2)     
                         pygame.draw.rect(win,ORANGE,bolder3)  
@@ -1448,6 +1461,14 @@ while run:
                     lastw2=False
                     lastd1=False
                     lastd2=False
+                    pj11=False
+                    pj12=False
+                    pj13=False
+                    pj14=False
+                    pj21=False
+                    pj22=False
+                    pj23=False
+                    pj24=False
                     escape2=True
                     fl1count=0
                     end=True
