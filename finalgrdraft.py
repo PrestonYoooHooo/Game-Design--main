@@ -110,6 +110,8 @@ counter=0
 walkCount1= 0
 walkCount2= 0
 lavacount=0
+pl1hc=0
+pl2hc=0
 left1=False
 right1=False
 left2=False
@@ -553,6 +555,8 @@ while run:
                     FIGy2= HEIGHT-50
                     end=False
                     lavacount=0
+                    pl1hc=0
+                    pl2hc=0
                     P1x=FIGx1
                     P2x=FIGx2
                     P1y=FIGy1-45
@@ -629,6 +633,8 @@ while run:
                     pygame.draw.rect(win,ORANGE,bolder2)     
                     pygame.draw.rect(win,ORANGE,bolder3)  
                     pygame.draw.rect(win,ORANGE,bolder4)
+                    my_timer.reset()
+                    my_timer = Stopwatch()
                     while play:
                         pygame.time.delay(100) #milliseconds 
                         for anyThing in pygame.event.get(): #variable for anytrhing that happneds in py to listen to keyboard and mouse
@@ -1361,10 +1367,12 @@ while run:
                             pjy24=FIGy2 
                         if pjxr11==FIGx1 or pjxr12==FIGx1 or pjxr13==FIGx1 or pjxr14==FIGx1 or pjxr21==FIGx1 or pjxr22==FIGx1 or pjxr23==FIGx1 or pjxr24==FIGx1 or pjxl11==FIGx1 or pjxl12==FIGx1 or pjxl13==FIGx1 or pjxl14==FIGx1 or pjxl21==FIGx1 or pjxl22==FIGx1 or pjxl23==FIGx1 or pjxl24==FIGx1 or pjy11==FIGy1 or pjy12==FIGy1 or pjy13==FIGy1 or pjy14==FIGy1 or pjy21==FIGy1 or pjy22==FIGy1 or pjy23==FIGy1 or pjy24==FIGy1:
                             spped1=False#the projectiles pierce players but will still leave them stunned if they score a direct hit
+                            pl1hc+=1
                             pygame.time.delay(5000)
                             spped1=True
                         if pjxr11==FIGx2 or pjxr12==FIGx2 or pjxr13==FIGx2 or pjxr14==FIGx2 or pjxr21==FIGx2 or pjxr22==FIGx2 or pjxr23==FIGx2 or pjxr24==FIGx2 or pjxl11==FIGx2 or pjxl12==FIGx2 or pjxl13==FIGx2 or pjxl14==FIGx2 or pjxl21==FIGx2 or pjxl22==FIGx2 or pjxl23==FIGx2 or pjxl24==FIGx2 or pjy11==FIGy2 or pjy12==FIGy2 or pjy13==FIGy2 or pjy14==FIGy2 or pjy21==FIGy2 or pjy22==FIGy2 or pjy23==FIGy2 or pjy21==FIGy2:
                             spped2=False
+                            pl1hc+=1
                             pygame.time.delay(5000)
                             spped=True
                         if FIGx1==boldx1+85 or boldx2+85 or boldx3+85 or boldx4+85:#These sets of commands will cause a player to reocil back and be stunned if they run into a wall
@@ -1409,11 +1417,13 @@ while run:
                             spped2=True
                         if fl1count==5:#this ends the game whenever a player has collected 5 flags
                             play=False
-                            score=f11count*2000
+                            scorepen=my_timer.get_seconds 
+                            score=f11count*2000-(scorepen*400)
                             end=True
                         if fl2count==5:
                             play=False
-                            score=fl2count*2000
+                            scorepen=my_timer.get_seconds
+                            score=fl2count*2000-(scorepen*400)
                             end=True
                         redrawGameWindowforp1()
                         redrawGameWindowforp2()
@@ -1519,6 +1529,8 @@ while run:
                     pjyd23=FIGy2+40
                     pjyd24=FIGy2+40
                     lavacount=0
+                    pl1hc=0
+                    pl2hc=0
                     boldx1=200
                     boldy1=200
                     boldx2=WIDTH-200
@@ -1529,6 +1541,8 @@ while run:
                     boldy4=HEIGHT-200
                     flgcount=0
                     score=0
+                    my_timer.reset()
+                    my_timer = Stopwatch()
                     flgx= random.randint(50,WIDTH-50)
                     flgx= random.randint(50, HEIGHT-50)
                     P1x=FIGx1
@@ -1544,8 +1558,8 @@ while run:
                         win.blit(nibg2(0,0))
                     if HEIGHT==1000:
                         win.blit(tebg2 (0,0))
-                    win.blit(StR,FIGx1,FIGy1)
-                    win.blit(StL,FIGx2, FIGy2) 
+                    win.blit(StR1,FIGx1,FIGy1)
+                    win.blit(StL2,FIGx2, FIGy2) 
                     win.blit(p1,P1x,P1y)
                     win.blit(p2,P2x, P2y) 
                     pygame.draw.rect(win,ORANGE,bolder1)#drawing all of the rectangles with the object colors chosen
@@ -2348,10 +2362,14 @@ while run:
                             spped2=True
                         if fl1count==5:
                             play=False
-                            score=fl1count*2000
+                            scorepen=my_timer.get_seconds()
+                            score=fl1count*2000-(scorepen*400)
+                            end=True
                         if fl2count==5:
                             play=False
-                            score=fl2count*2000
+                            scorepen=my_timer.get_seconds()
+                            score=fl2count*2000-(scorepen*400)
+                            end=True
                         redrawGameWindowforp1()
                         redrawGameWindowforp2()
                         flagspawn()
