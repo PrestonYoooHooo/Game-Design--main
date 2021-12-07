@@ -56,7 +56,7 @@ projcount21=30
 projcount22=30
 projcount23=30
 projcount24=30
-lavacount-0
+lavacount=0
 #global variables: they work anywhere in the program
 colors = {'red':(150,0,0), 'green':(0,200,0), 'blue': (0,0,225), 'purple':(150,0,150), 'white':(255,255,255),'black': (0,0,0),'yellow': (255,211,67),'orange':(255, 165, 0), 'black': (0,0,0)}
 WHITE=colors.get('white')
@@ -1380,7 +1380,7 @@ while run:
                             pl1hc+=1
                             pygame.time.delay(5000)
                             spped=True
-                        if FIGx1==boldx1+85 or FIGx1==boldx2+85 orFIGx1== boldx3+85 or FIGx1==boldx4+85:#These sets of commands will cause a player to reocil back and be stunned if they run into a wall
+                        if FIGx1==boldx1+85 or FIGx1==boldx2+85 or FIGx1== boldx3+85 or FIGx1==boldx4+85:#These sets of commands will cause a player to reocil back and be stunned if they run into a wall
                             spped1=False
                             FIGx1+=50
                             pygame.time.delay(3000)
@@ -1884,7 +1884,7 @@ while run:
                                 projcount21=30
                                 pjxl21=FIGx2-40
                                 pjy21=FIGy2
-                            if pjy21 == boldy1+80 or pjy21 ==boldy2+80 orpjy21 == boldy3+80 or pjy21 ==boldy4+80:
+                            if pjy21 == boldy1+80 or pjy21 ==boldy2+80 or pjy21 == boldy3+80 or pjy21 ==boldy4+80:
                                 pj21=False
                                 projcount21=30
                                 pjxl21=FIGx2-40  
