@@ -232,9 +232,9 @@ def redrawGameWindowforp2():
     if pj22==True:
         win.blit(proj22,(pjxl22,pjy22))
     if pj23==True:
-        win.blit(proj23,pjxl23,pjy23)
+        win.blit(proj23,(pjxl23,pjy23))
     if pj24==True:
-        win.blit(proj24,pjxl24,pjy24)
+        win.blit(proj24,(pjxl24,pjy24))
 def create_NewWindow(winTitile):
     pygame.display.set_caption(winTitile)
     win.fill(WHITE)
@@ -566,48 +566,31 @@ while run:
                     P2x=FIGx2
                     P1y=FIGy1-45
                     P2y=FIGy2-45
-                    pjxr11=FIGx1-40#all of these pj variables represent the projeciles and the diffrent positions I should spawn them dpending on the direction the player is facing when firing
+                    pjxr11=FIGx1+40#all of these pj variables represent the projeciles and the diffrent positions I should spawn them dpending on the direction the player is facing when firing
                     pjy11=FIGy1
-                    pjxl11=FIGx1+40
-                    pjxr21=FIGx2-40
+                    pjxl11=FIGx1-40
+                    pjxr21=FIGx2+40
                     pjy21=FIGy2
-                    pjxl21=FIGx2+40
-                    pjxr12=FIGx1-40
+                    pjxl21=FIGx2-40
+                    pjxr12=FIGx1+40
                     pjy12=FIGy1
                     play=True
-                    pjxl12=FIGx1+40
-                    pjxr22=FIGx2-40
+                    pjxl12=FIGx1-40
+                    pjxr22=FIGx2+40
                     pjy22=FIGy2
-                    pjxl22=FIGx2+40
-                    pjxr13=FIGx1-40
+                    pjxl22=FIGx2-40
+                    pjxr13=FIGx1+40
                     pjy13=FIGy1
-                    pjxl13=FIGx1+40
-                    pjxr23=FIGx2-40
+                    pjxl13=FIGx1-40
+                    pjxr23=FIGx2+40
                     pjy23=FIGy2
-                    pjxl23=FIGx2+40
-                    pjxr14=FIGx1-40
+                    pjxl23=FIGx2-40
+                    pjxr14=FIGx1+40
                     pjy14=FIGy1
-                    pjxl14=FIGx1+40
-                    pjxr24=FIGx2-40
+                    pjxl14=FIGx1-40
+                    pjxr24=FIGx2+40
                     pjy24=FIGy2
-                    pjxl24=FIGx2+40
-                    pjyw11=FIGy1-40
-                    pjyw12=FIGy1-40
-                    pjyw13=FIGy1-40
-                    pjyw14=FIGy1-40
-                    pjyw21=FIGy2-40
-                    pjyw22=FIGy2-40
-                    pjyw23=FIGy2-40
-                    pjyw24=FIGy2-40
-                    pjyd11=FIGy1+40
-                    pjyd11=FIGy1+40
-                    pjyd12=FIGy1+40
-                    pjyd13=FIGy1+40
-                    pjyd14=FIGy1+40
-                    pjyd21=FIGy2+40
-                    pjyd22=FIGy2+40
-                    pjyd23=FIGy2+40
-                    pjyd24=FIGy2+40
+                    pjxl24=FIGx2-40
                     flgcount=0
                     pj11=False
                     pj12=False
@@ -690,36 +673,36 @@ while run:
                             if keyPressed[pygame.K_f]:#fires projectile depending on directions and limits it to only 4 projectiles per player allowed to be fired on the screen
                                 if lastr1==True and p1pjcon>0:#you can fire left and right (not up and down becuase i could find good back sprites for facing does directions so while you can move in them you can shot in them)
                                     if p1pjcon==4:
-                                        win.blit(proj11,pjxr11,FIGy1)
+                                        win.blit(proj11,(pjxr11,FIGy1))
                                         p1pjcon-=1
                                         pj11=True
                                     if p1pjcon==3:
-                                        win.blit(proj12,pjxr12,FIGy1)
+                                        win.blit(proj12,(pjxr12,FIGy1))
                                         p1pjcon-=1  
                                         pj12=True  
                                     if p1pjcon==2:
-                                        win.blit(proj13,pjxr13,FIGy1)
+                                        win.blit(proj13,(pjxr13,FIGy1))
                                         p1pjcon-=1 
                                         pj13=True
                                     if p1pjcon==1:
-                                        win.blit(proj14,pjxr14,FIGy1)
+                                        win.blit(proj14,(pjxr14,FIGy1))
                                         p1pjcon-=1 
                                         pj14=True
                                 if lastl1==True and p1pjcon>0:
                                     if p1pjcon==4:
-                                        win.blit(proj11,pjxl11,FIGy1)#the 4 diffrent projeciles and 4 diffrent images allowing for them to have their own coordinates
+                                        win.blit(proj11,(pjxl11,FIGy1))#the 4 diffrent projeciles and 4 diffrent images allowing for them to have their own coordinates
                                         p1pjcon-=1
                                         pj11=True
                                     if p1pjcon==3:
-                                        win.blit(proj12,pjxl12,FIGy1)
+                                        win.blit(proj12,(pjxl12,FIGy1))
                                         p1pjcon-=1 
                                         pj12=True    
                                     if p1pjcon==2:
-                                        win.blit(proj13,pjxl13,FIGy1)
+                                        win.blit(proj13,(pjxl13,FIGy1))
                                         p1pjcon-=1 
                                         pj13=True
                                     if p1pjcon==1:
-                                        win.blit(proj14,pjxl14,FIGy1)
+                                        win.blit(proj14,(pjxl14,FIGy1))
                                         p1pjcon-=1 
                                         pj14=True 
                         if spped2==True:#all of this is the same for player one except for player2 
@@ -762,36 +745,36 @@ while run:
                             if keyPressed[pygame.K_SLASH]:
                                 if lastr2==True and p2pjcon>0:
                                     if p2pjcon==4:
-                                        win.blit(proj21,pjxr21,pjy11)
+                                        win.blit(proj21,(pjxr21,pjy11))
                                         p2pjcon-=1
                                         pj21=True
                                     if p2pjcon==3:
-                                        win.blit(proj22,pjxr22,pjy12)
+                                        win.blit(proj22,(pjxr22,pjy12))
                                         p2pjcon-=1 
                                         pj22=True    
                                     if p2pjcon==2:
-                                        win.blit(proj23,pjxr23,pjy13)
+                                        win.blit(proj23,(pjxr23,pjy13))
                                         p2pjcon-=1 
                                         pj23=True
                                     if p2pjcon==1:
-                                        win.blit(proj24,pjxr24,pjy14)
+                                        win.blit(proj24,(pjxr24,pjy14))
                                         p2pjcon-=1
                                         pj24=True 
                                 if lastl2==True and p2pjcon>0:
                                     if p2pjcon==4:
-                                        win.blit(proj21,pjxr21,pjy21)
+                                        win.blit(proj21,(pjxr21,pjy21))
                                         p2pjcon-=1
                                         pj21=True
                                     if p2pjcon==3:
-                                        win.blit(proj22,pjxr22,pjy22)
+                                        win.blit(proj22,(pjxr22,pjy22))
                                         p2pjcon-=1  
                                         pj22=True   
                                     if p2pjcon==2:
-                                        win.blit(proj23,pjxr23,pjy23)
+                                        win.blit(proj23,(pjxr23,pjy23))
                                         p2pjcon-=1 
                                         pj23=True
                                     if p2pjcon==1:
-                                        win.blit(proj24,pjxr24,pjy24)
+                                        win.blit(proj24,(pjxr24,pjy24))
                                         p2pjcon-=1 
                                         pj24=True
                         if pj11==True and projcount11>0 and lastl1==True:#for every second the projectile is one screen it will travel depending on direction of shot and will only stop whe its counter reaches 0 causing it to disaapear or when it hits a playerer or a wall, all of these reset the counter and allow for anohter projectile to be fired
@@ -1499,47 +1482,30 @@ while run:
                     FIGx2=WIDTH-50
                     FIGy2= HEIGHT-50
                     fl2count=0
-                    pjxr11=FIGx1-40
+                    pjxr11=FIGx1+40
                     pjy11=FIGy1
-                    pjxl11=FIGx1+40
-                    pjxr21=FIGx2-40
+                    pjxl11=FIGx1-40
+                    pjxr21=FIGx2+0
                     pjy21=FIGy2
-                    pjxl21=FIGx2+40
-                    pjxr12=FIGx1-40
+                    pjxl21=FIGx2-40
+                    pjxr12=FIGx1+40
                     pjy12=FIGy1
-                    pjxl12=FIGx1+40
-                    pjxr22=FIGx2-40
+                    pjxl12=FIGx1-40
+                    pjxr22=FIGx2+40
                     pjy22=FIGy2
-                    pjxl22=FIGx2+40
-                    pjxr13=FIGx1-40
+                    pjxl22=FIGx2-40
+                    pjxr13=FIGx1+40
                     pjy13=FIGy1
-                    pjxl13=FIGx1+40
-                    pjxr23=FIGx2-40
+                    pjxl13=FIGx1-40
+                    pjxr23=FIGx2+40
                     pjy23=FIGy2
-                    pjxl23=FIGx2+40
-                    pjxr14=FIGx1-40
+                    pjxl23=FIGx2-40
+                    pjxr14=FIGx1+40
                     pjy14=FIGy1
-                    pjxl14=FIGx1+40
-                    pjxr24=FIGx2-40
+                    pjxl14=FIGx1-40
+                    pjxr24=FIGx2+40
                     pjy24=FIGy2
-                    pjxl24=FIGx2+40
-                    pjyw11=FIGy1-40
-                    pjyw12=FIGy1-40
-                    pjyw13=FIGy1-40
-                    pjyw14=FIGy1-40
-                    pjyw21=FIGy2-40
-                    pjyw22=FIGy2-40
-                    pjyw23=FIGy2-40
-                    pjyw24=FIGy2-40
-                    pjyd11=FIGy1+40
-                    pjyd11=FIGy1+40
-                    pjyd12=FIGy1+40
-                    pjyd13=FIGy1+40
-                    pjyd14=FIGy1+40
-                    pjyd21=FIGy2+40
-                    pjyd22=FIGy2+40
-                    pjyd23=FIGy2+40
-                    pjyd24=FIGy2+40
+                    pjxl24=FIGx2-40
                     lavacount=0
                     pl1hc=0
                     pl2hc=0
@@ -2370,6 +2336,14 @@ while run:
                         redrawGameWindowforp2()
                         flagspawn()
                         lavspawn()
+                        if HEIGHT==700:
+                            win.blit(sebg2,(0,0))
+                        if HEIGHT==800:
+                            win.blit(eibg2(0,0))
+                        if HEIGHT==900:
+                            win.blit(nibg2(0,0))
+                        if HEIGHT==1000:
+                            win.blit(tebg2 (0,0))
                         pygame.draw.rect(win,ORANGE,bolder1)#drawing all of the rectangles with the object colors chosen
                         pygame.draw.rect(win,ORANGE,bolder2)     
                         pygame.draw.rect(win,ORANGE,bolder3)  
