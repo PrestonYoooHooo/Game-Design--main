@@ -18,9 +18,9 @@ ScMessages=['Score 1','Score 2','Score 3', 'Score 4', 'Back']
 InMessages= ['Get a friend', 'Gather 3 flags before them', 'Push them back with your laser', 'Enjoy your ruined friendship', 'Back']
 PlMessages= ['Level 1', 'Level 2', 'Back']
 EndMessages=['The top Score was', 'Play Level 1','Play Level 2', 'Back to Menu']
-walkRight1 = [pygame.image.load('images/Pygame-Tutorials-master/Game/R1.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R2.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R3.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R4.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R5.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R6.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R7.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R8.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R9.png')]
-walkLeft1 = [pygame.image.load('images/Pygame-Tutorials-master/Game/L1.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L2.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L3.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L4.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L5.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L6.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L7.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L8.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L9.png')]
-walkRight2 = [pygame.image.load('images/Pygame-Tutorials-master/Game/R1 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R2 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R3 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R4 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R5 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R6 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R7 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R8 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R9 - Copy.png')]
+walkRight1 = [pygame.image.load('images\Pygame-Tutorials-master\Game\R1.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R2.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R3.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R4.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R5.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R6.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R7.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R8.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R9.png')]
+walkLeft1 = [pygame.image.load('images\Pygame-Tutorials-master\Game\L1.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L2.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L3.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L4.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L5.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L6.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L7.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L8.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L9.png')]
+walkRight2 = [pygame.image.load('images\Pygame-Tutorials-master\Game\R1 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R2 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R3 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R4 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R5 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R6 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R7 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R8 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R9 - Copy.png')]
 walkLeft2 = [pygame.image.load('images\Pygame-Tutorials-master\Game\L1 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L2 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L3 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L4 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L5 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L6 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L7 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L8 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L9 - Copy.png')]
 StL1 = pygame.image.load('images\Pygame-Tutorials-master\Game\R1.png')
 StR1 = pygame.image.load('images\Pygame-Tutorials-master\Game\L1.png')
@@ -1360,7 +1360,7 @@ while run:
                             spped1=True
                         if pjxr11==FIGx2 or pjxr12==FIGx2 or pjxr13==FIGx2 or pjxr14==FIGx2 or pjxr21==FIGx2 or pjxr22==FIGx2 or pjxr23==FIGx2 or pjxr24==FIGx2 or pjxl11==FIGx2 or pjxl12==FIGx2 or pjxl13==FIGx2 or pjxl14==FIGx2 or pjxl21==FIGx2 or pjxl22==FIGx2 or pjxl23==FIGx2 or pjxl24==FIGx2 or pjy11==FIGy2 or pjy12==FIGy2 or pjy13==FIGy2 or pjy14==FIGy2 or pjy21==FIGy2 or pjy22==FIGy2 or pjy23==FIGy2 or pjy21==FIGy2:
                             spped2=False
-                            pl1hc+=1
+                            pl2hc+=1
                             pygame.time.delay(5000)
                             spped=True
                         if FIGx1==boldx1+85 or FIGx1==boldx2+85 or FIGx1== boldx3+85 or FIGx1==boldx4+85:#These sets of commands will cause a player to reocil back and be stunned if they run into a wall
@@ -1406,12 +1406,12 @@ while run:
                         if fl1count==5:#this ends the game whenever a player has collected 5 flags
                             play=False
                             # scorepen=my_timer.get_seconds 
-                            score=fl1count*2000#-(scorepen*400)
+                            score=fl1count*2000-(pl1hc*200)#scores based on number of times you got hit
                             end=True
                         if fl2count==5:
                             play=False
                             # scorepen=my_timer.get_seconds
-                            score=fl2count*2000#-(scorepen*400)
+                            score=fl2count*2000-(pl2hc*200)
                             end=True
                         redrawGameWindowforp1()
                         redrawGameWindowforp2()
@@ -1539,7 +1539,7 @@ while run:
                     win.blit(StR1,(FIGx1,FIGy1))
                     win.blit(StL2,(FIGx2, FIGy2)) 
                     win.blit(p1,(P1x,P1y))
-                    win.blit(p2,(P2x,P2y) )
+                    win.blit(p2,(P2x,P2y))
                     pygame.draw.rect(win,ORANGE,bolder1)#drawing all of the rectangles with the object colors chosen
                     pygame.draw.rect(win,ORANGE,bolder2)     
                     pygame.draw.rect(win,ORANGE,bolder3)  
@@ -2276,10 +2276,12 @@ while run:
                             pjy24=FIGy2      
                         if pjxr11==FIGx1 or pjxr12==FIGx1 or pjxr13==FIGx1 or pjxr14==FIGx1 or pjxr21==FIGx1 or pjxr22==FIGx1 or pjxr23==FIGx1 or pjxr24==FIGx1 or pjxl11==FIGx1 or pjxl12==FIGx1 or pjxl13==FIGx1 or pjxl14==FIGx1 or pjxl21==FIGx1 or pjxl22==FIGx1 or pjxl23==FIGx1 or pjxl24==FIGx1 or pjy11==FIGy1 or pjy12==FIGy1 or pjy13==FIGy1 or pjy14==FIGy1 or pjy21==FIGy1 or pjy22==FIGy1 or pjy23==FIGy1 or pjy24==FIGy1:
                             spped1=False
+                            pl1hc+=1
                             pygame.time.delay(5000)
                             spped1=True
                         if pjxr11==FIGx2 or pjxr12==FIGx2 or pjxr13==FIGx2 or pjxr14==FIGx2 or pjxr21==FIGx2 or pjxr22==FIGx2 or pjxr23==FIGx2 or pjxr24==FIGx2 or pjxl11==FIGx2 or pjxl12==FIGx2 or pjxl13==FIGx2 or pjxl14==FIGx2 or pjxl21==FIGx2 or pjxl22==FIGx2 or pjxl23==FIGx2 or pjxl24==FIGx2 or pjy11==FIGy2 or pjy12==FIGy2 or pjy13==FIGy2 or pjy14==FIGy2 or pjy21==FIGy2 or pjy22==FIGy2 or pjy23==FIGy2 or pjy24==FIGy2:
                             spped2=False
+                            pl2hc+=1
                             pygame.time.delay(5000)
                             spped2=True  
                         if FIGx1==boldx1+85 or FIGx1==boldx2+85 or FIGx1==boldx3+85 or FIGx1==boldx4+85:
@@ -2325,12 +2327,12 @@ while run:
                         if fl1count==5:
                             play=False
                             # scorepen=my_timer.get_seconds()
-                            score=fl1count*2000#-(scorepen*400)
+                            score=fl1count*2000-(pl2hc*200)
                             end=True
                         if fl2count==5:
                             play=False
                             # scorepen=my_timer.get_seconds()
-                            score=fl2count*2000#-(scorepen*400)
+                            score=fl2count*2000-(pl2hc*200)
                             end=True
                         redrawGameWindowforp1()
                         redrawGameWindowforp2()
