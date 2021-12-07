@@ -63,7 +63,7 @@ run=True
 bg=py.image.load("images\images copy 2.jpg")
 FIGx=300
 FIGy=300
-FIG=py.image.load("images\Right Mov\\716-7162071_thumb-image-megaman-zero-sprites-hd-png-download.png 2.jpeg")
+FIG=py.image.load('images\Pygame-Tutorials-master\Game\L1.png')
 screen.blit (bg, (0,0))
 screen.blit(FIG,(FIGx,FIGy))
 py.display.flip#have to use flip for images

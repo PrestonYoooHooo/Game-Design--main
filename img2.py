@@ -38,7 +38,7 @@ walkCount = 0
 bg=pygame.image.load("images/bgSmaller.jpg")
 FIGx=300
 FIGy=300
-FIG=pygame.image.load("images/Pygame-Tutorials-master/Game/standing.png")
+FIG=pygame.image.load('images\Pygame-Tutorials-master\Game\L1.png')
 win.blit (bg, (0,0))
 win.blit(FIG,(FIGx,FIGy))
 
