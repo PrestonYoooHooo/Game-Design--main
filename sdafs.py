@@ -163,6 +163,7 @@ P1y=FIGy1-45
 P2y=FIGy2-45
 def create_NewWindow(winTitile):
     pygame.display.set_caption(winTitile)
+    win.blit(eibg,(0,0))
     pygame.display.update()
 def redrawGameWindowforp1():
     global walkCount1 
@@ -202,7 +203,7 @@ def redrawGameWindowforp2():
         walkCount2 = 0 
     if left2==True and right2==False:  
         win.blit(walkLeft2[walkCount2//3], (FIGx2,FIGy2))
-        walkCount += 1                          
+        walkCount1 += 1                          
     elif right2==True and left2 ==False:
         win.blit(walkRight2[walkCount2//3], (FIGx2,FIGy2))
         walkCount2 += 1

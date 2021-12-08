@@ -4,6 +4,8 @@
 
 import pygame, os,random,time
 
+from pygame.display import flip
+
 os.system('cls')
 pygame.init()
 #list fot menu Messages
@@ -127,9 +129,24 @@ FIGx1=50
 FIGy1=HEIGHT-50
 FIGx2=WIDTH-50
 FIGy2=HEIGHT-50#they start at oppisted sides of the screen 
+def updateFile():#Thanks to Tech With Tim for this function
+    f = open('scores.txt','r') # opens the file in read mode
+    file = f.readlines() # reads all the lines in as a list
+    last = int(file[0]) # gets the first line of the file
 
+    if last < int(score): # sees if the current score is greater than the previous best
+        f.close() # closes/saves the file
+        file = open('scores.txt', 'w') # reopens it in write mode
+        file.write(str(score)) # writes the best score
+        file.close() # closes/saves the file
+
+        return score
+               
+    return last
 def flagspawn():
     global flgcount
+    global fl1count
+    global fl2count
     flgx=0
     flgy=0
     if flgcount==0:
@@ -149,6 +166,7 @@ def flagspawn():
         flgcount=0
         fl2count+=1
 def lavspawn():
+    global lavacount
     if lavacount==0:
         pygame.time.delay(5000)
         lvx= random.randint(50,WIDTH-50)#randomizes the lava coordds when there isn't lava already on the screen
@@ -169,9 +187,28 @@ def lavspawn():
         spped2=False
         pygame.time.delay(5000)
         spped2=True
-         
 def redrawGameWindowforp1():
     global walkCount1 
+    global walkCount2
+    global pjxl11
+    global pjy11
+    global pjxl12
+    global pjy12
+    global pjxl21
+    global pjy21
+    global pjxl22
+    global pjy22
+    global P1x
+    global P1y
+    global P2x
+    global P2y
+    win.blit(eibg,(0,0))
+    win.blit(p1,(PendingDeprecationWarning))
+    win.blit(p2,(P2x,P2y))
+    pygame.draw.rect(win,ORANGE,bolder1)#drawing all of the rectangles with the object colors chosen
+    pygame.draw.rect(win,ORANGE,bolder2)     
+    pygame.draw.rect(win,ORANGE,bolder3)  
+    pygame.draw.rect(win,ORANGE,bolder4)
     if walkCount1 + 1 >= 27:
         walkCount1 = 0
     if left1==True and right1==False:  #for every time they take a step the walkcount is moved up by one and their image is changed constanly to make it look like they are moving in a certian direction
@@ -185,7 +222,7 @@ def redrawGameWindowforp1():
         walkCount1 = 0
     else:
         win.blit(StL1,(FIGx1,FIGy1))#
-        walkCoun1t=0
+        walkCount1=0
     if pj11==True:#just redraws the projectiles
         win.blit(proj11,(pjxl11,pjy11))
     if pj12==True:
@@ -202,8 +239,6 @@ def redrawGameWindowforp1():
     #     win.blit(proj23,(pjxl23,pjy23))
     # if pj24==True:
     #     win.blit(proj24,(pjxl24,pjy24))
-def redrawGameWindowforp2():
-    print(FIGx2,FIGy2)
     global walkCount2
     if walkCount2 + 1 >= 27:
         walkCount2 = 0 
@@ -235,10 +270,27 @@ def redrawGameWindowforp2():
     #     win.blit(proj23,(pjxl23,pjy23))
     # if pj24==True:
     #     win.blit(proj24,(pjxl24,pjy24))
+    pygame.display.update()
 def create_NewWindow(winTitile):
     pygame.display.set_caption(winTitile)
     win.fill(WHITE)
     pygame.display.update()
+def create_NewgWindow(winTitile):
+    FIGx1=50
+    FIGy1=HEIGHT-50
+    FIGx2=WIDTH-50
+    FIGy2=HEIGHT-50#they start at oppisted sides of the screen 
+    pygame.display.set_caption(winTitile)
+    win.blit(eibg,(0,0))
+    # win.blit(StR1,(FIGx1,FIGy1))
+    #win.blit(StL2,(FIGx2, FIGy2))
+    #win.blit(p1,(P1x,P1y))
+    # win.blit(p2,(P2x,P2y))
+    # pygame.draw.rect(win,ORANGE,bolder1)#drawing all of the rectangles with the object colors chosen
+    # pygame.draw.rect(win,ORANGE,bolder2)     
+    # pygame.draw.rect(win,ORANGE,bolder3)  
+    # pygame.draw.rect(win,ORANGE,bolder4)
+    pygame.display.update
 def display_Title(message,y):#that comes with def
     win.fill(WHITE)
     pygame.time.delay(100)
@@ -601,23 +653,21 @@ while run:
                     P2y=FIGy2-75
                     Flgx=random.randint(50,WIDTH-50)#
                     flgy=random.randint(50,HEIGHT-50)
-                    create_NewWindow('Level 1')
+                    create_NewgWindow('Level 1')
                     # if HEIGHT==700:
                     #     win.blit(sebg,(0,0))
-                    if HEIGHT==800:
-                        win.blit(eibg,(0,0))
                     # if HEIGHT==900:
                     #     win.blit(nibg,(0,0))
                     # if HEIGHT==1000:#bases type of background needed on height
                     #     win.blit(tebg,(0,0))
-                    win.blit(StR1,(FIGx1,FIGy1))
-                    win.blit(StL2,(FIGx2, FIGy2))
-                    win.blit(p1,(P1x,P1y))
-                    win.blit(p2,(P2x,P2y))
-                    pygame.draw.rect(win,ORANGE,bolder1)#drawing all of the rectangles with the object colors chosen
-                    pygame.draw.rect(win,ORANGE,bolder2)     
-                    pygame.draw.rect(win,ORANGE,bolder3)  
-                    pygame.draw.rect(win,ORANGE,bolder4)
+                    # win.blit(StR1,(FIGx1,FIGy1))
+                    # win.blit(StL2,(FIGx2, FIGy2))
+                    # win.blit(p1,(P1x,P1y))
+                    # win.blit(p2,(P2x,P2y))
+                    # pygame.draw.rect(win,ORANGE,bolder1)#drawing all of the rectangles with the object colors chosen
+                    # pygame.draw.rect(win,ORANGE,bolder2)     
+                    # pygame.draw.rect(win,ORANGE,bolder3)  
+                    # pygame.draw.rect(win,ORANGE,bolder4)
                     # my_timer.reset()
                     # my_timer = Stopwatch()
                     while play:
@@ -1411,20 +1461,21 @@ while run:
                             score=fl2count*2000-(pl2hc*200)
                             end=True
                         redrawGameWindowforp1()
-                        redrawGameWindowforp2()
                         flagspawn()
-                        if HEIGHT==700:
-                            win.blit(sebg,(0,0))
-                        if HEIGHT==800:
-                            win.blit(eibg,(0,0))
-                        if HEIGHT==900:
-                            win.blit(nibg,(0,0))
-                        if HEIGHT==1000:#bases type of background needed on height
-                            win.blit(tebg,(0,0))
+                        # if HEIGHT==700:
+                        #     win.blit(sebg,(0,0))
+                        # if HEIGHT==800:
+                        #     win.blit(eibg,(0,0))
+                        # if HEIGHT==900:
+                        #     win.blit(nibg,(0,0))
+                        # if HEIGHT==1000:#bases type of background needed on height
+                        #     win.blit(tebg,(0,0))
                         pygame.draw.rect(win,ORANGE,bolder1)#drawing all of the rectangles with the object colors chosen
                         pygame.draw.rect(win,ORANGE,bolder2)     
                         pygame.draw.rect(win,ORANGE,bolder3)  
                         pygame.draw.rect(win,ORANGE,bolder4)
+                        pygame.display.update()
+                        pygame.display.flip()
                 if end==True:
                     create_NewWindow("Good Game")#creates a endgame window
                     win.fill(WHITE)
@@ -1524,23 +1575,23 @@ while run:
                     P2x=FIGx2
                     P1y=FIGy1-75
                     P2y=FIGy2-75
-                    create_NewWindow('Level 2')
-                    if HEIGHT==700:
-                        win.blit(sebg2,(0,0))
-                    if HEIGHT==800:
-                        win.blit(eibg2(0,0))
-                    if HEIGHT==900:
-                        win.blit(nibg2(0,0))
-                    if HEIGHT==1000:
-                        win.blit(tebg2 (0,0))
-                    win.blit(StR1,(FIGx1,FIGy1))
-                    win.blit(StL2,(FIGx2, FIGy2)) 
-                    win.blit(p1,(P1x,P1y))
-                    win.blit(p2,(P2x,P2y))
-                    pygame.draw.rect(win,ORANGE,bolder1)#drawing all of the rectangles with the object colors chosen
-                    pygame.draw.rect(win,ORANGE,bolder2)     
-                    pygame.draw.rect(win,ORANGE,bolder3)  
-                    pygame.draw.rect(win,ORANGE,bolder4)
+                    create_NewgWindow('Level 2')
+                    # if HEIGHT==700:
+                    #     win.blit(sebg2,(0,0))
+                    # if HEIGHT==800:
+                    #     win.blit(eibg2(0,0))
+                    # if HEIGHT==900:
+                    #     win.blit(nibg2(0,0))
+                    # if HEIGHT==1000:
+                    #     win.blit(tebg2 (0,0))
+                    # win.blit(StR1,(FIGx1,FIGy1))
+                    # win.blit(StL2,(FIGx2, FIGy2)) 
+                    # win.blit(p1,(P1x,P1y))
+                    # win.blit(p2,(P2x,P2y))
+                    # pygame.draw.rect(win,ORANGE,bolder1)#drawing all of the rectangles with the object colors chosen
+                    # pygame.draw.rect(win,ORANGE,bolder2)     
+                    # pygame.draw.rect(win,ORANGE,bolder3)  
+                    # pygame.draw.rect(win,ORANGE,bolder4)
                     while play:
                         pygame.time.delay(100) #milliseconds 
                         for anyThing in pygame.event.get(): #variable for anytrhing that happneds in py to listen to keyboard and mouse
@@ -2332,21 +2383,22 @@ while run:
                             score=fl2count*2000-(pl2hc*200)
                             end=True
                         redrawGameWindowforp1()
-                        redrawGameWindowforp2()
                         flagspawn()
                         lavspawn()
-                        if HEIGHT==700:
-                            win.blit(sebg2,(0,0))
-                        if HEIGHT==800:
-                            win.blit(eibg2(0,0))
-                        if HEIGHT==900:
-                            win.blit(nibg2(0,0))
-                        if HEIGHT==1000:
-                            win.blit(tebg2 (0,0))
+                        # if HEIGHT==700:
+                        #     win.blit(sebg,(0,0))
+                        # if HEIGHT==800:
+                        #     win.blit(eibg,(0,0))
+                        # if HEIGHT==900:
+                        #     win.blit(nibg,(0,0))
+                        # if HEIGHT==1000:#bases type of background needed on height
+                        #     win.blit(tebg,(0,0))
                         pygame.draw.rect(win,ORANGE,bolder1)#drawing all of the rectangles with the object colors chosen
                         pygame.draw.rect(win,ORANGE,bolder2)     
                         pygame.draw.rect(win,ORANGE,bolder3)  
                         pygame.draw.rect(win,ORANGE,bolder4)
+                        pygame.display.update()
+                        pygame.display.flip()
                 if end==True:
                     create_NewWindow("Good Game")
                     win.fill(WHITE)
