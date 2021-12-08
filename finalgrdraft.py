@@ -38,7 +38,7 @@ nibg2 = pygame.image.load('images\lava-lake-active-valcano-rj-2560x1700 copy 2.j
 tebg2 = pygame.image.load('images\lava-lake-active-valcano-rj-2560x1700 copy 3.jpg')
 lamon = pygame.image.load('images\95-957201_lava-muk-pokemon-lava.jpg')
 p1=pygame.image.load('images\pngtree-battle-player-1-vs-2-logo-versus-png-image_2899070.jpeg')
-p2 = pygame.image.load('images\pngtree-battle-player-1-vs-2-logo-versus-png-image_2899070.jpeg')
+p2 = pygame.image.load('images\pngtree-battle-player-1-vs-2-logo-versus-png-image_2899070 copy.jpeg')
 fl = pygame.image.load('images\\Unknown.png') 
 proj11 = pygame.image.load('images\\untitled folder\explosion01_128 copy.jpeg')
 proj12 = pygame.image.load('images\\untitled folder\explosion01_128 copy 2.jpeg')
@@ -143,28 +143,6 @@ def updateFile():#Thanks to Tech With Tim for this function
         return score
                
     return last
-def flagspawn():
-    global flgcount
-    global fl1count
-    global fl2count
-    flgx=0
-    flgy=0
-    if flgcount==0:
-        pygame.time.delay(15000)
-        flgx= random.randint(50,WIDTH-50)#when there is no flag the count is zero which triggers the coords to randomize after a delay and adds to the count so it dosen't happen untill the flag is collected
-        flgy= random.randint(50,HEIGHT-50)
-        flgcount+=1
-    if flgcount==1:
-        win.blit(fl,(flgx,flgy))
-    if flgx==boldx1+85 or flgx==boldx1-85 or flgx==boldx2+85 or flgx==boldx2-85 or flgx==boldx3+85 or flgx==boldx3-85 or flgx==boldx4+85 or flgx==boldx4-85 or flgy==boldy1+85 or flgy==boldy1-85 or flgy==boldy2+85 or flgy==boldy2-85 or flgy==boldy3+85 or flgy== boldy3-85 or flgy== boldy4+85 or flgy== boldy4-85:
-        flgx= random.randint(50,WIDTH-50)# if the flag lands on a wall postition it will instantly randomize the coordinates so the flag isn't stuck
-        flgy= random.randint(50,HEIGHT-50)  
-    if flgx==-FIGx1+30 or flgx==FIGx1-30 or flgy==FIGy1+30 or flgy==FIGy1-30: #as with other extra numbers these gave some linency so you don't have to be right on top of it  
-        flgcount=0
-        fl1count+=1#adds to the flag count for a player
-    if flgx==FIGx2+30 or flgx==FIGx2-30 or flgy==FIGy2-30 or flgy==FIGy2+30:
-        flgcount=0
-        fl2count+=1
 def lavspawn():
     global lavacount
     if lavacount==0:
@@ -179,11 +157,13 @@ def lavspawn():
         lvy= random.randint(50,HEIGHT-50)  
     if lvx==-FIGx1+30 or lvx==FIGx1-30 or lvy==FIGy1+30 or lvy==FIGy1-30: #as with other extra numbers these gave some linency so you don't have to be right on top of it  
         lavacount=0
+        pl1hc+=1
         spped1=False#when someone toches this it not only stuns the player but gets rid of the lava too
         pygame.time.delay(5000)
         spped1=True
     if lvx==FIGx2+30 or lvx==FIGx2-30 or lvy==FIGy2-30 or lvy==FIGy2+30:
         lavacount=0
+        pl2hc+=1
         spped2=False
         pygame.time.delay(5000)
         spped2=True
@@ -203,7 +183,7 @@ def redrawGameWindowforp1():
     global P2x
     global P2y
     win.blit(eibg,(0,0))
-    win.blit(p1,(PendingDeprecationWarning))
+    win.blit(p1,(P1x,P1y))
     win.blit(p2,(P2x,P2y))
     pygame.draw.rect(win,ORANGE,bolder1)#drawing all of the rectangles with the object colors chosen
     pygame.draw.rect(win,ORANGE,bolder2)     
@@ -1450,18 +1430,17 @@ while run:
                             FIGy2-=50
                             pygame.time.delay(3000)
                             spped2=True
-                        if fl1count==5:#this ends the game whenever a player has collected 5 flags
+                        if pl2hc==5:#this ends the game whenever a player has collected 5 flags
                             play=False
                             # scorepen=my_timer.get_seconds 
-                            score=fl1count*2000-(pl1hc*200)#scores based on number of times you got hit
+                            score=pl2hc*2000-(pl1hc*200)#scores based on number of times you got hit
                             end=True
-                        if fl2count==5:
+                        if pl1hc==5:
                             play=False
                             # scorepen=my_timer.get_seconds
-                            score=fl2count*2000-(pl2hc*200)
+                            score=pl1hc*2000-(pl2hc*200)
                             end=True
                         redrawGameWindowforp1()
-                        flagspawn()
                         # if HEIGHT==700:
                         #     win.blit(sebg,(0,0))
                         # if HEIGHT==800:
@@ -1666,14 +1645,14 @@ while run:
                                         win.blit(proj12,(pjxl12,FIGy1))
                                         p1pjcon-=1 
                                         pj12=True    
-                        #             if p1pjcon==2:
-                        #                 win.blit(proj13,(pjxl13,FIGy1))
-                        #                 p1pjcon-=1 
-                        #                 pj13=True
-                        #             if p1pjcon==1:
-                        #                 win.blit(proj14,(pjxl14,FIGy1))
-                        #                 p1pjcon-=1 
-                        #                 pj14=True          
+                                    if p1pjcon==4:
+                                        win.blit(proj11,(pjxl11,FIGy1))
+                                        p1pjcon-=1 
+                                        pj11=True
+                                    if p1pjcon==3:
+                                        win.blit(proj12,(pjxl12,FIGy1))
+                                        p1pjcon-=1 
+                                        pj12=True          
                         if spped2==True:
                             if keyPressed[pygame.K_d]:  
                                 FIGx2 +=speedy 
@@ -2372,18 +2351,17 @@ while run:
                             FIGy2-=50
                             pygame.time.delay(3000)
                             spped2=True
-                        if fl1count==5:
+                        if pl2hc==5:
                             play=False
                             # scorepen=my_timer.get_seconds()
-                            score=fl1count*2000-(pl1hc*200)
+                            score=pl2hc*2000-(pl1hc*200)
                             end=True
-                        if fl2count==5:
+                        if pl1hc==5:
                             play=False
                             # scorepen=my_timer.get_seconds()
-                            score=fl2count*2000-(pl2hc*200)
+                            score=pl1hc*2000-(pl2hc*200)
                             end=True
                         redrawGameWindowforp1()
-                        flagspawn()
                         lavspawn()
                         # if HEIGHT==700:
                         #     win.blit(sebg,(0,0))
