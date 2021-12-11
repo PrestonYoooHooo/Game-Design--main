@@ -59,6 +59,7 @@ projcount12=30
 # projcount14=30
 projcount21=30
 gm2=False
+stgm=True
 projcount22=30
 # projcount23=30
 # projcount24=30
@@ -91,6 +92,7 @@ gobcount=0
 boldx2=WIDTH-200
 boldy2=200
 boldy3=HEIGHT-200
+
 boldx3=200
 boldx4=WIDTH-200
 boldy4=HEIGHT-200
@@ -125,6 +127,7 @@ walkCount1= 0
 walkCount2= 0
 lavacount=0
 pl1hc=0
+gem=False
 pl2hc=0
 left1=False
 right1=False
@@ -181,13 +184,13 @@ def lavspawn():
     if FIGx1>lvx-30 and FIGx1<lvx+30 and FIGy1>lvx-30 and FIGy1<lvx+30: #as with other extra numbers these gave some linency so you don't have to be right on top of it  to trigger it
         lavacount-=1
         pl1hc-=2#lava takes away more coins than the goblin will
-    if FIGy1>lvy-30 and FIGx1<lvy+30 and FIGy1>lvy-30 and FIGy1<lvy+30:
+    if FIGy1>lvy-30 and FIGy1<lvy+30 and FIGx1>lvy-30 and FIGx1<lvy+30:
         lavacount-=1
         pl1hc-=2
     if FIGx2>lvx-30 and FIGx2<lvx+30 and FIGy2>lvx-30 and FIGy2<lvx+30: #as with other extra numbers these gave some linency so you don't have to be right on top of it  
         lavacount-=1
         pl2hc-=2
-    if FIGy2>lvy-30 and FIGx2<lvy+30 and FIGy2>lvy-30 and FIGy2<lvy+30:
+    if FIGy2>lvy-30 and FIGx2<lvy+30 and FIGx2>lvy-30 and FIGx2<lvy+30:
         lavacount-=1
         pl2hc-=2
     if lvx<50:#border controls for the goblin/lava that will make sure they stay in bounds
@@ -231,7 +234,7 @@ def gobspawn():
     if FIGx2>gbx-30 and FIGx2<gbx+30 and FIGy2>gbx-30 and FIGy2<gbx+30: #as with other extra numbers these gave some linency so you don't have to be right on top of it  
         gobcount-=1
         pl2hc-=1
-    if FIGy2>gby-30 and FIGx2<gby+30 and FIGy2>gby-30 and FIGy2<gby+30:
+    if FIGy2>gby-30 and FIGy2<gby+30 and FIGx2>gbx-30 and FIGx2<gbx+30:
         gobcount-=1
         pl2hc-=1
     if gbx<50:#border controls for the goblin/lava that will make sure they stay in bounds
@@ -287,6 +290,9 @@ def redrawGameWindowforp1():
     global P2x
     global P2y
     global hecount
+    global speedx
+    global speedy
+    global gem2
     if gem2==True:
         if hecount==1:
             win.blit(sebg2,(0,0))
@@ -371,6 +377,8 @@ def redrawGameWindowforp1():
     # if pj24==True:
     #     win.blit(proj24,(pjxl24,pjy24))
     pygame.display.update()
+    speedx=10+(pl2hc*10)
+    speedy=10+(pl1hc*10)
 def create_NewWindow(winTitile):
     pygame.display.set_caption(winTitile)
     win.fill(WHITE)
@@ -757,6 +765,9 @@ while run:
                     pj22=False
                     pj23=False
                     pj24=False
+                    stgm=False
+                    speedx=10
+                    speedy=10
                     P1y=FIGy1-75#shows which player is which by stayign directicly above them
                     P2y=FIGy2-75
                     Flgx=random.randint(50,WIDTH-50)#
@@ -784,8 +795,6 @@ while run:
                             if anyThing.type ==pygame.QUIT: #says if Quit something happends
                                 run =False
                         keyPressed= pygame.key.get_pressed()#records keyboard movement
-                        speedx=10
-                        speedy=10
                         P1y=FIGy1-75
                         P2y=FIGy2-75
                         if spped1:  #this if statment allows me to disable a single players movement if they are stunned
@@ -985,18 +994,24 @@ while run:
                     counter-=1 
                     newgame1=True
                     newgame2=False
+                    gem2=False
                 if end==True and xp >x and xp<x+wbox and yp>y and yp<445 and yp>345 and counter is 8:
                     counter-=1 
                     newgame1=False
                     newgame2=True 
-                if xp>x and xp<x+wbox and yp>y and yp<345 and yp>245 and counter is 7 or newgame2==True and counter is 7:
+                    gem2==True
+                if end==True and xp >x and xp<x+wbox and yp>y and yp<545 and yp>445 and counter is 8:
+                    counter-=8
+                    display_Title("TestyGame",y)
+                    Menu_function(gameMessages,150)
+                if xp>x and xp<x+wbox and yp>y and yp<345 and yp>245 and stgm==True and counter is 7 or newgame2==True and counter is 7:
                     walkCount1= 0
+                    gem2=True
                     walkCount2= 0
                     boldx1=200
                     boldy1=200
                     boldx2=WIDTH-200
                     boldy2=200
-                    gem2=True
                     escape1=True
                     score=0
                     boldy3=HEIGHT-200
@@ -1066,11 +1081,13 @@ while run:
                     pj22=False
                     pj23=False
                     pj24=False
+                    speedx=10
+                    speedy=10
                     P1y=FIGy1-75#shows which player is which by stayign directicly above them
                     P2y=FIGy2-75
                     Flgx=random.randint(50,WIDTH-50)#
                     flgy=random.randint(50,HEIGHT-50)
-                    create_NewgWindow('Level 1')
+                    create_NewgWindow('Level 2')
                     # if HEIGHT==700:
                     #     win.blit(sebg,(0,0))
                     # if HEIGHT==900:
@@ -1093,13 +1110,11 @@ while run:
                             if anyThing.type ==pygame.QUIT: #says if Quit something happends
                                 run =False
                         keyPressed= pygame.key.get_pressed()#records keyboard movement
-                        speedx=10
-                        speedy=10
                         P1y=FIGy1-75
                         P2y=FIGy2-75
                         if spped1:  #this if statment allows me to disable a single players movement if they are stunned
                             if keyPressed[pygame.K_d]: 
-                                FIGx1 +=speedx #negative or postive depsending on direction
+                                FIGx1 +=speedy #negative or postive depsending on direction
                                 right1=True#for direction
                                 left1=False
                                 lastr1=True#for the last direction if an idle pose is needed
@@ -1107,7 +1122,7 @@ while run:
                                 lastd1=False
                                 lastw1=False
                             if keyPressed[pygame.K_a]:  
-                                FIGx1 -=speedx 
+                                FIGx1 -=speedy
                                 right1=False
                                 left1=True
                                 lastr1=False
@@ -1115,13 +1130,13 @@ while run:
                                 lastd1=False
                                 lastw1=False
                             if keyPressed[pygame.K_w]:  #wasn't able to get up and down sprite so reused the other walking sprites but you do still travel in that direction
-                                FIGy1-=speedx
+                                FIGy1-=speedy
                                 lastr1=False
                                 lastl1=False
                                 lastd1=False
                                 lastw1=True      
                             if keyPressed [pygame.K_s]:
-                                FIGy1 +=speedx
+                                FIGy1 +=speedy
                                 lastr1=False
                                 lastl1=False
                                 lastw1=False
@@ -1284,18 +1299,18 @@ while run:
                         redrawGameWindowforp1()
                         coinspawn()  
                         lavspawn()
-                if end==True and  counter is 8:
-                    create_NewWindow("Good Game")#creates a endgame window
-                    win.fill(WHITE)
-                    display_Title("Good Game",40)#
-                    Menu_function(EndMessages,150)#ssame as the other menus but also with the score thing and it allows us to travel to other parts of the game like hte menu
-                    #actiates the endgame if statments
-                if end==True and xp >x and xp<x+wbox and yp>y and yp<345 and yp>245 and counter is 8:
-                    counter-=1 
-                    newgame1=True
-                    newgame2=False
-                if end==True and xp >x and xp<x+wbox and yp>y and yp<445 and yp>345 and counter is 8:
-                    counter-=1 
-                    newgame1=False
-                    newgame2=True        
+                # if end==True and  counter is 8:
+                #     create_NewWindow("Good Game")#creates a endgame window
+                #     win.fill(WHITE)
+                #     display_Title("Good Game",40)#
+                #     Menu_function(EndMessages,150)#ssame as the other menus but also with the score thing and it allows us to travel to other parts of the game like hte menu
+                #     #actiates the endgame if statments
+                # if end==True and xp >x and xp<x+wbox and yp>y and yp<345 and yp>245 and counter is 8:
+                #     counter-=1 
+                #     newgame1=True
+                #     newgame2=False
+                # if end==True and xp >x and xp<x+wbox and yp>y and yp<445 and yp>345 and counter is 8:
+                #     counter-=1 
+                #     newgame1=False
+                #     newgame2=True        
 pygame.quit()
