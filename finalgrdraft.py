@@ -293,7 +293,7 @@ def redrawGameWindowforp1():
     global speedx
     global speedy
     global gem2
-    if gem2==True:
+    if gem2==True:#if I am starting a level 2 game this will load a diffrent background while also loading it sepedning on the screen size
         if hecount==1:
             win.blit(sebg2,(0,0))
         if hecount==2:
@@ -377,7 +377,7 @@ def redrawGameWindowforp1():
     # if pj24==True:
     #     win.blit(proj24,(pjxl24,pjy24))
     pygame.display.update()
-    speedx=10+(pl2hc*10)
+    speedx=10+(pl2hc*10)#speed based on the other players coin count so you could get an advantage or disadavnatage depdning on 
     speedy=10+(pl1hc*10)
 def create_NewWindow(winTitile):
     pygame.display.set_caption(winTitile)
