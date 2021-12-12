@@ -17,10 +17,10 @@ settingMessages=["Screen Size","Background Colors", "Object Colors", "Sounds On\
 sizeMessages=["700*700", "800*800", "900*900", "1000*1000","Back"]
 BacoMessages=["Red","Blue","White","Orange","Back"]
 CoMessages=['Orange','Red','White','Blue','Back']
-ScMessages=['Score 1','Score 2','Score 3', 'Score 4', 'Back']
+ScMessages=['The Top Score is:','Back']
 InMessages= ['Get a friend', 'Gather 3 flags before them', 'Push them back with your laser', 'Enjoy your ruined friendship', 'Back']
 PlMessages= ['Level 1', 'Level 2', 'Back']
-EndMessages=['The top Score was', 'Play Level 1','Play Level 2', 'Back to Menu']
+EndMessages=['Play Level 1','Play Level 2', 'Back to Menu']
 walkRight1 = [pygame.image.load('images\Pygame-Tutorials-master\Game\R1.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R2.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R3.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R4.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R5.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R6.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R7.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R8.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R9.png')]
 walkLeft1 = [pygame.image.load('images\Pygame-Tutorials-master\Game\L1.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L2.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L3.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L4.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L5.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L6.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L7.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L8.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/L9.png')]
 walkRight2 = [pygame.image.load('images\Pygame-Tutorials-master\Game\R1 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R2 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R3 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R4 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R5 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R6 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R7 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R8 - Copy.png'), pygame.image.load('images/Pygame-Tutorials-master/Game/R9 - Copy.png')]
@@ -485,9 +485,17 @@ while run:
                     xp=0
                     yp=0                  
                     win.fill(WHITE)
+                    xm=WIDTH/2-text.get_width()/2+190
+                    ym=150-10
                     create_NewWindow("Score Board")
-                    display_Title("Score Board",40)
-                    Menu_function(ScMessages,150)
+                    display_Title("Top score",40)
+                    Menu_function(ScMessages, 150)
+                    fl = open('scores.txt','r')
+                    fg = fl.readlines()
+                    fls = str(fg[0])
+                    flst = MENU_FONT.render(fls,1,BLACK)
+                    win.blit(flst, (xm,ym))
+                    pygame.display.flip()
                     pygame.time.delay(100)
                     counter+=6
                 if xp>x and xp<x+wbox and yp>y and yp<645 and yp>545 and counter is 0:
@@ -679,7 +687,7 @@ while run:
                     Menu_function(gameMessages,150)
                     counter-=5
                     pygame.time.delay(100)
-                if xp >x and xp<x+wbox and yp>y and yp<645 and yp>545 and counter is 6:
+                if xp >x and xp<x+wbox and yp>y and yp<345 and yp>245 and counter is 6:
                     xp=0
                     yp=0 
                     win.fill(WHITE)
@@ -985,6 +993,7 @@ while run:
                         coinspawn()
                         gobspawn()  
                 if end==True and  counter is 8:
+                    updateFile()
                     create_NewWindow("Good Game")#creates a endgame window
                     win.fill(WHITE)
                     display_Title("Good Game",40)#
@@ -1287,12 +1296,12 @@ while run:
                             FIGy2-=50                        
                         if pl2hc==5:#this ends the game whenever a player has collected 5 flags
                             play=False
-                            score=pl2hc*2000-(pl1hc*200)#scores based on number of times you got hit
+                            score=pl2hc*2000-(pl1hc*200)+1000#scores based on number of times you got hit
                             end=True
                             counter+=1
                         if pl1hc==5:
                             play=False
-                            score=pl1hc*2000-(pl2hc*200)
+                            score=pl1hc*2000-(pl2hc*200)+1000
                             end=True
                             counter+=1
                             pygame.time.delay(100)
@@ -1312,5 +1321,13 @@ while run:
                 # if end==True and xp >x and xp<x+wbox and yp>y and yp<445 and yp>345 and counter is 8:
                 #     counter-=1 
                 #     newgame1=False
-                #     newgame2=True        
+                #     newgame2=True    
+                if xp>x and xp<x+wbox and yp>y and yp<445 and yp>345 and counter is 7:
+                    xp=0
+                    yp=0 
+                    win.fill(WHITE)
+                    display_Title("Testy Game",y)
+                    Menu_function(gameMessages,150)
+                    counter-=7
+                    pygame.time.delay(100)
 pygame.quit()
