@@ -1013,7 +1013,7 @@ while run:
                     counter-=8
                     display_Title("TestyGame",y)
                     Menu_function(gameMessages,150)
-                if xp>x and xp<x+wbox and yp>y and yp<345 and yp>245 and stgm==True and counter is 7 or newgame2==True and counter is 7:
+                if xp>x and xp<x+wbox and yp>y and yp<345 and yp>245 and stgm==True and counter is 7 or newgame2==True and counter is 7:#the stgm is theer because it will say if the mouse is at that position and counter is 7 level 2 will play but only if you choose it first. this is due to the fact that in other areas it would trigger level 2 without meaning too so this prevents it
                     walkCount1= 0
                     gem2=True
                     walkCount2= 0
