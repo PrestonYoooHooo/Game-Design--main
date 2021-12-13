@@ -993,11 +993,14 @@ while run:
                         coinspawn()
                         gobspawn()  
                 if end==True and  counter is 8:
-                    EndMessages= [str(score),'Play Level 1', 'Play Level 2', 'Go to Menu',]
+                    EndMessages=[str(score),'Play Level 1', 'Play Level 2', 'Go to Menu',]
                     updateFile()
                     create_NewWindow("Good Game")#creates a endgame window
                     win.fill(WHITE)
-                    display_Title("Good Game",40)#
+                    if pl1hc==5:
+                        display_Title("Player 1 Won",40)#
+                    if pl2hc==5:
+                        display_Title("Player 2 Won",40)
                     Menu_function(EndMessages,150)#ssame as the other menus but also with the score thing and it allows us to travel to other parts of the game like hte menu
                     #actiates the endgame if statments
                 if end==True and xp >x and xp<x+wbox and yp>y and yp<345 and yp>245 and counter is 8:
@@ -1125,7 +1128,7 @@ while run:
                         P2y=FIGy2-75
                         if spped1:  #this if statment allows me to disable a single players movement if they are stunned
                             if keyPressed[pygame.K_d]: 
-                                FIGx1 +=speedy #negative or postive depsending on direction
+                                FIGx1 +=speedx #negative or postive depsending on direction
                                 right1=True#for direction
                                 left1=False
                                 lastr1=True#for the last direction if an idle pose is needed
@@ -1133,7 +1136,7 @@ while run:
                                 lastd1=False
                                 lastw1=False
                             if keyPressed[pygame.K_a]:  
-                                FIGx1 -=speedy
+                                FIGx1 -=speedx
                                 right1=False
                                 left1=True
                                 lastr1=False
@@ -1141,13 +1144,13 @@ while run:
                                 lastd1=False
                                 lastw1=False
                             if keyPressed[pygame.K_w]:  #wasn't able to get up and down sprite so reused the other walking sprites but you do still travel in that direction
-                                FIGy1-=speedy
+                                FIGy1-=speedx
                                 lastr1=False
                                 lastl1=False
                                 lastd1=False
                                 lastw1=True      
                             if keyPressed [pygame.K_s]:
-                                FIGy1 +=speedy
+                                FIGy1 +=speedx
                                 lastr1=False
                                 lastl1=False
                                 lastw1=False
