@@ -143,7 +143,7 @@ FIGx1=150
 FIGy1=HEIGHT-150
 FIGx2=WIDTH-150
 FIGy2=HEIGHT-150#they start at oppisted sides of the screen 
-def updateFile():#Thanks to Tech With Tim for this function
+def updateFile():#Thanks to Tech With Tim for this function that updates the scoreboard
     f = open('scores.txt','r') # opens the file in read mode
     file = f.readlines() # reads all the lines in as a list
     last = int(file[0]) # gets the first line of the file
@@ -157,7 +157,7 @@ def updateFile():#Thanks to Tech With Tim for this function
         return score
                
     return last
-def lavspawn():
+def lavspawn():#same thing as goblin 
     global lavacount
     global pl1hc
     global pl2hc
@@ -202,7 +202,7 @@ def lavspawn():
     if lvy==HEIGHT-50:
         lvy-=50
     pygame.display.flip()
-def gobspawn():
+def gobspawn():#spawns a goblin radomly on the screen during level 1
     global gobcount
     global gbx
     global gby
@@ -257,7 +257,7 @@ def coinspawn():
     global FIGy2
     global pl1hc
     global pl2hc
-    if coincount==1:
+    if coincount==1:#causes coins to spawn radomly at the top of the sceen
         cy=0
         cx=random.randint(50,WIDTH-50)#coin's x postion is random but they start at the top of the screen
         win.blit(coin,(cx,cy))
@@ -274,7 +274,7 @@ def coinspawn():
         coincount+=1
         pl2hc+=1
     pygame.display.flip()
-def redrawGameWindowforp1():
+def redrawGameWindowforp1():#redraws everything and blits everyintg in. changes backgrounds and walkspeed when needed and blits walk cycles too
     global walkCount1 
     global walkCount2
     global pjxl11
@@ -383,7 +383,7 @@ def create_NewWindow(winTitile):
     pygame.display.set_caption(winTitile)
     win.fill(WHITE)
     pygame.display.update()
-def create_NewgWindow(winTitile):
+def create_NewgWindow(winTitile):#creates a new window specifically for games but the background gets changed later based on game and screen size
     FIGx1=50
     FIGy1=HEIGHT-50
     FIGx2=WIDTH-50
@@ -399,7 +399,7 @@ def create_NewgWindow(winTitile):
     # pygame.draw.rect(win,ORANGE,bolder3)  
     # pygame.draw.rect(win,ORANGE,bolder4)
     pygame.display.update
-def display_Title(message,y):#that comes with def
+def display_Title(message,y):#that comes with def creates a title for a window
     win.fill(WHITE)
     pygame.time.delay(100)
     text=TITLE_FONT.render(message,1,BLACK)#message now variable
@@ -409,7 +409,7 @@ def display_Title(message,y):#that comes with def
     pygame.display.update()
     pygame.time.delay(100)
 
-def Menu_function(Messages,y):
+def Menu_function(Messages,y):#draws squares and blits text onto screen for a menu
     pygame.time.delay(100)
     square.y=y
     xy=15
