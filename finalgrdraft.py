@@ -993,6 +993,7 @@ while run:
                         coinspawn()
                         gobspawn()  
                 if end==True and  counter is 8:
+                    EndMessages= [str(score),'Play Level 1', 'Play Level 2', 'Go to Menu',]
                     updateFile()
                     create_NewWindow("Good Game")#creates a endgame window
                     win.fill(WHITE)
