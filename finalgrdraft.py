@@ -1117,6 +1117,7 @@ while run:
                         pygame.time.delay(100) #milliseconds 
                         for anyThing in pygame.event.get(): #variable for anytrhing that happneds in py to listen to keyboard and mouse
                             if anyThing.type ==pygame.QUIT: #says if Quit something happends
+                                play = False
                                 run =False
                         keyPressed= pygame.key.get_pressed()#records keyboard movement
                         P1y=FIGy1-75
