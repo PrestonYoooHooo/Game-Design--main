@@ -174,13 +174,13 @@ def lavspawn():
         lvx= random.randint(50,WIDTH-50)# if the lava lands on a wall postition it will instantly randomize the coordinates so the lava isn't stuck in one place
         lvy= random.randint(50,HEIGHT-50)  
     if lvx>boldx1-30 and lvx<boldx1+30 and lvy>boldx1-30 and lvy<boldx1+30:
-        lavacount+=1
+        lavacount-=1
     if lvx>boldx2-30 and lvx<boldx2+30 and lvy>boldy2-30 and lvy<boldy2+30:
-        lavacount+=1
+        lavacount-=1
     if lvx>boldx3-30 and lvx<boldx3+30 and lvy>boldx3-30 and lvy<boldx3+30:
-        lavacount+=1
+        lavacount-=1
     if lvx>boldx4-30 and lvx<boldx4+30 and lvy>boldy4-30 and lvy<boldy4+30:
-        lavacount+=1
+        lavacount-=1
     if FIGx1>lvx-30 and FIGx1<lvx+30 and FIGy1>lvx-30 and FIGy1<lvx+30: #as with other extra numbers these gave some linency so you don't have to be right on top of it  to trigger it
         lavacount-=1
         pl1hc-=2#lava takes away more coins than the goblin will
@@ -427,7 +427,7 @@ def Menu_function(Messages,y):
         ym+=100
         square.y=ym+15
     
-display_Title("TestyGame",y)
+display_Title("Coin Fever",y)
 Menu_function(gameMessages,150)
 run=True
 play=True
@@ -533,7 +533,7 @@ while run:
                     xp=0
                     yp=0
                     win.fill(WHITE)
-                    display_Title("TestyGame",y)
+                    display_Title("CoinFever",y)
                     Menu_function(gameMessages,150)
                     counter-=1
                 if xp >x and xp<x+wbox and yp>y and yp<245 and counter is 2:
@@ -683,7 +683,7 @@ while run:
                     xp=0
                     yp=0 
                     win.fill(WHITE)
-                    display_Title("Testy Game",y)
+                    display_Title("Coin Fever",y)
                     Menu_function(gameMessages,150)
                     counter-=5
                     pygame.time.delay(100)
@@ -691,7 +691,7 @@ while run:
                     xp=0
                     yp=0 
                     win.fill(WHITE)
-                    display_Title("Testy Game",y)
+                    display_Title("Coin Fever",y)
                     Menu_function(gameMessages,150)
                     counter-=6
                     pygame.time.delay(100)
@@ -1015,7 +1015,7 @@ while run:
                     gem2==True
                 if end==True and xp >x and xp<x+wbox and yp>y and yp<545 and yp>445 and counter is 8:
                     counter-=8
-                    display_Title("TestyGame",y)
+                    display_Title("Coin Fever",y)
                     Menu_function(gameMessages,150)
                 if xp>x and xp<x+wbox and yp>y and yp<345 and yp>245 and stgm==True and counter is 7 or newgame2==True and counter is 7:#the stgm is theer because it will say if the mouse is at that position and counter is 7 level 2 will play but only if you choose it first. this is due to the fact that in other areas it would trigger level 2 without meaning too so this prevents it
                     walkCount1= 0
