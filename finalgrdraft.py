@@ -834,14 +834,14 @@ while run:
                                 lastl1=False
                                 lastw1=False
                                 lastd1=True
-                            if FIGx1==10:#border controls for player 1 that buffs them back if they walk into it
-                                FIGx1+=30
-                            if FIGx1==WIDTH-30:
-                                FIGx1-=30
-                            if FIGy1==10:
-                                FIGy1+=30
-                            if FIGy1==HEIGHT-30:
-                                FIGy1-=30
+                            if FIGx1==70:#border controls for player 1 that buffs them back if they walk into it
+                                FIGx1+=speedx*2
+                            if FIGx1==WIDTH-70:
+                                FIGx1-=speedx*2
+                            if FIGy1==70:
+                                FIGy1+=speedx*2
+                            if FIGy1==HEIGHT-70:
+                                FIGy1-=speedx*2
                             # if keyPressed[pygame.K_f]:#fires projectile depending on directions and limits it to only 4 projectiles per player allowed to be fired on the screen
                             #     if lastr1==True and p1pjcon>0:#you can fire left and right (not up and down becuase i could find good back sprites for facing does directions so while you can move in them you can shot in them)
                             #         if p1pjcon==4:
@@ -906,14 +906,14 @@ while run:
                                 lastl2=False
                                 lastd2=True
                                 lastw2=False
-                            if FIGx2==10:#boder controls for player 2
-                                FIGx2+=30
-                            if FIGx2==WIDTH-30:
-                                FIGx2-=30
-                            if FIGy2==10:
-                                FIGy2+=30
-                            if FIGy2==HEIGHT-30:
-                                FIGy2-=30
+                            if FIGx2==700:#boder controls for player 2
+                                FIGx2+=speedy*2
+                            if FIGx2==WIDTH-70:
+                                FIGx2-=speedy*2
+                            if FIGy2==70:
+                                FIGy2+=speedy*2
+                            if FIGy2==HEIGHT-70:
+                                FIGy2-=speedy*2
                         if FIGx1==boldx1+50 and FIGy1>boldy1-50 and FIGy1<boldy1+50:#borders for the cube as they hit you back if you walk into them
                             FIGx1+=50
                         if FIGx1==boldx1-50 and FIGy1>boldy1-50 and FIGy1<boldy1+50:
@@ -1155,14 +1155,14 @@ while run:
                                 lastl1=False
                                 lastw1=False
                                 lastd1=True
-                            if FIGx1==10:#border controls for player 1 that buffs them back if they walk into it
-                                FIGx1+=30
-                            if FIGx1==WIDTH-30:
-                                FIGx1-=30
-                            if FIGy1==10:
-                                FIGy1+=30
-                            if FIGy1==HEIGHT-30:
-                                FIGy1-=30
+                            if FIGx1==70:#border controls for player 1 that buffs them back if they walk into it
+                                FIGx1+=speedx*2
+                            if FIGx1==WIDTH-70:
+                                FIGx1-=speedx*2
+                            if FIGy1==70:
+                                FIGy1+=speedx*2
+                            if FIGy1==HEIGHT-70:
+                                FIGy1-=speedx*2
                             # if keyPressed[pygame.K_f]:#fires projectile depending on directions and limits it to only 4 projectiles per player allowed to be fired on the screen
                             #     if lastr1==True and p1pjcon>0:#you can fire left and right (not up and down becuase i could find good back sprites for facing does directions so while you can move in them you can shot in them)
                             #         if p1pjcon==4:
@@ -1227,14 +1227,14 @@ while run:
                                 lastl2=False
                                 lastd2=True
                                 lastw2=False
-                            if FIGx2==10:#boder controls for player 2
-                                FIGx2+=30
-                            if FIGx2==WIDTH-30:
-                                FIGx2-=30
-                            if FIGy2==10:
-                                FIGy2+=30
-                            if FIGy2==HEIGHT-30:
-                                FIGy2-=30
+                            if FIGx2==70:#boder controls for player 2
+                                FIGx2+=speedy*2
+                            if FIGx2==WIDTH-70:
+                                FIGx2-=speedy*2
+                            if FIGy2==70:
+                                FIGy2+=speedy*2
+                            if FIGy2==HEIGHT-70:
+                                FIGy2-=speedy*2
                         if FIGx1==boldx1+50 and FIGy1>boldy1-50 and FIGy1<boldy1+50:#borders for the cube as they hit you back if you walk into them
                             FIGx1+=50
                         if FIGx1==boldx1-50 and FIGy1>boldy1-50 and FIGy1<boldy1+50:
